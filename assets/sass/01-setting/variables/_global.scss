@@ -1,0 +1,12 @@
+:root {
+	/* Admin-bar height */
+	--global--admin-bar--height: 0;
+}
+
+.admin-bar {
+	--global--admin-bar--height: 32px;
+
+	@media only screen and (max-width: 782px) {
+		--global--admin-bar--height: 46px;
+	}
+}
