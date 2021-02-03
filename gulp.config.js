@@ -11,11 +11,11 @@
 // Local project URL of your already running WordPress site.
 // > Could be something like "wpgulp.local" or "localhost"
 // > depending upon your local WordPress setup.
-const projectURL = 'plymaledingus.local';
+const projectURL = 'themescaffold.local';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
-const browserAutoOpen = true;
+const browserAutoOpen = 'external';
 const injectChanges = true;
 
 // >>>>> Style options.
