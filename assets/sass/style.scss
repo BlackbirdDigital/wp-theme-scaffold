@@ -8,6 +8,8 @@
 
 @import "04-base/base";
 
+@import "05-blocks/blocks";
+
 @import "06-components/header";
 @import "06-components/footer";
 @import "06-components/single";
@@ -20,20 +22,5 @@
 
 @import "07-utilities/accessibility";
 @import "07-utilities/alignments";
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
-
-
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
 
 
