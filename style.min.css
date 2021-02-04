@@ -115,9 +115,10 @@ h6,.h6{font-size:var(--heading--font-size-h6);font-weight:var(--heading--font-we
 .gallery-columns-8{grid-template-columns:repeat(8,1fr)}
 .gallery-columns-9{grid-template-columns:repeat(9,1fr)}
 .gallery-caption{display:block}
+.site-header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .page-content .wp-smiley,.entry-content .wp-smiley,.comment-content .wp-smiley{border:0;margin-bottom:0;margin-top:0;padding:0}
 .custom-logo-link{display:inline-block}
-.main-navigation{display:block;width:100%}
+.main-navigation{display:block}
 .main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}
 .main-navigation ul ul{-webkit-box-shadow:0 3px 3px rgba(0,0,0,0.2);box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:100%;left:-999em;z-index:99999}
 .main-navigation ul ul ul{left:-999em;top:0}
@@ -132,7 +133,6 @@ h6,.h6{font-size:var(--heading--font-size-h6);font-weight:var(--heading--font-we
 .comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{-webkit-box-flex:1;-ms-flex:1 0 50%;flex:1 0 50%}
 .comment-navigation .nav-next,.posts-navigation .nav-next,.post-navigation .nav-next{text-align:end;-webkit-box-flex:1;-ms-flex:1 0 50%;flex:1 0 50%}
 .sticky{display:block}
-.post,.page{margin:0 0 1.5em}
 .updated:not(.published){display:none}
 .page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
@@ -149,6 +149,11 @@ body.admin-bar .site{min-height:calc(100vh - var(--global--admin-bar--height))}
 .alignleft{float:left;margin-right:1.5em;margin-bottom:1.5em}
 .alignright{float:right;margin-left:1.5em;margin-bottom:1.5em}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto;margin-bottom:1.5em}
+.has-background a,.has-background p,.has-background h1,.has-background h2,.has-background h3,.has-background h4,.has-background h5,.has-background h6{color:currentColor}
+.has-white-color[class]{color:"#ffffff"}
+.has-white-background-color[class]{background-color:"#ffffff"}
+.has-black-color[class]{color:"#000000"}
+.has-black-background-color[class]{background-color:"#000000"}
 @media screen and (min-width:37.5em){.menu-toggle{display:none}
 .main-navigation ul{display:-webkit-box;display:-ms-flexbox;display:flex}
 }@media only screen and (max-width:782px){.admin-bar{--global--admin-bar--height:46px}
