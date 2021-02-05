@@ -5,11 +5,6 @@
 	margin-right: auto;
 }
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
-}
-
 // Color Palette Classes
 @mixin color-palette-classes($color-name, $color-value) {
 	.has-#{$color-name}-color[class] {

@@ -1,13 +1,38 @@
 :root{--global--admin-bar--height:0}
 .admin-bar{--global--admin-bar--height:32px}
-.wp-block-heading h1,h1,.h1,.wp-block-heading h2,h2,.h2,.wp-block-heading h3,h3,.h3,.wp-block-heading h4,h4,.h4,.wp-block-heading h5,h5,.h5,.wp-block-heading h6,h6,.h6{clear:both;font-family:var(--heading--font-family);font-weight:var(--heading--font-weight)}
-.wp-block-heading h1 strong,h1 strong,.h1 strong,.wp-block-heading h2 strong,h2 strong,.h2 strong,.wp-block-heading h3 strong,h3 strong,.h3 strong,.wp-block-heading h4 strong,h4 strong,.h4 strong,.wp-block-heading h5 strong,h5 strong,.h5 strong,.wp-block-heading h6 strong,h6 strong,.h6 strong{font-weight:var(--heading--font-weight-strong)}
-.wp-block-heading h1[style*="--wp--typography--line-height"],h1[style*="--wp--typography--line-height"],.h1[style*="--wp--typography--line-height"],.wp-block-heading h2[style*="--wp--typography--line-height"],h2[style*="--wp--typography--line-height"],.h2[style*="--wp--typography--line-height"],.wp-block-heading h3[style*="--wp--typography--line-height"],h3[style*="--wp--typography--line-height"],.h3[style*="--wp--typography--line-height"],.wp-block-heading h4[style*="--wp--typography--line-height"],h4[style*="--wp--typography--line-height"],.h4[style*="--wp--typography--line-height"],.wp-block-heading h5[style*="--wp--typography--line-height"],h5[style*="--wp--typography--line-height"],.h5[style*="--wp--typography--line-height"],.wp-block-heading h6[style*="--wp--typography--line-height"],h6[style*="--wp--typography--line-height"],.h6[style*="--wp--typography--line-height"]{line-height:var(--wp--typography--line-height,--global--line-height-body)}
-.wp-block-heading h1,h1,.h1{font-size:var(--heading--font-size-h1);letter-spacing:var(--heading--letter-spacing-h1);line-height:var(--heading--line-height-h1)}
-.wp-block-heading h2,h2,.h2{font-size:var(--heading--font-size-h2);letter-spacing:var(--heading--letter-spacing-h2);line-height:var(--heading--line-height-h2)}
-.wp-block-heading h3,h3,.h3{font-size:var(--heading--font-size-h3);letter-spacing:var(--heading--letter-spacing-h3);line-height:var(--heading--line-height-h3)}
-.wp-block-heading h4,h4,.h4{font-size:var(--heading--font-size-h4);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h4);line-height:var(--heading--line-height-h4)}
-.wp-block-heading h5,h5,.h5{font-size:var(--heading--font-size-h5);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h5);line-height:var(--heading--line-height-h5)}
-.wp-block-heading h6,h6,.h6{font-size:var(--heading--font-size-h6);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h6);line-height:var(--heading--line-height-h6)}
+body,button,input,select,optgroup,textarea{color:#404040;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:1rem;line-height:1.5}
+h1,h2,h3,h4,h5,h6{clear:both}
+p{margin-bottom:1.5em}
+dfn,cite,em,i{font-style:italic}
+blockquote{margin:0 1.5em}
+address{margin:0 0 1.5em}
+pre{background:#eee;font-family:"Courier 10 Pitch",courier,monospace;line-height:1.6;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:1.6em}
+code,kbd,tt,var{font-family:monaco,consolas,"Andale Mono","DejaVu Sans Mono",monospace}
+abbr,acronym{border-bottom:1px dotted #666;cursor:help}
+mark,ins{background:#fff9c0;text-decoration:none}
+big{font-size:125%}
+body{background:#fff}
+hr{background-color:#ccc;border:0;height:1px;margin-bottom:1.5em}
+ul,ol{margin:0 0 1.5em 3em}
+ul{list-style:disc}
+ol{list-style:decimal}
+li>ul,li>ol{margin-bottom:0;margin-left:1.5em}
+dt{font-weight:700}
+dd{margin:0 1.5em 1.5em}
+embed,iframe,object{max-width:100%}
+img{height:auto;max-width:100%}
+figure{margin:1em 0}
+table{margin:0 0 1.5em;width:100%}
+a{color:#4169e1}
+a:visited{color:#4169e1}
+a:hover,a:focus,a:active{color:#191970}
+a:focus{outline:thin dotted}
+a:hover,a:active{outline:0}
+.wp-block-heading h1,h1,.h1,.wp-block-heading h2,h2,.h2,.wp-block-heading h3,h3,.h3,.wp-block-heading h4,h4,.h4,.wp-block-heading h5,h5,.h5,.wp-block-heading h6,h6,.h6{clear:both;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif}
+.has-background a,.has-background p,.has-background h1,.has-background h2,.has-background h3,.has-background h4,.has-background h5,.has-background h6{color:currentColor}
+.has-white-color[class]{color:"#ffffff"}
+.has-white-background-color[class]{background-color:"#ffffff"}
+.has-black-color[class]{color:"#000000"}
+.has-black-background-color[class]{background-color:"#000000"}
 @media only screen and (max-width:782px){.admin-bar{--global--admin-bar--height:46px}
 }

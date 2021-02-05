@@ -79,7 +79,7 @@ img{height:auto;max-width:100%}
 figure{margin:1em 0}
 table{margin:0 0 1.5em;width:100%}
 a{color:#4169e1}
-a:visited{color:purple}
+a:visited{color:#4169e1}
 a:hover,a:focus,a:active{color:#191970}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
@@ -90,14 +90,7 @@ input[type="text"],input[type="email"],input[type="url"],input[type="password"],
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus{color:#111}
 select{border:1px solid #ccc}
 textarea{width:100%}
-h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{clear:both;font-family:var(--heading--font-family);font-weight:var(--heading--font-weight)}
-h1 strong,.h1 strong,h2 strong,.h2 strong,h3 strong,.h3 strong,h4 strong,.h4 strong,h5 strong,.h5 strong,h6 strong,.h6 strong{font-weight:var(--heading--font-weight-strong)}
-h1,.h1{font-size:var(--heading--font-size-h1);letter-spacing:var(--heading--letter-spacing-h1);line-height:var(--heading--line-height-h1)}
-h2,.h2{font-size:var(--heading--font-size-h2);letter-spacing:var(--heading--letter-spacing-h2);line-height:var(--heading--line-height-h2)}
-h3,.h3{font-size:var(--heading--font-size-h3);letter-spacing:var(--heading--letter-spacing-h3);line-height:var(--heading--line-height-h3)}
-h4,.h4{font-size:var(--heading--font-size-h4);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h4);line-height:var(--heading--line-height-h4)}
-h5,.h5{font-size:var(--heading--font-size-h5);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h5);line-height:var(--heading--line-height-h5)}
-h6,.h6{font-size:var(--heading--font-size-h6);font-weight:var(--heading--font-weight-strong);letter-spacing:var(--heading--letter-spacing-h6);line-height:var(--heading--line-height-h6)}
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{clear:both;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif}
 .wp-caption{margin-bottom:1.5em;max-width:100%}
 .wp-caption img[class*="wp-image-"]{display:block;margin-left:auto;margin-right:auto}
 .wp-caption .wp-caption-text{margin:.8075em 0}
