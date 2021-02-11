@@ -94,12 +94,7 @@ const zipIgnoreGlob = [
 	'!./.editorconfig',
 	'!./phpcs.xml.dist',
 	'!./vscode',
-	'!./package-lock.json',
-	`!${imgSRC}`,
-	`!${styleSRC}`,
-	`!${styleEditorSRC}`,
-	`!${jsCustomSRC}`,
-	`!${jsVendorSRC}`
+	'!./package-lock.json'
 ];
 
 // >>>>> Translation options.
