@@ -106,21 +106,14 @@ gulp.task('styles', () => {
 			})
 		)
 		.on('error', sass.logError)
-		.pipe(sourcemaps.write({includeContent: false}))
+		.pipe(sourcemaps.write({includeContent: true}))
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(autoprefixer(config.BROWSERS_LIST))
-		.pipe(sourcemaps.write('./'))
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
 		.pipe(gulp.dest(config.styleDestination))
 		.pipe(filter('**/*.css')) // Filtering stream to only css files.
 		.pipe(mmq({log: true})) // Merge Media Queries only for .min.css version.
 		.pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss({maxLineLen: 10}))
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.styleDestination))
-		.pipe(filter('**/*.css')) // Filtering stream to only css files.
-		.pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
 		.pipe(
 			notify({
 				message: '\n\n✅  ===> STYLES — completed!\n',

@@ -16,7 +16,7 @@ const projectURL = 'themescaffold.local';
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
 const browserAutoOpen = 'external';
-const injectChanges = true;
+const injectChanges = false;
 
 // >>>>> Style options.
 // Path to main .scss file.
