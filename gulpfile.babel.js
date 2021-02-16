@@ -1,7 +1,6 @@
 /**
- * Load WPGulp Configuration.
+ * Load Configuration.
  *
- * TODO: Customize your project in the wpgulp.js file.
  */
 const config = require('./gulp.config.js');
 
@@ -150,20 +149,12 @@ gulp.task('stylesRTL', () => {
 			})
 		)
 		.on('error', sass.logError)
-		.pipe(sourcemaps.write({includeContent: false}))
+		.pipe(sourcemaps.write({includeContent: true}))
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(autoprefixer(config.BROWSERS_LIST))
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
 		.pipe(rename({suffix: '-rtl'})) // Append "-rtl" to the filename.
 		.pipe(rtlcss()) // Convert to RTL.
-		.pipe(sourcemaps.write('./')) // Output sourcemap for style-rtl.css.
-		.pipe(gulp.dest(config.styleDestination))
-		.pipe(filter('**/*.css')) // Filtering stream to only css files.
-		.pipe(browserSync.stream()) // Reloads style.css or style-rtl.css, if that is enqueued.
-		.pipe(mmq({log: true})) // Merge Media Queries only for .min.css version.
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss({maxLineLen: 10}))
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
 		.pipe(gulp.dest(config.styleDestination))
 		.pipe(filter('**/*.css')) // Filtering stream to only css files.
 		.pipe(browserSync.stream()) // Reloads style.css or style-rtl.css, if that is enqueued.
@@ -254,15 +245,15 @@ gulp.task('customJS', () => {
 		.pipe(concat(config.jsCustomFile + '.js'))
 		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
 		.pipe(gulp.dest(config.jsCustomDestination))
-		.pipe(
-			rename({
-				basename: config.jsCustomFile,
-				suffix: '.min'
-			})
-		)
-		.pipe(uglify())
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsCustomDestination))
+		// .pipe(
+		// 	rename({
+		// 		basename: config.jsCustomFile,
+		// 		suffix: '.min'
+		// 	})
+		// )
+		// .pipe(uglify())
+		// .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+		// .pipe(gulp.dest(config.jsCustomDestination))
 		.pipe(
 			notify({
 				message: '\n\n✅  ===> CUSTOM JS — completed!\n',
