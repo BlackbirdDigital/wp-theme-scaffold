@@ -12,6 +12,7 @@ input[type="submit"] {
 
 	&:hover {
 		border-color: $color__border-button-hover;
+		cursor: pointer;
 	}
 
 	&:active,
