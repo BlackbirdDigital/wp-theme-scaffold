@@ -9,10 +9,10 @@ input[type="submit"] {
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
+	cursor: pointer;
 
 	&:hover {
 		border-color: $color__border-button-hover;
-		cursor: pointer;
 	}
 
 	&:active,
