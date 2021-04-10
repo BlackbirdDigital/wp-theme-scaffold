@@ -21,10 +21,15 @@ When making edits to your theme, begin your work by running `gulp` in the theme 
 # Structure
 FIXME
 
-## Contributing
-### Bugs & Feature Requests
-FIXME
+# Contributing
+## Bugs & Feature Requests
 
-### Development
+Bug reports and feature requests should be submitted via [GitHub Issues](https://github.com/BlackbirdDigital/wp-theme-scaffold/issues).
 
-FIXME
+## Development
+
+To contribute with code:
+
+1. Create a new branch off the main branch (currently `rough-pass`).
+2. Make your edits.
+3. Open a pull request briefly describing the changes.
