@@ -1,14 +1,12 @@
+# Instructions
 > If you wish to make an apple pie from scratch, you must first invent the universe.
 >
 > -- Carl Sagan
 
-# Instructions
 ## Setup
 How to begin working on your new theme, using the [Blackbird WP Theme Scaffold](https://github.com/BlackbirdDigital/wp-theme-scaffold) as a base.
 
-**Requirements**
-
-FIXME - what you need installed
+Requirements: [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/).
 
 1. Create a **local copy** this theme ([zip](https://github.com/BlackbirdDigital/wp-theme-scaffold/archive/refs/heads/rough-pass.zip) or [clone](https://github.com/BlackbirdDigital/wp-theme-scaffold)). *Note: If cloning, remember to delete the `.git` directory.*
 2. `cd` into the theme folder and run **`npm install`**.
