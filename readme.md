@@ -12,14 +12,14 @@ Requirements: [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/
 2. `cd` into the theme folder and run **`npm install`**.
 3. Run **`npm start`** (runs `gulp`).
 4. Create your [new repository](https://bitbucket.org/repo/create?workspace=blackbirddev). *Note: Do not include a README at this point.*
-5. FIXME - Clone new repo, move files into repo, search & replaces initial commit & push
+5. FIXME - Clone new repo, move files into repo, search & replaces (list out) initial commit & push
 6. FIXME - might reorder to reduce steps
 
 ## Usage
 When making edits to your theme, begin your work by running `gulp` in the theme directory. When finished, you can run `ctrl + C` (Mac) or close your teminal window to terminate the task.
 
 # Structure
-FIXME
+FIXME - basic description of structure, philosophy, anything its modeled after
 
 # Contributing
 ## Bugs & Feature Requests
