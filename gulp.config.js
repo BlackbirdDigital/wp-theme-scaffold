@@ -1,162 +1,157 @@
 /**
  * Configuration File
  *
- * 1. Edit the variables as per your project requirements.
- * 2. In paths you can add <<glob or array of globs>>.
+ * Edit the variables as per your project requirements.
  *
+ * @note All paths should include a trailing slash unless otherwise noted.
  */
 
-// Project options.
+// Since this is JS, we can be DRY
+const slug = 'theme-scaffold';
 
-// Local project URL of your already running WordPress site.
-// > Could be something like "wpgulp.local" or "localhost"
-// > depending upon your local WordPress setup.
-const projectURL = 'themescaffold.local';
+// Project options object
+export default {
 
-// Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
-const productURL = './';
-const browserAutoOpen = 'external';
-const injectChanges = false;
+	/**
+	 * Local domain of the WordPress website.
+	 *
+	 * Usually something like 'themescaffold.local' or 'localhost'
+	 */
+	localDomain: 'themescaffold.local',
 
-// >>>>> Style options.
-// Path to main .scss file.
-const styleSRC = './assets/sass/style.scss';
-const styleEditorSRC = './assets/sass/style-editor.scss';
+	/**
+	 * BrowserSync settings.
+	 *
+	 * You can override any BrowserSync setting below.
+	 * Both `proxy` and `host` will use localDomain above unless overriden here.
+	 *
+	 * @link http://www.browsersync.io/docs/options/
+	 */
+	browserSync: {
+		open: 'external', // Set to false if you want to open the BrowserSync proxy site manually
+	},
 
-// Path to place the compiled CSS file. Default set to root folder.
-const styleDestination = './';
+	/**
+	 * Browsers to target for autoprefixing CSS and JS feature shims.
+	 *
+	 * @link https://github.com/ai/browserslist
+	 */
+	targetBrowsers: ['last 2 version', '> 1%'],
 
-// Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
-const outputStyle = 'compact';
-const errLogToConsole = true;
-const precision = 10;
+	/**
+	 * Style path options.
+	 */
+	// Path to main .scss file.
+	stylePath: 'assets/sass/',
+	// Path to place the compiled CSS files.
+	styleDestination: 'css/',
 
-// JS Vendor options.
+	/**
+	 * Sass compiler options.
+	 *
+	 * https://sass-lang.com/documentation/js-api#options
+	 */
+	sass: {
+		outputStyle: 'compact', // compact | compressed | nested | expanded
+		errLogToConsole: true,
+		precision: 10,
+	},
 
-// Path to JS vendor folder.
-const jsVendorSRC = './assets/js/vendor/*.js';
+	/**
+	 * JavaScript path options.
+	 */
+	// Path to JS source files. All files in the root of thie folder will be treated as separate entry points.
+	jsPath: 'assets/js/',
+	// Path to place the compiled JS files.
+	jsDestination: 'js/',
+	// Path to JS vendor folder. Any files in the root of this folder are included.
+	jsVendorPath: 'assets/js/vendor/',
+	// Path to place the compiled JS vendors file.
+	jsVendorDestination: 'js/vendor/',
+	// Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
+	jsVendorFile: 'vendor',
 
-// Path to place the compiled JS vendors file.
-const jsVendorDestination = './js/';
+	/**
+	 * Image path options.
+	 */
+	// Source folder of images which should be optimized and watched.
+	// - You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
+	imgPath: 'assets/img/**/*',
+	// Destination folder of optimized images.
+	// - Must be different from the imagesSRC folder.
+	imgDestination: 'img/',
 
-// Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
-const jsVendorFile = 'vendor';
+	/**
+	 * Imagemin options.
+	 *
+	 * Handles optimizing images.
+	 *
+	 * @link https://github.com/sindresorhus/gulp-imagemin#api
+	 */
+	imagemin: {
+		gifsicle: {
+			interlaced: true,
+		},
+		mozjpeg: {
+			quality: 90, // 0-100.
+			progressive: true,
+		},
+		optipng: {
+			optimizationLevel: 3, // 0-7 low-high.
+		},
+		svgo: {
+			plugins: [
+				{removeViewBox: false},
+				{cleanupIDs: false}
+			],
+		},
+	},
 
-// JS Custom options.
+	/**
+	 * Zip archive config.
+	 *
+	 * For exporting a tidy package of your project, if you are into that.
+	 */
+	// Name will have ".zip" appended automatically.
+	zipName: slug,
+	// Must be a folder outside of the zip folder.
+	zipDestination: './../', // Default: Parent folder.
+	// Files to include in the zip archive.
+	zipIncludeGlob: ['./**/*'], // Default: Include all files/folders in current directory.
+	// Files and folders to ignore for the zip archive.
+	zipIgnoreGlob: [
+		'!./{node_modules,node_modules/**/*}',
+		'!./.git',
+		'!./.svn',
+		'!./.eslintrc.js',
+		'!./.eslintignore',
+		'!./.editorconfig',
+		'!./phpcs.xml.dist',
+		'!./vscode',
+		'!./package-lock.json'
+	],
 
-// Path to JS custom scripts folder.
-const jsCustomSRC = './assets/js/custom/*.js';
+	/**
+	 * Translation options.
+	 */
+	// Where to save the translation files.
+	translationDestination: 'languages/',
 
-// Path to place the compiled JS custom scripts file.
-const jsCustomDestination = './js/';
-
-// Compiled JS custom file name. Default set to custom i.e. custom.js.
-const jsCustomFile = 'custom';
-
-// Images options.
-
-// Source folder of images which should be optimized and watched.
-// > You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-const imgSRC = './assets/img/**/*';
-
-// Destination folder of optimized images.
-// > Must be different from the imagesSRC folder.
-const imgDST = './img/';
-
-// >>>>> Watch files paths.
-// Path to all *.scss files inside css folder and inside them.
-const watchStyles = './assets/sass/**/*.scss';
-
-// Path to all vendor JS files.
-const watchJsVendor = './assets/js/vendor/*.js';
-
-// Path to all custom JS files.
-const watchJsCustom = './assets/js/custom/*.js';
-
-// Path to all PHP files.
-const watchPhp = './**/*.php';
-
-// >>>>> Zip file config.
-// Must have.zip at the end.
-const zipName = 'theme-scaffold.zip';
-
-// Must be a folder outside of the zip folder.
-const zipDestination = './../'; // Default: Parent folder.
-const zipIncludeGlob = ['./**/*']; // Default: Include all files/folders in current directory.
-
-// Default ignored files and folders for the zip file.
-const zipIgnoreGlob = [
-	'!./{node_modules,node_modules/**/*}',
-	'!./.git',
-	'!./.svn',
-	'!./.eslintrc.js',
-	'!./.eslintignore',
-	'!./.editorconfig',
-	'!./phpcs.xml.dist',
-	'!./vscode',
-	'!./package-lock.json'
-];
-
-// >>>>> Translation options.
-// Your text domain here.
-const textDomain = 'theme-scaffold';
-
-// Name of the translation file.
-const translationFile = 'theme-scaffold.pot';
-
-// Where to save the translation files.
-const translationDestination = './languages';
-
-// Package name.
-const packageName = 'theme-scaffold';
-
-// Where can users report bugs.
-const bugReport = 'wp@blackbird.digital';
-
-// Last translator Email ID.
-const lastTranslator = 'Blackbird';
-
-// Team's Email ID.
-const team = 'Dev';
-
-// Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
-// The following list is set as per WordPress requirements. Though; Feel free to change.
-const BROWSERS_LIST = ['last 2 version', '> 1%'];
-
-// Export.
-module.exports = {
-	projectURL,
-	productURL,
-	browserAutoOpen,
-	injectChanges,
-	styleSRC,
-	styleEditorSRC,
-	styleDestination,
-	outputStyle,
-	errLogToConsole,
-	precision,
-	jsVendorSRC,
-	jsVendorDestination,
-	jsVendorFile,
-	jsCustomSRC,
-	jsCustomDestination,
-	jsCustomFile,
-	imgSRC,
-	imgDST,
-	watchStyles,
-	watchJsVendor,
-	watchJsCustom,
-	watchPhp,
-	zipName,
-	zipDestination,
-	zipIncludeGlob,
-	zipIgnoreGlob,
-	textDomain,
-	translationFile,
-	translationDestination,
-	packageName,
-	bugReport,
-	lastTranslator,
-	team,
-	BROWSERS_LIST
+	/**
+	 * WP-Pot options.
+	 *
+	 * Handles generating the ".pot" file for translation strings.
+	 */
+	wpPot: {
+		// Your text domain here. This will also be the name of the translation file.
+		textDomain: slug,
+		// Package name.
+		package: slug,
+		// URL where can users report bugs.
+		bugReport: 'https://blackbird.digital',
+		// Last translator email.
+		lastTranslator: 'Blackbird <wp@blackbird.digital>',
+		// Team email.
+		team: 'Blackbird <info@blackbird.digital>',
+	},
 };
