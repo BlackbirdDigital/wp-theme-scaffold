@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+.test {
+	size: 100px;
+}
+
+@import '01-setting/_theme-json.js';
+
+@debug map.get($colors, rose);
+
+
+@import "01-setting/file-header";
+@import "01-setting/variables/variables.scss";
+
+@import "02-tools/mixins";
+
+@import "03-generic/normalize";
+@import "03-generic/box-sizing";
+
+@import "04-base/base";
+
+@import "05-blocks/blocks";
+
+@import "06-components/*";
+
+@import "07-utilities/accessibility";
+@import "07-utilities/alignments";
+@import "07-utilities/color-palette";

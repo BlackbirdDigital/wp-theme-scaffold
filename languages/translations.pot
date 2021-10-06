@@ -1,8 +1,8 @@
-# Copyright (C) 2021 theme-scaffold
-# This file is distributed under the same license as the theme-scaffold package.
+# Copyright (C) 2021 unnamed project
+# This file is distributed under the same license as the unnamed project package.
 msgid ""
 msgstr ""
-"Project-Id-Version: theme-scaffold\n"
+"Project-Id-Version: unnamed project\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,26 +78,6 @@ msgstr ""
 
 #: single.php:24
 msgid "Next:"
-msgstr ""
-
-#: style.css:2
-msgid "theme-scaffold"
-msgstr ""
-
-#: style.css:3
-msgid "https://github.com/BlackbirdDigital/wp-theme-scaffold"
-msgstr ""
-
-#: style.css:4
-msgid "Blackbird Digital"
-msgstr ""
-
-#: style.css:5
-msgid "https://blackbird.digital/"
-msgstr ""
-
-#: style.css:6
-msgid "A scaffold for rapid theme development."
 msgstr ""
 
 #. translators: %s: post date.

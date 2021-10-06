@@ -81,7 +81,7 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 		add_editor_style( '/style-editor.css' );
-		
+
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -140,7 +140,7 @@ function theme_scaffold_scripts() {
 	wp_style_add_data( 'theme-scaffold-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'theme-scaffold-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	
+
 	wp_enqueue_script( 'theme-scaffold-custom', get_template_directory_uri() . '/js/custom.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
