@@ -1,20 +1,22 @@
 <?php
-// Color Palette
-function add_custom_gutenberg_color_palette() {
-	add_theme_support(
-		'editor-color-palette',
-		[
-			[
-				'name'  => 'White',
-				'slug'  => 'white',
-				'color' => '#FFFFFF',
-			],
-			[
-				'name'  => 'Black',
-				'slug'  => 'black',
-				'color' => '#000000',
-			]
-		]
+/**
+ * Block style registrations.
+ *
+ * @package theme-scaffold
+ */
+
+/**
+ * Register block styles.
+ */
+function theme_scaffold_block_styles() {
+	// Lead Paragraph: paragraph with large, bold text.
+	register_block_style(
+		'core/paragraph',
+		array(
+			'name'  => 'lead',
+			'label' => 'Lead Paragraph',
+			'style' => 'theme-style',
+		)
 	);
 }
-add_action( 'after_setup_theme', 'add_custom_gutenberg_color_palette' );
+add_action( 'init', 'theme_scaffold_block_styles' );
