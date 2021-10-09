@@ -1,14 +1,13 @@
 {
   "name": "wp-theme-scaffold",
-  "description": "A scaffold for rapid theme development",
+  "description": "A scaffold for rapid theme development by Blackbird Digital",
   "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
   },
   "dependencies": {
-    "gulp": "^4.0.0",
-    "gulp-wp": "file:../gulp-wp",
+    "gulp-wp": "^0.4.1",
     "postcss-size": "^4.0.1"
   },
   "scripts": {
