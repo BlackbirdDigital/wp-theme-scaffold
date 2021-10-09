@@ -165,14 +165,6 @@
 			]
 		},
 		"blocks": {
-			"core/paragraph": {
-				"border": {},
-				"color": {},
-				"custom": {},
-				"layout": {},
-				"spacing": {},
-				"typography": {}
-			},
 			"core/heading": {
 				"typography": {
 					"customFontSize": false,
