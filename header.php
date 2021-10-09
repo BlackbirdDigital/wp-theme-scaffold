@@ -26,6 +26,6 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'theme-scaffold' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/header/site-branding' ); ?>
-		<?php get_template_part( 'template-parts/header/site-nav' ); ?>
+		<?php get_template_part( 'modules/site-branding' ); ?>
+		<?php get_template_part( 'modules/site-nav' ); ?>
 	</header><!-- #masthead -->
