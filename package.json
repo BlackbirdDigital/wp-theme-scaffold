@@ -7,7 +7,7 @@
     "url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
   },
   "dependencies": {
-    "gulp-wp": "^0.4.1",
+    "gulp-wp": "^0.4.2",
     "postcss-size": "^4.0.1"
   },
   "scripts": {
