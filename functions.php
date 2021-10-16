@@ -1,6 +1,6 @@
 <?php
 /**
- * theme-scaffold functions and definitions
+ * Theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
