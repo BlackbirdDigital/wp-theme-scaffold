@@ -27,5 +27,5 @@
 
 	<header id="masthead" class="site-header">
 		<?php get_template_part( 'modules/site-branding' ); ?>
-		<?php get_template_part( 'modules/site-nav' ); ?>
+		<?php get_template_part( 'modules/site-navigation' ); ?>
 	</header><!-- #masthead -->
