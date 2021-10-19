@@ -6,9 +6,11 @@
 		"type": "git",
 		"url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"gulp-wp": "^0.4.2",
-		"postcss-size": "^4.0.1"
+		"postcss-size": "^4.0.1",
+		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
+		"prettier-eslint": "^13.0.0"
 	},
 	"scripts": {
 		"start": "gulp-wp",
