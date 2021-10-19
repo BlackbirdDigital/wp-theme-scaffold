@@ -31,7 +31,7 @@ function get_module( $slug, $name = null, $args = array() ) {
 		$args = $name;
 		$name = null;
 	}
-	return get_template_part( 'modules/' . $slug, $name, $args );
+	return get_template_part( 'inc/modules/' . $slug, $name, $args );
 }
 
 /**
@@ -49,5 +49,5 @@ function get_component( $slug, $name = null, $args = array() ) {
 		$args = $name;
 		$name = null;
 	}
-	return get_template_part( 'components/' . $slug, $name, $args );
+	return get_template_part( 'inc/components/' . $slug, $name, $args );
 }
