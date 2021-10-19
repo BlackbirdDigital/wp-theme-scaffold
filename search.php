@@ -28,7 +28,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'modules/excerpt' );
+				get_template_part( 'template-parts/excerpt' );
 
 			endwhile;
 
@@ -36,7 +36,7 @@ get_header();
 
 		else :
 
-			get_template_part( 'modules/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>

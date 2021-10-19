@@ -32,7 +32,7 @@ get_header();
 				the_post();
 
 				// Include the Post-Type-specific template for the content.
-				get_template_part( 'modules/content', get_post_type() );
+				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
 
@@ -40,7 +40,7 @@ get_header();
 
 		else :
 
-			get_template_part( 'modules/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
