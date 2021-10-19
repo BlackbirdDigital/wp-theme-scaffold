@@ -1,52 +1,6 @@
 {
 	"version": 1,
 	"settings": {
-		"border": {
-			"customColor": false,
-			"customRadius": false,
-			"customStyle": false,
-			"customWidth": false
-		},
-		"color": {
-			"custom": true,
-			"customDuotone": true,
-			"customGradient": false,
-			"duotone": [],
-			"gradients": [],
-			"link": false,
-			"palette": [
-				{
-					"name": "Primary",
-					"slug": "primary",
-					"color": "var(--wp--custom--theme-colors--primary)"
-				},
-				{
-					"name": "Secondary",
-					"slug": "secondary",
-					"color": "var(--wp--custom--theme-colors--secondary)"
-				},
-				{
-					"name": "Tertiary",
-					"slug": "tertiary",
-					"color": "var(--wp--custom--theme-colors--tertiary)"
-				},
-				{
-					"name": "Background",
-					"slug": "background",
-					"color": "var(--wp--custom--theme-colors--background)"
-				},
-				{
-					"name": "Text",
-					"slug": "text",
-					"color": "var(--wp--custom--theme-colors--text)"
-				},
-				{
-					"name": "Muted",
-					"slug": "muted",
-					"color": "var(--wp--custom--theme-colors--muted)"
-				}
-			]
-		},
 		"custom": {
 			"colors": {
 				"white": "#FFFFFF",
@@ -102,6 +56,52 @@
 				"masthead": "6.25rem"
 			}
 		},
+		"border": {
+			"customColor": false,
+			"customRadius": false,
+			"customStyle": false,
+			"customWidth": false
+		},
+		"color": {
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": false,
+			"duotone": [],
+			"gradients": [],
+			"link": false,
+			"palette": [
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"color": "var(--wp--custom--theme-colors--primary)"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"color": "var(--wp--custom--theme-colors--secondary)"
+				},
+				{
+					"name": "Tertiary",
+					"slug": "tertiary",
+					"color": "var(--wp--custom--theme-colors--tertiary)"
+				},
+				{
+					"name": "Background",
+					"slug": "background",
+					"color": "var(--wp--custom--theme-colors--background)"
+				},
+				{
+					"name": "Text",
+					"slug": "text",
+					"color": "var(--wp--custom--theme-colors--text)"
+				},
+				{
+					"name": "Muted",
+					"slug": "muted",
+					"color": "var(--wp--custom--theme-colors--muted)"
+				}
+			]
+		},
 		"layout": {
 			"contentSize": "var(--wp--custom--layout--default)",
 			"wideSize": "var(--wp--custom--layout--wide)"
@@ -109,7 +109,7 @@
 		"spacing": {
 			"customMargin": true,
 			"customPadding": true,
-			"units": [ "rem", "vh", "vw" ]
+			"units": ["rem", "vh", "vw"]
 		},
 		"typography": {
 			"customFontSize": false,
