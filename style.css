@@ -3,7 +3,7 @@ Theme Name: Theme Scaffold
 Theme URI: https://github.com/BlackbirdDigital/wp-theme-scaffold
 Author: Blackbird Digital
 Author URI: https://blackbird.digital/
-Description: A scaffold for rapid theme development by Blackbird Digital.
+Description: A scaffold for rapid custom theme development by Blackbird Digital.
 Version: 1.0.0
 Tested up to: 5.8
 Requires PHP: 7.4
@@ -16,7 +16,4 @@ Scaffold Version: 0.1.0
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
