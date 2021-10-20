@@ -23,9 +23,6 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'theme-scaffold' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theme-scaffold' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/site-branding' ); ?>
-		<?php get_template_part( 'template-parts/site-navigation' ); ?>
-	</header><!-- #masthead -->
+	<?php get_template_part( 'template-parts/site/header' ); ?>
