@@ -1,18 +1,18 @@
 <?php
 /**
- * Partial: none.
+ * Partial: content-none.
  *
  * @package theme-scaffold
  */
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'theme-scaffold' ); ?></h1>
+<section class="content-none no-results not-found">
+	<header class="content-none__header page-header">
+		<h1 class="content-none__title page-title"><?php esc_html_e( 'Nothing Found', 'theme-scaffold' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="content-none__content page-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -45,5 +45,5 @@
 
 		endif;
 		?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+	</div>
+</section><!-- .content-none -->

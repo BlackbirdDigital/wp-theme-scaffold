@@ -1,20 +1,20 @@
 <?php
 /**
- * Partial: entry.
+ * Partial: content-entry.
  *
  * @package theme-scaffold
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-	<header class="entry__header">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-entry' ); ?>>
+	<header class="content-entry__header">
 		<?php
-		the_title( '<h1 class="entry__title entry-title">', '</h1>' );
+		the_title( '<h1 class="content-entry__title entry-title">', '</h1>' );
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry__meta">
+			<div class="content-entry__meta">
 				<?php
 				theme_scaffold_posted_on();
 				theme_scaffold_posted_by();
@@ -25,7 +25,7 @@
 
 	<?php theme_scaffold_post_thumbnail(); ?>
 
-	<div class="entry__content entry-content">
+	<div class="content-entry__content entry-content">
 		<?php
 		the_content();
 
@@ -38,7 +38,7 @@
 		?>
 	</div>
 
-	<footer class="entry__footer">
+	<footer class="content-entry__footer">
 		<?php theme_scaffold_entry_footer(); ?>
 	</footer>
-</article><!-- .entry -->
+</article><!-- .content-entry -->

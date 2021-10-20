@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial: excerpt.
+ * Partial: content-excerpt.
  *
  * @package theme-scaffold
  */
@@ -12,12 +12,12 @@ $defaults = array(
 $args = wp_parse_args( $args, $defaults );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt' ); ?>>
-	<header class="excerpt__header">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-excerpt' ); ?>>
+	<header class="content-excerpt__header">
 		<?php
 			the_title(
 				sprintf(
-					'<h$1%s class="excerpt__title entry-title"><a href="$2%s" rel="bookmark">',
+					'<h$1%s class="content-excerpt__title entry-title"><a href="$2%s" rel="bookmark">',
 					$args['heading_level'],
 					esc_url( get_permalink() )
 				),
@@ -29,7 +29,7 @@ $args = wp_parse_args( $args, $defaults );
 
 			if ( 'post' === get_post_type() ) :
 				?>
-					<div class="excerpt__meta">
+					<div class="content-excerpt__meta">
 						<?php
 						theme_scaffold_posted_on();
 						theme_scaffold_posted_by();
@@ -42,7 +42,7 @@ $args = wp_parse_args( $args, $defaults );
 
 	<?php theme_scaffold_post_thumbnail(); ?>
 
-	<div class="excerpt__content entry-content">
+	<div class="content-excerpt__content entry-content">
 		<?php the_excerpt(); ?>
 	</div>
-</article><!-- .excerpt -->
+</article><!-- .content-excerpt -->
