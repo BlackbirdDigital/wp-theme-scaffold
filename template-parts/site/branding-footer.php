@@ -6,7 +6,7 @@
  */
 
 ?>
-<div class="site-branding">
+<div class="site-branding site-branding--footer">
 	<?php
 	if ( has_custom_logo() ) :
 		the_custom_logo();

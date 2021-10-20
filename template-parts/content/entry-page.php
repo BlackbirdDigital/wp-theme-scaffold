@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'entry', 'entry-page' ) ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'entry', 'entry--page' ) ); ?>>
 	<header class="entry__header">
 		<?php the_title( '<h1 class="entry__title entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
