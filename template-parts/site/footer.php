@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer
+ * Partial: site-footer.
  *
  * @package theme-scaffold
  */

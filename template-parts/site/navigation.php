@@ -1,6 +1,6 @@
 <?php
 /**
- * Site navigation
+ * Partial: site-navigation.
  *
  * @package theme-scaffold
  */

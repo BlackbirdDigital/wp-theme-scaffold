@@ -1,6 +1,6 @@
 <?php
 /**
- * Site branding
+ * Partial: site-branding, footer variation.
  *
  * @package theme-scaffold
  */

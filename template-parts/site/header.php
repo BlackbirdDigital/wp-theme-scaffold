@@ -1,6 +1,6 @@
 <?php
 /**
- * Site header
+ * Partial: site-header.
  *
  * @package theme-scaffold
  */
