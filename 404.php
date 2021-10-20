@@ -10,20 +10,20 @@
 get_header();
 ?>
 
-	<main id="content" class="site-content">
+<main id="content" class="site-content">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'theme-scaffold' ); ?></h1>
-			</header><!-- .page-header -->
+	<section class="error-404 not-found">
+		<header class="page-header">
+			<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'theme-scaffold' ); ?></h1>
+		</header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'theme-scaffold' ); ?></p>
+		<div class="page-content">
+			<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'theme-scaffold' ); ?></p>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		</div><!-- .page-content -->
+	</section><!-- .error-404 -->
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_footer();

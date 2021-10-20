@@ -10,36 +10,36 @@
 get_header();
 ?>
 
-	<main id="content" class="site-content">
+<main id="content" class="site-content">
 
-		<?php if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+		<header class="page-header">
 			<?php
-			while ( have_posts() ) :
-				the_post();
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
 
-				// Include the Post-Type-specific template for the excerpt.
-				get_template_part( 'template-parts/content/excerpt', get_post_type() );
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-			endwhile;
+			// Include the Post-Type-specific template for the excerpt.
+			get_template_part( 'template-parts/content/excerpt', get_post_type() );
 
-			the_posts_navigation();
+		endwhile;
 
-		else :
+		the_posts_navigation();
 
-			get_template_part( 'template-parts/content/none' );
+	else :
 
-		endif;
-		?>
+		get_template_part( 'template-parts/content/none' );
 
-	</main><!-- #main -->
+	endif;
+	?>
+
+</main><!-- #main -->
 
 <?php
 get_sidebar();

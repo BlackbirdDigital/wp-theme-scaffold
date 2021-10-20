@@ -15,37 +15,37 @@
 get_header();
 ?>
 
-	<main id="content" class="site-content">
+<main id="content" class="site-content">
 
-		<?php
-		if ( have_posts() ) :
+	<?php
+	if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			while ( have_posts() ) :
-				the_post();
-
-				// Include the Post-Type-specific template for the content.
-				get_template_part( 'template-parts/content/entry', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content/none' );
-
+		if ( is_home() && ! is_front_page() ) :
+			?>
+			<header>
+				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+			</header>
+			<?php
 		endif;
-		?>
 
-	</main><!-- #main -->
+		while ( have_posts() ) :
+			the_post();
+
+			// Include the Post-Type-specific template for the content.
+			get_template_part( 'template-parts/content/entry', get_post_type() );
+
+		endwhile;
+
+		the_posts_navigation();
+
+	else :
+
+		get_template_part( 'template-parts/content/none' );
+
+	endif;
+	?>
+
+</main><!-- #main -->
 
 <?php
 get_sidebar();

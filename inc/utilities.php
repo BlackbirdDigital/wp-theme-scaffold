@@ -42,8 +42,8 @@ function get_component( $slug, $name = null, $args = array() ) {
 /**
  * Return a subset of an array based on an array of keys.
  *
- * @param array $array Array to subset.
- * @param array $keys  Array of keys to pull from $array.
+ * @param array    $array Array to subset.
+ * @param string[] $keys  Array of keys to pull from $array.
  */
 function array_subset( $array = array(), $keys = array() ) {
 	return array_intersect_key( $array, array_flip( $keys ) );

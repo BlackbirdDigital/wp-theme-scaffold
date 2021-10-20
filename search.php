@@ -10,38 +10,38 @@
 get_header();
 ?>
 
-	<main id="content" class="site-content">
+<main id="content" class="site-content">
 
-		<?php if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'theme-scaffold' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'theme-scaffold' ), '<span>' . get_search_query() . '</span>' );
+				?>
+			</h1>
+		</header><!-- .page-header -->
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-				// Include the search-specific template variation for the excerpt.
-				get_template_part( 'template-parts/content/excerpt', 'search' );
+			// Include the search-specific template variation for the excerpt.
+			get_template_part( 'template-parts/content/excerpt', 'search' );
 
-			endwhile;
+		endwhile;
 
-			the_posts_navigation();
+		the_posts_navigation();
 
-		else :
+	else :
 
-			get_template_part( 'template-parts/content/none' );
+		get_template_part( 'template-parts/content/none' );
 
-		endif;
-		?>
+	endif;
+	?>
 
-	</main><!-- .site-content -->
+</main><!-- .site-content -->
 
 <?php
 get_sidebar();
