@@ -8,10 +8,21 @@ A theme scaffold that is theme.json-ready for WordPress 5.8+ and includes a buil
 2. Rename the folder to your theme's slug
 3. Run a few search & replace actions:
    1. Theme Scaffold: Theme name, title-case with spaces.
-   2. theme-scaffold: Theme slug, package name, text domain, and block namespace, lower-case with dashes.
-   3. theme_scaffold: Function "namespace", lower-case with underscores.
+   2. ThemeScaffold: Theme namespace, pascal-case (no spaces).
+   3. theme-scaffold: Theme slug, package name, text domain, and block namespace, lower-case with dashes.
+   4. theme_scaffold: Function "namespace", lower-case with underscores.
 4. Edit the `style.css` file to include your Author/URL information
 5. Remove the scaffold info from the top portion of this README
+
+## The Agency Approach
+
+WordPress theme scaffolds are a-dime-a-dozen, so why build another?
+
+This scaffold is primarily meant to address pain points common to custom WordPress agency development work. Most theme scaffolds are very broad and are aimed at theme repository or premium theme developers. We needed a starting point that, among other things:
+
+1. Is custom post type ready. Template-parts like `content.php` are ready to be extended like `content-customslug.php`, and different ways of viewing posts are accounted for with `excerpt.php` and potentially others.
+2. Includes a workflow for custom Gutenberg blocks that are theme-specific.
+3. Includes a starting point with `theme.json` and a framework for utilizing the custom space for global properties.
 
 ## Scaffold Contents
 
