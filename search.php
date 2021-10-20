@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="content" class="site-content">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -24,11 +24,11 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/excerpt' );
+				// Include the search-specific template variation for the excerpt.
+				get_template_part( 'template-parts/content/excerpt', 'search' );
 
 			endwhile;
 
@@ -36,12 +36,12 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content/none' );
 
 		endif;
 		?>
 
-	</main><!-- #main -->
+	</main><!-- .site-content -->
 
 <?php
 get_sidebar();
