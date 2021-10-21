@@ -15,5 +15,8 @@
 	"scripts": {
 		"start": "gulp-wp",
 		"build": "gulp-wp build"
+	},
+	"dependencies": {
+		"normalize.scss": "^0.1.0"
 	}
 }
