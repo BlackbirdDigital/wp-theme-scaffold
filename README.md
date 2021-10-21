@@ -46,6 +46,8 @@ The `src` folder houses all files meant to be compiled into another form or othe
 
 #### Styles: /src/styles
 
+For a brief intro to the basic foundation of our scaffold styling system, see this [CSS Tricks article about using BEM and utility classes](https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/).
+
 ### Distributable Files: /dist
 
 The `dist` folder houses all compiled files. You might not see it yet if you've just downloaded the scaffolding and haven't run the build process.
