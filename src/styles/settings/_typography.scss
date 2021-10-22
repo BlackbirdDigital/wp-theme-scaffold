@@ -1,0 +1,23 @@
+/**
+ * Settings: typography
+ */
+
+@use 'theme';
+
+// Get related maps from theme.json
+$maps: (
+	font-families: theme.$font-families,
+	font-sizes: theme.$font-sizes,
+	heading-sizes: theme.$heading-sizes,
+	heading-sizes-mobile: theme.$heading-sizes-mobile,
+);
+
+@function get( $map-name, $key ) {
+	$map: map.get( $maps, $map-name );
+	@return map.get( $map, $key );
+}
+
+@function get-var( $map-name, $key ) {
+	$map: map.get( $maps, $map-name );
+	@return var( --wp--custom--#{$map-name}--#{$key} );
+}

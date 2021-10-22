@@ -1,0 +1,30 @@
+/**
+ * Tools: respond
+ *
+ * Media query tools.
+ */
+
+@use 'sass:map';
+@use '../settings/breakpoints';
+
+/**
+ * This mixin allows you to use one of the standard breakpoints set in the
+ * settings/_breakpoints.scss file, or define your own like so:
+ *
+ * @include respond.to((min-width: 300px) and (max-width: 600px)) {
+ *   color: red;
+ * }
+ *
+ * Though at that point you might as well just use a standard @media rule.
+ */
+@mixin to( $breakpoint ) {
+	@if map.has-key( breakpoints.$widths, $breakpoint ) {
+		@media #{map.get(breakpoints.$widths, $breakpoint)} {
+			@content;
+		}
+	} @else {
+		@media #{$breakpoint} {
+			@content;
+		}
+	}
+}

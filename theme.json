@@ -36,6 +36,11 @@
 				"wide": "60rem",
 				"extraWide": "72rem"
 			},
+			"fontFamilies": {
+				"sansSerif": "helvetica, arial, sans-serif",
+				"serif": "serif",
+				"monospace": "monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace"
+			},
 			"fontSizes": {
 				"sm": "0.875rem",
 				"md": "1rem",
@@ -51,6 +56,11 @@
 				"4": "1.5rem",
 				"5": "1.125rem",
 				"6": "1rem"
+			},
+			"headingSizesMobile": {
+				"1": "2rem",
+				"2": "1.875rem",
+				"3": "1.75rem"
 			}
 		},
 		"border": {
@@ -118,12 +128,12 @@
 			"dropCap": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "helvetica, arial, sans-serif",
+					"fontFamily": "var(--wp--custom--font-families--sans-serif)",
 					"slug": "sans-serif",
 					"name": "Sans Serif Font"
 				},
 				{
-					"fontFamily": "serif",
+					"fontFamily": "var(--wp--custom--font-families--serif)",
 					"slug": "serif",
 					"name": "Serif Font"
 				}
@@ -211,32 +221,32 @@
 					"fontSizes": [
 						{
 							"name": "H1",
-							"slug": "h1",
+							"slug": "h-1",
 							"size": "var(--wp--custom--heading-sizes--1)"
 						},
 						{
 							"name": "H2",
-							"slug": "h2",
+							"slug": "h-2",
 							"size": "var(--wp--custom--heading-sizes--2)"
 						},
 						{
 							"name": "H3",
-							"slug": "h3",
+							"slug": "h-3",
 							"size": "var(--wp--custom--heading-sizes--3)"
 						},
 						{
 							"name": "H4",
-							"slug": "h4",
+							"slug": "h-4",
 							"size": "var(--wp--custom--heading-sizes--4)"
 						},
 						{
 							"name": "H5",
-							"slug": "h5",
+							"slug": "h-5",
 							"size": "var(--wp--custom--heading-sizes--5)"
 						},
 						{
 							"name": "H6",
-							"slug": "h6",
+							"slug": "h-6",
 							"size": "var(--wp--custom--heading-sizes--6)"
 						}
 					]

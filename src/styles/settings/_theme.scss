@@ -1,0 +1,33 @@
+/**
+ * Settings: theme
+ *
+ * This file pulls the custom settings from the root theme.json.
+ *
+ * See _theme-json.js for what is pulled from theme.json and how.
+ */
+
+// Provides a $theme map with each custom value as a nested map.
+@forward '_theme-json.js';
+
+/**
+ * Get a custom map.
+ */
+@function get-map( $map-name ) {
+	@return map.get( $theme, $map-name );
+}
+
+/**
+ * Get a value from a custom map.
+ */
+@function get( $map-name, $key ) {
+	$map: get-map( $map-name );
+	@return map.get( $map, $key );
+}
+
+/**
+ * Get the CSS custom property for a value from a custom map.
+ */
+@function get-var( $map-name, $key ) {
+	$map: get-map( $map-name );
+	@return var( --wp--custom--#{$map-name}--#{$key} );
+}

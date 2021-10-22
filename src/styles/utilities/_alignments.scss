@@ -1,0 +1,26 @@
+/**
+ * Utilities: alignments
+ */
+
+@use '../tools/layout';
+
+// RECOMMENDED STYLE
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+// RECOMMENDED STYLE
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+// RECOMMENDED STYLE
+.aligncenter {
+	clear: both;
+	@include layout.center-block;
+	margin-bottom: 1.5em;
+}

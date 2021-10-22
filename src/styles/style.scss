@@ -1,28 +1,17 @@
-@use 'sass:map';
+/**
+ * Front-end stylesheet
+ */
 
-.test {
-	size: 100px;
-}
+@import 'normalize.scss/normalize';
 
-@import '01-setting/_theme-json.js';
+@import 'base/global/*';
+@import 'base/elements/*';
+@import 'base/typography/*';
 
-@debug map.get($colors, rose);
+@import 'utilities/*';
 
+@import 'layouts/*';
 
-@import "01-setting/file-header";
-@import "01-setting/variables/variables.scss";
+@import 'modules/*';
 
-@import "02-tools/mixins";
-
-@import "03-generic/normalize";
-@import "03-generic/box-sizing";
-
-@import "04-base/base";
-
-@import "05-blocks/blocks";
-
-@import "06-components/*";
-
-@import "07-utilities/accessibility";
-@import "07-utilities/alignments";
-@import "07-utilities/color-palette";
+@import 'blocks/**/*/_style.scss';

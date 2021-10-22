@@ -1,0 +1,26 @@
+.site-header {
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/* Small menu. */
+	.site-navigation.toggled ul {
+		display: block;
+	}
+
+	@media screen and ( min-width: 37.5em ) {
+		.menu-toggle {
+			display: none;
+		}
+
+		.site-navigation ul {
+			display: flex;
+		}
+	}
+
+	/* Make sure logo link wraps around logo image. */
+	.custom-logo-link {
+		display: inline-block;
+	}
+}

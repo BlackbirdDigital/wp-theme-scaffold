@@ -1,0 +1,12 @@
+/**
+ * Editor stylesheet
+ */
+
+@import 'base/editor/*';
+
+@import 'utilities/*';
+
+@import 'modules/*';
+
+@import 'blocks/**/*/_style.scss';
+@import 'blocks/**/*/_editor.scss';
