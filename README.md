@@ -14,7 +14,7 @@ A theme scaffold that is theme.json-ready for WordPress 5.8+ and includes a buil
 4. Edit the `style.css` file to include your Author/URL information
 5. Remove the scaffold info from the top portion of this README
 
-## The Agency Approach
+## Agency-focused Theme Scaffold
 
 WordPress theme scaffolds are a-dime-a-dozen, so why build another?
 
@@ -23,6 +23,12 @@ This scaffold is primarily meant to address pain points common to custom WordPre
 1. Is custom post type ready. Template-parts like `content.php` are ready to be extended like `content-customslug.php`, and different ways of viewing posts are accounted for with `excerpt.php` and potentially others.
 2. Includes a workflow for custom Gutenberg blocks that are theme-specific.
 3. Includes a starting point with `theme.json` and a framework for utilizing the custom space for global properties.
+
+## Theming Approach
+
+In WordPress 5.8, the [theme.json](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) file was introduced as a way to configure a theme for interoperability with the Gutenberg editor. You can read the link for details, but one of the key aspects of `theme.json` that we are making heavy use of in this scaffold is the [automatic generation of CSS custom properties](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/#css-custom-properties-presets-custom).
+
+In this scaffold, we make use of the `settings.custom` property to define all of our [Design Tokens](https://css-tricks.com/what-are-design-tokens/). This is a single source of truth for things that the Gutenberg editor will inherit, such as colors, font families & sizes, and layout widths, but also additional properties as needed. **In general, we prefer to define "variables" for our theme here instead of in Sass.**
 
 ## Scaffold Contents
 
@@ -43,6 +49,8 @@ More "traditional" theme scaffolds might have called this the "template-parts" f
 The `src` folder houses all files meant to be compiled into another form or otherwise put through a build process to end up in the `dist` folder. These are generally client-side files like JavaScript and CSS.
 
 #### Scripts: /src/scripts
+
+All JS files in the root of `/src/scripts` are considered entrypoints and will be compiled and placed in the `/dist/js` folder. The workflow utilizes the WebPack configuration from [wp-scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/), so you can write ESNext and also import CSS/Sass to be compiled as well.
 
 #### Styles: /src/styles
 
