@@ -6,3 +6,10 @@
 .sticky {
 	display: block;
 }
+
+.published {
+}
+
+.updated:not( .published ) {
+	display: none;
+}
