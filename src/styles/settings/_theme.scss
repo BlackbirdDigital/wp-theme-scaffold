@@ -6,14 +6,17 @@
  * See _theme-json.js for what is pulled from theme.json and how.
  */
 
+@use 'sass:map';
+@use 'sass:string';
+
 // Provides a $theme map with each custom value as a nested map.
-@forward '_theme-json.js';
+@use '_theme-json.js' as theme;
 
 /**
  * Get a custom map.
  */
 @function get-map( $map-name ) {
-	@return map.get( $theme, $map-name );
+	@return map.get( theme.$custom, $map-name );
 }
 
 /**
@@ -21,7 +24,7 @@
  */
 @function get( $map-name, $key ) {
 	$map: get-map( $map-name );
-	@return map.get( $map, $key );
+	@return string.unquote( map.get( $map, $key ) );
 }
 
 /**

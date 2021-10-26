@@ -26,6 +26,13 @@
 	line-height: 1.5;
 }
 
+// These sizes are already provided for the Heading and Post Title blocks, but this makes them available to the rest of our theme.
+@each $key, $val in theme.get-map( 'heading-sizes' ) {
+	.has-h-#{$key}-font-size {
+		font-size: theme.get-var( 'heading-sizes', $key );
+	}
+}
+
 .has-h-1-font-size {
 	line-height: 1.1;
 }
