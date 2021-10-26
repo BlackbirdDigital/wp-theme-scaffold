@@ -8,11 +8,11 @@
 ?>
 
 <section class="content-none no-results not-found">
-	<header class="content-none__header page-header">
-		<h1 class="content-none__title page-title"><?php esc_html_e( 'Nothing Found', 'theme-scaffold' ); ?></h1>
-	</header><!-- .page-header -->
+	<header class="content-none__header header">
+		<h1 class="content-none__title title"><?php esc_html_e( 'Nothing Found', 'theme-scaffold' ); ?></h1>
+	</header>
 
-	<div class="content-none__content page-content">
+	<div class="content-none__content content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -46,4 +46,4 @@
 		endif;
 		?>
 	</div>
-</section><!-- .content-none -->
+</section>

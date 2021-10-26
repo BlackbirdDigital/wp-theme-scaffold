@@ -14,7 +14,7 @@ $args = wp_parse_args( $args, $defaults );
 $pto = get_post_type_object( get_post_type() );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'content-excerpt', 'content-excerpt--search' ) ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-excerpt--search' ); ?>>
 	<div class="content-excerpt__type">
 		<?php echo esc_html( $pto->labels->singular_name ); ?>
 	</div>
@@ -33,7 +33,7 @@ $pto = get_post_type_object( get_post_type() );
 	);
 	?>
 
-	<div class="content-excerpt__content entry-content">
+	<div class="content-excerpt__content entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
-</article><!-- .content-excerpt -->
+</article>

@@ -42,7 +42,7 @@ $args = wp_parse_args( $args, $defaults );
 
 	<?php theme_scaffold_post_thumbnail(); ?>
 
-	<div class="content-excerpt__content entry-content">
+	<div class="content-excerpt__content entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
-</article><!-- .content-excerpt -->
+</article>
