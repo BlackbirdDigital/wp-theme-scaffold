@@ -2,11 +2,17 @@
  * Editor stylesheet
  */
 
-@import 'base/editor/*';
+// Set $is-editor to true, which will be inherited anywhere the tools/context module is used.
+@use 'tools/context' with (
+	$is-editor: true,
+);
+
+@import 'base/global/*';
+@import 'base/elements/*';
+@import 'base/typography/*';
 
 @import 'modules/*';
 
-@import 'blocks/**/*/_style.scss';
-@import 'blocks/**/*/_editor.scss';
+@import 'blocks/**/*';
 
 @import 'utilities/*';

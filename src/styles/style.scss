@@ -8,10 +8,8 @@
 @import 'base/elements/*';
 @import 'base/typography/*';
 
-@import 'facade/*';
-
 @import 'modules/*';
 
-@import 'blocks/**/*/_style.scss';
+@import 'blocks/**/*';
 
 @import 'utilities/*';

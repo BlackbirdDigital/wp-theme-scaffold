@@ -1,0 +1,21 @@
+/**
+ * Module: content-entry.
+ */
+
+@use '../tools/context';
+
+@include context.is-front {
+	.content-entry {
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__meta {
+		}
+
+		&__footer {
+		}
+	}
+}

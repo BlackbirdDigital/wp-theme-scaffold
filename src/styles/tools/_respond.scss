@@ -5,11 +5,11 @@
  */
 
 @use 'sass:map';
-@use '../settings/breakpoints';
+@use '../settings/theme';
 
 /**
  * This mixin allows you to use one of the standard breakpoints set in the
- * settings/_breakpoints.scss file, or define your own like so:
+ * theme.json file, or define your own like so:
  *
  * @include respond.to((min-width: 300px) and (max-width: 600px)) {
  *   color: red;
@@ -17,9 +17,23 @@
  *
  * Though at that point you might as well just use a standard @media rule.
  */
-@mixin to( $breakpoint ) {
-	@if map.has-key( breakpoints.$widths, $breakpoint ) {
-		@media #{map.get(breakpoints.$widths, $breakpoint)} {
+@mixin to( $breakpoint, $direction: 'min-width' ) {
+	$breakpoints: theme.get-map( 'breakpoints' );
+	@if map.has-key( $breakpoints, $breakpoint ) {
+		$width: theme.get( 'breakpoints', $breakpoint );
+		// If max-width, treat like <, not <=.
+		// NOTE: Once Media Queries Level 4 Range Syntax is well supported this will be much easier: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4
+		@if $direction == 'max-width' {
+			@if math.unit( $width ) == 'px' {
+				// For px, remove 1 px.
+				$width: $width - 1;
+			} @else {
+				// For all other units, remove 0.01.
+				$width: $width - 0.01;
+			}
+		}
+		// Note: must get *value* directly, can't use CSS custom properties here.
+		@media (#{$direction}: #{$width}) {
 			@content;
 		}
 	} @else {

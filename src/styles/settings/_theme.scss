@@ -2,21 +2,43 @@
  * Settings: theme
  *
  * This file pulls the custom settings from the root theme.json.
- *
  * See _theme-json.js for what is pulled from theme.json and how.
  */
 
 @use 'sass:map';
 @use 'sass:string';
 
-// Provides a $theme map with each custom value as a nested map.
-@use '_theme-json.js' as theme;
+// Provides a $custom map with each custom value as a nested map.
+@forward '_theme-json.js';
+@use '_theme-json.js' as *;
+
+/**
+ * Check if a custom map exists.
+ */
+@function has-map( $map-name ) {
+	@return map.has-key( $custom, $map-name );
+}
 
 /**
  * Get a custom map.
+ *
+ * WARNING: If you use this directly for values, you MUST use sass:string.unquote!
+ * Instead, it is recommended to use get-var() below.
  */
 @function get-map( $map-name ) {
-	@return map.get( theme.$custom, $map-name );
+	@if has-map( $map-name ) {
+		@return map.get( $custom, $map-name );
+	} @else {
+		@error "Custom map '#{$map-name}' not found in theme.json. Make sure you're checking for the kebab-case version of the map instead of the camelCase version.";
+	}
+}
+
+/**
+ * Check if key exists in a custom map.
+ */
+@function has( $map-name, $key ) {
+	$map: get-map( $map-name );
+	@return map.has-key( $map, $key );
 }
 
 /**

@@ -1,3 +1,10 @@
+/**
+ * Element: body.
+ */
+
+@use '../../settings/theme';
+
 body {
-	background: var(--wp--custom--theme-colors--background); // Fallback for when there is no custom background color defined.
+	// Fallback for when there is no custom background color defined.
+	background: theme.get( 'theme-colors', 'background' );
 }

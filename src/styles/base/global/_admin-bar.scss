@@ -1,0 +1,21 @@
+/**
+ * Global: admin-bar.
+ */
+
+@use '../../tools/context';
+
+:root {
+	// when admin bar is not shown, default to 0
+	--global--admin-bar--height: 0px;
+}
+
+@include context.is-front {
+	// When admin bar is shown, .admin-bar is added to body classes
+	.admin-bar {
+		--global--admin-bar--height: 32px;
+
+		@media only screen and ( max-width: 782px ) {
+			--global--admin-bar--height: 46px;
+		}
+	}
+}

@@ -1,21 +1,30 @@
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-	border: 1px solid;
-	border-color: red;
-	border-radius: 3px;
-	background: transparent;
-	color: red;
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+/**
+ * Elements: buttons.
+ */
 
-	&:hover {
-		border-color: black;
-	}
+@use '../../tools/context';
 
-	&:active,
-	&:focus {
-		border-color: black;
+// Only include base button styles on front so we don't interfere with UI buttons in the editor.
+@include context.is-front {
+	button,
+	input[type='button'],
+	input[type='reset'],
+	input[type='submit'] {
+		border: 1px solid;
+		border-color: red;
+		border-radius: 3px;
+		background: transparent;
+		color: red;
+		line-height: 1;
+		padding: 0.6em 1em 0.4em;
+
+		&:hover {
+			border-color: black;
+		}
+
+		&:active,
+		&:focus {
+			border-color: black;
+		}
 	}
 }

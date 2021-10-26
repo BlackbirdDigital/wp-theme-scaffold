@@ -1,11 +1,17 @@
+/**
+ * Typography: body.
+ */
+
+@use '../../settings/theme';
+
 body,
 button,
 input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
+	color: theme.get-var( 'theme-colors', 'text' );
+	font-family: theme.get-var( 'font-families', 'serif' );
 	font-size: 1rem;
-	line-height: $font__line-height-body;
+	line-height: 1.5;
 }
