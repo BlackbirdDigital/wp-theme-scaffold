@@ -14,7 +14,7 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function theme_scaffold_setup() {
-		/*
+		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on theme-scaffold, use a find and replace
@@ -25,7 +25,7 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
+		/**
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
@@ -39,13 +39,6 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'theme-scaffold' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -68,13 +61,6 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add theme support for align full and align wide option for the block editor.
-		add_theme_support( 'align-wide' );
-
-		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
-		add_editor_style( '/style-editor.css' );
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -89,21 +75,27 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		// Add support for editor styles.
+		add_editor_style( 'dist/css/editor.css' );
 	}
 endif;
 add_action( 'after_setup_theme', 'theme_scaffold_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Register menus.
  *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
+ * @link https://developer.wordpress.org/themes/functionality/navigation-menus/
  */
-function theme_scaffold_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'theme_scaffold_content_width', 640 );
+function theme_scaffold_menus() {
+	register_nav_menus(
+		array(
+			'primary'   => esc_html__( 'Primary', 'theme-scaffold' ),
+			'secondary' => esc_html__( 'Secondary', 'theme-scaffold' ),
+		)
+	);
 }
-add_action( 'after_setup_theme', 'theme_scaffold_content_width', 0 );
+add_action( 'init', 'theme_scaffold_menus' );
 
 /**
  * Register widget area.
@@ -129,12 +121,14 @@ add_action( 'widgets_init', 'theme_scaffold_widgets_init' );
  * Enqueue scripts and styles.
  */
 function theme_scaffold_scripts() {
-	wp_enqueue_style( 'theme-scaffold-style', get_stylesheet_uri(), array(), _S_VERSION );
-	// wp_style_add_data( 'theme-scaffold-style', 'rtl', 'replace' );
+	$style_asset = require get_template_directory() . '/dist/css/style.asset.php';
+	wp_enqueue_style( 'theme-scaffold-style', get_template_directory_uri() . '/dist/css/style.css', array(), $style_asset['version'] );
 
-	wp_enqueue_script( 'theme-scaffold-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	$themejs_asset = require get_template_directory() . '/dist/js/theme.asset.php';
+	wp_enqueue_script( 'theme-scaffold-script', get_template_directory_uri() . '/dist/js/theme.js', array(), $themejs_asset['version'], true );
 
-	wp_enqueue_script( 'theme-scaffold-custom', get_template_directory_uri() . '/js/custom.js', array(), _S_VERSION, true );
+	$blocksviewjs_asset = require get_template_directory() . '/dist/js/theme.asset.php';
+	wp_enqueue_script( 'theme-scaffold-blocks-view', get_template_directory_uri() . '/dist/js/custom.js', $blocksviewjs_asset['dependencies'], $blocksviewjs_asset['version'], true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

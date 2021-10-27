@@ -21,8 +21,9 @@ $attributes = array_subset( $args, array( 'id' ) );
 	<?php
 	wp_nav_menu(
 		array(
-			'theme_location' => 'menu-1',
+			'theme_location' => 'primary',
 			'menu_id'        => 'primary-menu',
+			// 'fallback_cb'    => false,
 		)
 	);
 	?>

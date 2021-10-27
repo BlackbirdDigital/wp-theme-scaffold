@@ -2,6 +2,11 @@
 /**
  * Useful functions.
  *
+ * Note than to use, you must use this file's namespace:
+ *
+ * use function ThemeScaffold\Utilities\debug;
+ * debug( $foo );
+ *
  * @package theme-scaffold
  */
 
@@ -63,6 +68,7 @@ function attributes_from_array( $array ) {
 				$value = $value ? 'true' : 'false';
 			}
 			$acc[] = esc_html( $key ) . '="' . esc_attr( $array[ $key ] ) . '"';
+			return $acc;
 		},
 		array()
 	);
