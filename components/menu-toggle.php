@@ -19,7 +19,7 @@ $defaults = array(
 $args = wp_parse_args( $args, $defaults );
 
 // Select $args to be set as attributes.
-$attributes = array_subset( $args, array( 'id', 'aria-controls', 'aria-expanded' ) );
+$attributes = array_subset( $args, array( 'id', 'aria-controls', 'aria-expanded', 'aria-label' ) );
 ?>
 
 <button
