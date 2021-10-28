@@ -15,7 +15,17 @@ function theme_scaffold_block_styles() {
 		array(
 			'name'  => 'lead',
 			'label' => 'Lead Paragraph',
-			'style' => 'theme-style',
+			'style' => 'theme-scaffold-style',
+		)
+	);
+
+	// Plain Button: button with only text, no background.
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'plain',
+			'label' => 'Plain',
+			'style' => 'theme-scaffold-style',
 		)
 	);
 }
