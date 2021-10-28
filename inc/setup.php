@@ -79,6 +79,9 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		// Add support for responsive video embeds.
 		add_theme_support( 'responsive-embeds' );
 
+		// You may wish to remove core block patterns if you're providing your own in inc/block-patterns.php.
+		// remove_theme_support( 'core-block-patterns' );
+
 		// Add support for editor styles.
 		add_editor_style( 'dist/css/editor.css' );
 	}
