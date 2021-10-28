@@ -1,8 +1,8 @@
-# Copyright (C) 2021 theme-scaffold
-# This file is distributed under the same license as the theme-scaffold package.
+# Copyright (C) 2021 Theme Scaffold
+# This file is distributed under the same license as the Theme Scaffold package.
 msgid ""
 msgstr ""
-"Project-Id-Version: theme-scaffold\n"
+"Project-Id-Version: Theme Scaffold\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,51 +37,20 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:16
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: CMS name, i.e. WordPress.
-#: footer.php:19
-msgid "Proudly powered by %s"
-msgstr ""
-
-#. translators: 1: Theme name, 2: Theme author.
-#: footer.php:25
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:53
-msgid "Primary"
-msgstr ""
-
-#: functions.php:123
-msgid "Sidebar"
-msgstr ""
-
-#: functions.php:125
-msgid "Add widgets here."
-msgstr ""
-
 #: header.php:26
 msgid "Skip to content"
 msgstr ""
 
-#. translators: %s: search query.
-#: search.php:21
-msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:23
+#: single.php:28
 msgid "Previous:"
 msgstr ""
 
-#: single.php:24
+#: single.php:29
 msgid "Next:"
 msgstr ""
 
 #: style.css:2
-msgid "theme-scaffold"
+msgid "Theme Scaffold"
 msgstr ""
 
 #: style.css:3
@@ -97,77 +66,93 @@ msgid "https://blackbird.digital/"
 msgstr ""
 
 #: style.css:6
-msgid "A scaffold for rapid theme development."
+msgid "A scaffold for rapid custom theme development by Blackbird Digital."
+msgstr ""
+
+#: components/menu-toggle.php:16
+msgid "Toggle Menu"
+msgstr ""
+
+#: inc/setup.php:99
+msgid "Primary"
+msgstr ""
+
+#: inc/setup.php:100
+msgid "Secondary"
+msgstr ""
+
+#: inc/setup.php:114
+msgid "Sidebar"
+msgstr ""
+
+#: inc/setup.php:116
+msgid "Add widgets here."
 msgstr ""
 
 #. translators: %s: post date.
-#: inc/template-tags.php:30
+#: inc/template-tags.php:28
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: post author.
-#: inc/template-tags.php:46
+#: inc/template-tags.php:44
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:63
+#: inc/template-tags.php:61
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of categories.
-#: inc/template-tags.php:66
+#: inc/template-tags.php:64
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:70
+#: inc/template-tags.php:68
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: inc/template-tags.php:73
+#: inc/template-tags.php:71
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
-#: inc/template-tags.php:83
+#: inc/template-tags.php:81
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100
+#: inc/template-tags.php:98
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: template-parts/content/content-none.php:24
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content/content-page.php:25, template-parts/content/content.php:53
+#: template-parts/content/entry.php:39, template-parts/content/page.php:28
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content/content.php:40
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: template-parts/content/none.php:12
+msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/header/site-nav.php:2
-msgid "Primary Menu"
+#: template-parts/content/none.php:42
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content/none.php:35
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content/none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. translators: %s: search query.
+#: template-parts/loop/archive-search.php:15
+msgid "Search Results for: %s"
 msgstr ""
