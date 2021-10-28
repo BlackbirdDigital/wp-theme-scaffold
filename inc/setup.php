@@ -76,6 +76,9 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 			)
 		);
 
+		// Add support for responsive video embeds.
+		add_theme_support( 'responsive-embeds' );
+
 		// Add support for editor styles.
 		add_editor_style( 'dist/css/editor.css' );
 	}
