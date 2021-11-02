@@ -58,6 +58,8 @@ For a brief intro to the basic foundation of our scaffold styling system, see th
 
 There is a nod to SMACSS in our approach, but it is altered/extended for the WordPress theme context and ease-of-use. Most of the partial files throughout the folder structure are imported automatically without you having to remember to import them into an entrypoint file every time. This means that some ideas from SMACSS are bent or extended in order for automatic imports to work within the cascade.
 
+An important point to note is that there is a `context` tool available that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
+
 The folders in import order:
 
 **1. Base**
@@ -72,26 +74,15 @@ The folders in import order:
 
 Utility classes, which SMACSS doesn't really account for, are generally classes that focus on accomplishing one focused thing and are meant to be used liberally to form the basis of your styles. WordPress itself provides many classes that we need to account for that generally fall into this category, such as `.alignright`, `.has-background`, and `.screen-reader-text`, along with a slew of recommended classes for themes submitted to the theme repository.
 
-**3. Layouts**
+**3. Modules**
 
-Unlike the linked article above about SMACSS, we *are* making use of a "Layouts" folder, primarily because of the distinction between front-end and the back-end editor contexts. These may often correspond with PHP template files in the `template-parts` folder, but in general these are going to be **front-end only** styles that aren't included in the editor stylesheet.
+These are our main BEM component class files. Each module file should be named the same as the "block" (from BEM's **Block**-Element-Modifier) so that when you need to update a module it is easy to find the file it resides in.
 
-**4. Modules**
-
-These are our main BEM component classes that, importantly, should be output in both the main front-end styles *and* the editor stylesheet.
-
-Each module file should be named the same as the "block" (from BEM's **Block**-Element-Modifier) so that when you need to update a module it is easy to find the file it resides in.
-
-**5. Blocks**
+**4. Blocks**
 
 Here is where there is an exception made to the standard concept of modules: Gutenberg blocks. Custom block styles should be added to the `blocks` subfolder and named with their block name (minus the namespace). There is a subfolder in `blocks` for core blocks to distinguish them from custom blocks.
 
-Each block should be set up as a folder containing 2 files:
-
-1. `_style.scss`: These styles will be applied on both the front-end and in the editor.
-2. `_editor.scss`: These styles are only applied in the editor, and are imported after the main `_style.scss` styles so that you can apply focused overrides where needed.
-
-Many block styles may `@extend` existing component styles from the `modules` folder.
+Many block styles may `@extend` existing component styles from the `modules` folder; remember you need to `@use` the module file in order to `@extend` a component class.
 
 **Other Folders**
 
