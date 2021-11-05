@@ -1,4 +1,6 @@
-This folder is for custom Gutenberg blocks.
+# Blocks
+
+The `src/blocks` folder is for custom Gutenberg blocks.
 
 While it is generally not recommended to include blocks within themes, when we
 are building very custom-designed websites we often need very custom-designed
@@ -14,3 +16,5 @@ Each block should be contained within a folder named for its base name (don't in
 - `view.js`:     Front-end-only javascript enqueued if the block is present
 
 You can of course include other files/folders as needed, but only the root files will be copied/compiled to the dist folder.
+
+Check out the example block for more info.

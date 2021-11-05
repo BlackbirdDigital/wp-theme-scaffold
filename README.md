@@ -48,6 +48,10 @@ More "traditional" theme scaffolds might have called this the "template-parts" f
 
 The `src` folder houses all files meant to be compiled into another form or otherwise put through a build process to end up in the `dist` folder. These are generally client-side files like JavaScript and CSS.
 
+#### Blocks: /src/blocks
+
+A special folder structure for building custom blocks easier. See the [blocks README](src/blocks/README.md) for more information.
+
 #### Scripts: /src/scripts
 
 All JS files in the root of `/src/scripts` are considered entrypoints and will be compiled and placed in the `/dist/js` folder. The workflow utilizes the WebPack configuration from [wp-scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/), so you can write ESNext and also import CSS/Sass to be compiled as well.
