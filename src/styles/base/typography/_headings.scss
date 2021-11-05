@@ -58,15 +58,6 @@
 .has-h-6-font-size {
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
 @for $i from 1 through 6 {
 	h#{$i} {
 		@extend .has-h-#{$i}-font-size;
