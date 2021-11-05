@@ -2,6 +2,8 @@
  * Tools: units
  */
 
+@use 'sass:math';
+
 $base-font-size: 16;
 
 /**
@@ -9,12 +11,12 @@ $base-font-size: 16;
  *
  * Accepts both unitless and px unit arguments.
  */
-@function em( $pixels, $context: $base-font-size ) {
-	@if ( unitless( $pixels ) ) {
+@function px2em( $pixels, $context: $base-font-size ) {
+	@if ( math.is-unitless( $pixels ) ) {
 		$pixels: $pixels * 1px;
 	}
 
-	@if ( unitless( $context ) ) {
+	@if ( math.is-unitless( $context ) ) {
 		$context: $context * 1px;
 	}
 
@@ -26,12 +28,12 @@ $base-font-size: 16;
  *
  * Accepts both unitless and px unit arguments.
  */
-@function rem( $pixels, $context: $base-font-size ) {
-	@if ( unitless( $pixels ) ) {
+@function px2rem( $pixels, $context: $base-font-size ) {
+	@if ( math.is-unitless( $pixels ) ) {
 		$pixels: $pixels * 1px;
 	}
 
-	@if ( unitless( $context ) ) {
+	@if ( math.is-unitless( $context ) ) {
 		$context: $context * 1px;
 	}
 
