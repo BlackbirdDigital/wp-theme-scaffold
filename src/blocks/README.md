@@ -8,8 +8,9 @@ across theme activations.
 Each block should be contained within a folder named for its base name (don't include the namespace). This folder should contain all files related to the block, including:
 - `block.json`:  Block metadata file (required)
 - `index.js`:    Entrypoint for editor functionality (required)
-- `style.scss`:  Front-end styles that will also be enqueued in the editor
+- `style.scss`:  Front-end styles that will also be enqueued in the editor (recommended)
 - `editor.scss`: Editor-only style overrides
-- `view.js`:     Front-end javascript enqueued if the block is present
+- `script.js`:   Front and editor javascript enqueued if the block is present
+- `view.js`:     Front-end-only javascript enqueued if the block is present
 
-You can of course include other files/folders as needed.
+You can of course include other files/folders as needed, but only the root files will be copied/compiled to the dist folder.
