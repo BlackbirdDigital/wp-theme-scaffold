@@ -32,8 +32,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-// Block Patterns.
-require get_template_directory() . '/inc/block-patterns.php';
-
-// Block Styles.
+/**
+ * Custom blocks, styles, and patterns.
+ */
+require get_template_directory() . '/inc/blocks.php';
 require get_template_directory() . '/inc/block-styles.php';
+require get_template_directory() . '/inc/block-patterns.php';
