@@ -4,6 +4,9 @@
  * Classes that are added to pieces of the page content.
  */
 
+@use '../tools/context';
+@use '../tools/layout';
+
 /**
  * Base content classes.
  *
@@ -13,6 +16,7 @@
  */
 
 .header {
+	@extend %block-container;
 }
 
 .title {
@@ -22,7 +26,9 @@
 }
 
 .content {
+	@extend %block-container;
 }
 
 .footer {
+	@extend %block-container;
 }

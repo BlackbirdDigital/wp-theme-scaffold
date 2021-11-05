@@ -37,6 +37,9 @@
 				"wide": "60rem",
 				"extraWide": "72rem"
 			},
+			"sizes": {
+				"gutter": "1rem"
+			},
 			"fontFamilies": {
 				"sansSerif": "helvetica, arial, sans-serif",
 				"serif": "serif",

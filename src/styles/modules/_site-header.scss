@@ -2,8 +2,12 @@
  * Module: site-header.
  */
 
+@use '../tools/layout';
+
 .site-header {
 	&__nav {
+		@include layout.container( 'extra-wide' );
+
 		display: flex;
 		justify-content: space-between;
 	}

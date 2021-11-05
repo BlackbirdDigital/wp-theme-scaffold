@@ -2,25 +2,28 @@
  * Utilities: alignments
  */
 
+@use '../settings/theme';
 @use '../tools/layout';
+
+// NOTE: block alignment styles can be found in tools/layout.
 
 // RECOMMENDED STYLE
 .alignleft {
 	float: left;
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+	margin-right: theme.get-var( 'sizes', 'gutter' );
+	margin-bottom: theme.get-var( 'sizes', 'gutter' );
 }
 
 // RECOMMENDED STYLE
 .alignright {
 	float: right;
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	margin-left: theme.get-var( 'sizes', 'gutter' );
+	margin-bottom: theme.get-var( 'sizes', 'gutter' );
 }
 
 // RECOMMENDED STYLE
 .aligncenter {
 	clear: both;
 	@include layout.center-block;
-	margin-bottom: 1.5em;
+	margin-bottom: theme.get-var( 'sizes', 'gutter' );
 }

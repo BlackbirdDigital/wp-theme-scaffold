@@ -40,6 +40,6 @@
 }
 
 /* Do not show the outline on the skip link target. */
-#primary[tabindex='-1']:focus {
+#content[tabindex='-1']:focus {
 	outline: 0;
 }

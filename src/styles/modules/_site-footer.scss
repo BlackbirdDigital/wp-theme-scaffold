@@ -2,5 +2,10 @@
  * Module: site-footer.
  */
 
+@use '../tools/layout';
+
 .site-footer {
+	&__content {
+		@include layout.container( 'extra-wide' );
+	}
 }
