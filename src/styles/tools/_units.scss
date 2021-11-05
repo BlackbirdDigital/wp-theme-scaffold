@@ -1,0 +1,39 @@
+/**
+ * Tools: units
+ */
+
+$base-font-size: 16;
+
+/**
+ * Transform px value to em.
+ *
+ * Accepts both unitless and px unit arguments.
+ */
+@function em( $pixels, $context: $base-font-size ) {
+	@if ( unitless( $pixels ) ) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if ( unitless( $context ) ) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1em;
+}
+
+/**
+ * Transform px value to rem.
+ *
+ * Accepts both unitless and px unit arguments.
+ */
+@function rem( $pixels, $context: $base-font-size ) {
+	@if ( unitless( $pixels ) ) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if ( unitless( $context ) ) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
