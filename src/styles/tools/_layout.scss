@@ -29,7 +29,7 @@
  * a full-width area where each child has a constrained width.
  */
 %block-container {
-	padding: 0 1rem;
+	padding: 0 theme.get-var( 'sizes', 'gutter' );
 
 	> * {
 		max-width: theme.get-var( 'layout', 'default' );
