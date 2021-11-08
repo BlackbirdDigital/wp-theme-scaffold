@@ -1,0 +1,27 @@
+/**
+ * Tools: context.
+ *
+ * Use this module to flag styles for only the editor or front-end stylesheet.
+ *
+ * @use 'tools/context';
+ * @include context.is-front {
+ *   // ...front-end-only styles
+ * }
+ * @include context.is-editor {
+ *   // ...editor-only styles
+ * }
+ */
+
+$is-editor: false !default;
+
+@mixin is-front() {
+	@if not $is-editor {
+		@content;
+	}
+}
+
+@mixin is-editor() {
+	@if $is-editor {
+		@content;
+	}
+}

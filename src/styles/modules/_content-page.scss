@@ -1,0 +1,18 @@
+/**
+ * Module: content-page.
+ */
+
+@use '../tools/context';
+
+@include context.is-front {
+	.content-page {
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__footer {
+		}
+	}
+}

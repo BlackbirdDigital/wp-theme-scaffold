@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "theme-scaffold/example",
+	"version": "1.0.0",
+	"title": "Example",
+	"description": "Theme Scaffold example block.",
+	"category": "theme",
+	"icon": "info",
+	"keywords": [ "example" ],
+	"textdomain": "text-scaffold",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Hello World"
+		}
+	},
+	"supports": {
+		"align": true
+	},
+	"editorScript": "file:index.js",
+	"editorStyle": "file:editor.css",
+	"viewScript": "file:view.js",
+	"style": "file:style.css"
+}

@@ -1,0 +1,17 @@
+/**
+ * Typography: body.
+ */
+
+@use '../../settings/theme';
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: theme.get-var( 'theme-colors', 'text' );
+	font-family: theme.get-var( 'font-families', 'serif' );
+	font-size: 1rem;
+	line-height: 1.5;
+}

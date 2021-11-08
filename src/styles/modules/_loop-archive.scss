@@ -1,0 +1,22 @@
+/**
+ * Module: content-entry.
+ */
+
+@use '../tools/context';
+
+@include context.is-front {
+	.loop-archive {
+		&--search {
+			@extend .loop-archive;
+		}
+
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__content {
+		}
+	}
+}

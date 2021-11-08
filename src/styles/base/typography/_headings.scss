@@ -1,0 +1,65 @@
+/**
+ * Typography: headings.
+ */
+
+@use '../../settings/theme';
+@use '../../tools/respond';
+
+/**
+ * Responsive heading sizes.
+ */
+@include respond.to( 'mobile' ) {
+	:root {
+		// Swap each heading size CSS var with it's mobile counterpoint value, if available.
+		@each $key, $val in theme.get-map( 'heading-sizes-mobile' ) {
+			--wp--custom--heading-sizes--#{$key}: #{theme.get-var(
+					'heading-sizes-mobile',
+					$key
+				)};
+		}
+	}
+}
+
+.has-h-1-font-size,
+.has-h-2-font-size,
+.has-h-3-font-size,
+.has-h-4-font-size,
+.has-h-6-font-size {
+	margin-block: 1em;
+	line-height: 1.5;
+	font-family: theme.get-var( 'font-families', 'sans-serif' );
+}
+
+// These size classes are already provided by WordPress for the Heading and Post Title blocks, but this makes them available to the rest of our theme.
+@each $key, $val in theme.get-map( 'heading-sizes' ) {
+	.has-h-#{$key}-font-size {
+		font-size: theme.get-var( 'heading-sizes', $key );
+	}
+}
+
+.has-h-1-font-size {
+	line-height: 1.1;
+}
+
+.has-h-2-font-size {
+	line-height: 1.15;
+}
+
+.has-h-3-font-size {
+	line-height: 1.25;
+}
+
+.has-h-4-font-size {
+}
+
+.has-h-6-font-size {
+}
+
+.has-h-6-font-size {
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		@extend .has-h-#{$i}-font-size;
+	}
+}

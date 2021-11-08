@@ -1,0 +1,10 @@
+/**
+ * Element: body.
+ */
+
+@use '../../settings/theme';
+
+body {
+	// Fallback for when there is no custom background color defined.
+	background: theme.get( 'theme-colors', 'background' );
+}

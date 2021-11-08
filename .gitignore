@@ -1,0 +1,45 @@
+# NPM
+node_modules
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.map
+
+# Logs and databases
+*.log
+*.sql
+*.env
+
+# OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files
+*.un~
+
+# VSCode Project Files
+.vscode
+
+# PhpStorm Project Files
+.idea
+
+# PHPCS
+/wpcs
+
+# Composer
+/vendor
+
+# Compiled Files
+/dist

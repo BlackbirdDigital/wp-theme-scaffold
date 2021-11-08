@@ -1,0 +1,17 @@
+/**
+ * Utilities: backgrounds
+ */
+
+.has-background {
+	// Inherit text color when a parent has a background
+	a,
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: inherit;
+	}
+}

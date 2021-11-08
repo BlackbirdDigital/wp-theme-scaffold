@@ -1,0 +1,57 @@
+/**
+ * Elements: text.
+ */
+
+@use '../../settings/theme';
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: grey;
+	font-family: theme.get-var( 'font-families', 'monospace' );
+	line-height: 1.5;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: theme.get-var( 'font-families', 'monospace' );
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted theme.get-var( 'theme-colors', 'text' );
+	cursor: help;
+}
+
+mark,
+ins {
+	background: theme.get-var( 'theme-colors', 'info' );
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
