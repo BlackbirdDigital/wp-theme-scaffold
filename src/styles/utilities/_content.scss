@@ -15,20 +15,21 @@
  * the .title here should affect both the title in single.php and 404.php.
  */
 
-.header {
-	@extend %block-container;
-}
+@include context.is-front {
+	.header {
+		@include layout.container();
+	}
 
-.title {
-}
+	.title {
+	}
 
-.meta {
-}
+	.meta {
+	}
 
-.content {
-	@extend %block-container;
-}
+	.content {
+	}
 
-.footer {
-	@extend %block-container;
+	.footer {
+		@include layout.container();
+	}
 }

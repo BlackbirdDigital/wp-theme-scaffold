@@ -12,7 +12,7 @@
 		<h1 class="content-none__title title"><?php esc_html_e( 'Nothing Found', 'theme-scaffold' ); ?></h1>
 	</header>
 
-	<div class="content-none__content content">
+	<div class="content-none__content content block-container">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

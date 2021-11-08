@@ -17,57 +17,14 @@
  * @param $width narrow|default|wide|extra-wide
  */
 @mixin container( $width: default ) {
+	box-sizing: content-box;
 	width: 100%;
-	max-width: theme.get-var( 'layout', $width );
+	max-width: calc( #{theme.get-var( 'layout', $width )} );
 	margin-inline: auto;
 	padding-inline: theme.get-var( 'sizes', 'gutter' );
-}
 
-/**
- * The %block-container placeholder is meant to be @extend-ed wherever you need
- * a container with contents that utilize alignment classes. This is meant to be
- * a full-width area where each child has a constrained width.
- */
-%block-container {
-	padding: 0 theme.get-var( 'sizes', 'gutter' );
-
+	// Reset box-sizing
 	> * {
-		max-width: theme.get-var( 'layout', 'default' );
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.alignnarrow,
-	.alignwide,
-	.alignextrawide,
-	.alignfull {
-		> * {
-			max-width: unset;
-		}
-	}
-
-	.alignnarrow {
-		max-width: theme.get-var( 'layout', 'narrow' );
-	}
-
-	.alignwide {
-		max-width: theme.get-var( 'layout', 'wide' );
-	}
-
-	.alignextrawide {
-		max-width: theme.get-var( 'layout', 'extra-wide' );
-	}
-
-	.alignfull {
-		width: 100vw;
-		max-width: none;
-		margin-inline: calc( #{theme.get-var( 'sizes', 'gutter' )} * -1 );
-	}
-
-	.alignleft {
-	}
-	.alignright {
-	}
-	.aligncenter {
+		box-sizing: border-box;
 	}
 }

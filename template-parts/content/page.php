@@ -19,7 +19,7 @@
 
 	<?php theme_scaffold_post_thumbnail(); ?>
 
-	<div class="content-page__content content">
+	<div class="content-page__content content block-container">
 		<?php
 		the_content();
 
