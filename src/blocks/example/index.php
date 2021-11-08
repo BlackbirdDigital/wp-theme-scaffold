@@ -9,7 +9,7 @@
  * JSX in the `index.js` file's `edit` function for the editor.
  *
  * Available globals:
- * - $attribtues Block attributes
+ * - $attributes Block attributes
  * - $content    InnerBlock content (from `save()` in index.js)
  * - $metadata   Block registration metadata from block.json
  *
@@ -22,7 +22,7 @@
  *
  * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
  *
- * Note: Dynamic blocks do not support anchor (id attribute) as of 2021-11-05:
+ * Note: Dynamic blocks do not support anchor (id attribute) as of v11.8.1:
  * https://github.com/WordPress/gutenberg/pull/24699
  */
 $atts = get_block_wrapper_attributes();
