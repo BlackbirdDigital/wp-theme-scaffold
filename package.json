@@ -1,7 +1,7 @@
 {
 	"name": "wp-theme-scaffold",
 	"description": "A scaffold for rapid custom theme development by Blackbird Digital",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
