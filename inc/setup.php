@@ -83,6 +83,7 @@ if ( ! function_exists( 'theme_scaffold_setup' ) ) :
 		// remove_theme_support( 'core-block-patterns' );
 
 		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
 		add_editor_style( 'dist/css/editor.css' );
 	}
 endif;
