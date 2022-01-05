@@ -7,9 +7,6 @@
 import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
 import domReady from '@wordpress/dom-ready';
 
-// Import blocks
-//import './blocks/example';
-
 /**
  * Client-side block style registrations
  */
