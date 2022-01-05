@@ -53,7 +53,7 @@ add_action( 'init', __NAMESPACE__ . '\\register_blocks' );
  */
 function block_plugins_url( $url, $path ) {
 	// Split the $url by the current theme slug and get just the file path.
-	$file = explode( get_stylesheet(), $url )[1];
+	$file = explode( get_template_directory(), $url )[1];
 	// For some reason this is getting applied to the gutenberg plugin urls, so we check if the string explode above worked.
 	if ( empty( $file ) ) {
 		return $url;
