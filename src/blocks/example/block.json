@@ -8,7 +8,7 @@
 	"category": "theme",
 	"icon": "info",
 	"keywords": [ "example" ],
-	"textdomain": "text-scaffold",
+	"textdomain": "theme-scaffold",
 	"attributes": {
 		"text": {
 			"type": "string",
