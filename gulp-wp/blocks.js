@@ -10,6 +10,7 @@ const { basename, dirname, extname, join } = require( 'path' );
 // External
 const named = require( 'vinyl-named' );
 const filter = require( 'gulp-filter' );
+const jsonImporter = require( 'node-sass-json-importer' );
 const webpack = require( 'webpack' );
 const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 const webpackStream = require( 'webpack-stream' );
@@ -54,6 +55,39 @@ module.exports = {
 							default: false,
 						},
 					},
+				},
+				module: {
+					...( wpWebpackConfig?.module || {} ),
+					// Complicated but successful insertion of jsonImporter into the sass-loader options
+					rules: wpWebpackConfig.module.rules.map( ( rule ) => {
+						const { test, use } = rule;
+						if ( test.toString() === /\.(sc|sa)ss$/.toString() ) {
+							return {
+								test,
+								use: use.map( ( u ) => {
+									const { loader, options } = u;
+									if (
+										loader ==
+										require.resolve( 'sass-loader' )
+									) {
+										return {
+											loader,
+											options: {
+												...options,
+												sassOptions: {
+													importer: jsonImporter( {
+														convertCase: true,
+													} ),
+												},
+											},
+										};
+									}
+									return u;
+								} ),
+							};
+						}
+						return rule;
+					} ),
 				},
 				resolve: {
 					...wpWebpackConfig.resolve,
