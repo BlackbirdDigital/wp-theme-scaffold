@@ -56,3 +56,17 @@
 	$map: get-map( $map-name );
 	@return var( --wp--custom--#{$map-name}--#{$key} );
 }
+
+/**
+ * Get the CSS custom property name.
+ */
+@function get-var-name( $map-name, $key ) {
+	@return --wp--custom--#{$map-name}--#{$key};
+}
+
+/**
+ * Set the CSS custom property value within the current context.
+ */
+@mixin set-var( $map-name, $key, $value ) {
+	#{get-var-name( $map-name, $key )}: $value;
+}
