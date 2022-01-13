@@ -1,5 +1,5 @@
 /**
- * Blocks
+ * Editor
  *
  * Import all block registrations and other editor customizations.
  */
