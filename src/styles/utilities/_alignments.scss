@@ -5,7 +5,32 @@
 @use '../settings/theme';
 @use '../tools/layout';
 
-// NOTE: block alignment styles can be found in tools/layout.
+.alignnarrow,
+.alignwide,
+.alignextrawide,
+.alignfull {
+	> * {
+		max-width: unset;
+	}
+}
+
+.alignnarrow {
+	max-width: theme.get-var( 'layout', 'narrow' );
+}
+
+.alignwide {
+	max-width: theme.get-var( 'layout', 'wide' );
+}
+
+.alignextrawide {
+	max-width: theme.get-var( 'layout', 'extra-wide' );
+}
+
+.alignfull {
+	width: 100vw; // maybe just unset width?
+	max-width: none;
+	margin-inline: calc( #{theme.get-var( 'sizes', 'gutter' )} * -1 );
+}
 
 // RECOMMENDED STYLE
 .alignleft {
