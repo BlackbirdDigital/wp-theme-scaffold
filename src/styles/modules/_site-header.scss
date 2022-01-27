@@ -3,6 +3,7 @@
  */
 
 @use '../tools/layout';
+@use '../tools/respond';
 
 .site-header {
 	&__nav {
@@ -17,7 +18,7 @@
 		display: block;
 	}
 
-	@media screen and ( min-width: 37.5em ) {
+	@include respond.to( 'tablet' ) {
 		.menu-toggle {
 			display: none;
 		}
