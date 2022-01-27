@@ -27,7 +27,7 @@
 				"success": "var(--wp--custom--colors--green)",
 				"info": "var(--wp--custom--colors--cyan)",
 				"background": "var(--wp--custom--colors--white)",
-				"text": "var(--wp--custom--colors--black)",
+				"foreground": "var(--wp--custom--colors--black)",
 				"muted": "var(--wp--custom--colors--grey2)",
 				"link": "var(--wp--custom--colors--blue)"
 			},
@@ -107,9 +107,9 @@
 					"color": "var(--wp--custom--theme-colors--background)"
 				},
 				{
-					"name": "Text",
-					"slug": "text",
-					"color": "var(--wp--custom--theme-colors--text)"
+					"name": "Foreground",
+					"slug": "foreground",
+					"color": "var(--wp--custom--theme-colors--foreground)"
 				},
 				{
 					"name": "Muted",
