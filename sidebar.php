@@ -7,11 +7,11 @@
  * @package theme-scaffold
  */
 
-if ( ! is_active_sidebar( 'primary' ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
 
 <aside id="sidebar-primary" class="widget-area">
-	<?php dynamic_sidebar( 'primary' ); ?>
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside>
