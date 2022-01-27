@@ -4,25 +4,19 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
-	const siteNavigation = document.getElementById( 'site-navigation' );
 
-	// Return early if the navigation don't exist.
-	if ( ! siteNavigation ) {
+( function () {
+	const button = document.getElementById( 'main-navigation-toggle' );
+
+	// Return early if the button doesn't exist.
+	if ( ! button ) {
 		return;
 	}
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
-
-	// Return early if the button don't exist.
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-	const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
+	const menu = document.getElementById( 'main-navigation' );
 
 	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
+	if ( ! menu ) {
 		button.style.display = 'none';
 		return;
 	}
@@ -31,24 +25,44 @@
 		menu.classList.add( 'nav-menu' );
 	}
 
-	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	button.addEventListener( 'click', function() {
-		siteNavigation.classList.toggle( 'toggled' );
+	const menuClosedListener = () => {
+		console.log( 'menu closed' );
+		document.body.classList.remove( 'menu-closing' );
+		menu.removeEventListener( 'transitionend', menuClosedListener );
+	};
 
-		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
-			button.setAttribute( 'aria-expanded', 'false' );
-		} else {
+	const menuClosing = () => {
+		console.log( 'menu closing' );
+		document.body.classList.add( 'menu-closing' );
+		menu.addEventListener( 'transitionend', menuClosedListener );
+	};
+
+	const toggleNav = () => {
+		document.body.classList.toggle( 'menu-open' );
+
+		if ( document.body.classList.contains( 'menu-open' ) ) {
 			button.setAttribute( 'aria-expanded', 'true' );
+		} else {
+			button.setAttribute( 'aria-expanded', 'false' );
+			menuClosing();
 		}
-	} );
+	};
 
-	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-	document.addEventListener( 'click', function( event ) {
-		const isClickInside = siteNavigation.contains( event.target );
+	const closeNav = () => {
+		document.body.classList.remove( 'menu-open' );
+		button.setAttribute( 'aria-expanded', 'false' );
+		menuClosing();
+	};
+
+	// Toggle the .open class and the aria-expanded value each time the button is clicked.
+	button.addEventListener( 'click', toggleNav );
+
+	// Remove the .open class and set aria-expanded to false when the user clicks outside the navigation.
+	document.addEventListener( 'click', function ( event ) {
+		const isClickInside = document.body.contains( event.target );
 
 		if ( ! isClickInside ) {
-			siteNavigation.classList.remove( 'toggled' );
-			button.setAttribute( 'aria-expanded', 'false' );
+			closeNav();
 		}
 	} );
 
@@ -56,7 +70,9 @@
 	const links = menu.getElementsByTagName( 'a' );
 
 	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+	const linksWithChildren = menu.querySelectorAll(
+		'.menu-item-has-children > a, .page_item_has_children > a'
+	);
 
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( const link of links ) {
@@ -72,7 +88,7 @@
 	/**
 	 * Sets or removes .focus class on an element.
 	 */
-	function toggleFocus() {
+	function toggleFocus( event ) {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
@@ -96,4 +112,4 @@
 			menuItem.classList.toggle( 'focus' );
 		}
 	}
-}() );
+} )();
