@@ -15,6 +15,9 @@ const gulp = require( 'gulp' );
 const { config: watchConfig } = require( 'gulp-wp/tasks/watch' );
 const config = {
 	tasks: {
+		styles: {
+			watch: [ 'src/styles/**/*.*', 'theme.json' ],
+		},
 		build: {
 			build: [ 'styles', 'scripts', 'blocks' ],
 		},

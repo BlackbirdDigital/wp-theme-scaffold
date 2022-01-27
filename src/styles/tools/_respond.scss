@@ -22,7 +22,7 @@
 @mixin to( $breakpoint, $direction: 'min-width' ) {
 	$breakpoints: theme.get-map( 'breakpoints' );
 	@if map.has-key( $breakpoints, $breakpoint ) {
-		$width: convert.to-number( theme.get( 'breakpoints', $breakpoint ) );
+		$width: theme.get( 'breakpoints', $breakpoint );
 		// If max-width, treat like <, not <=.
 		// NOTE: Once Media Queries Level 4 Range Syntax is well supported this will be much easier: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4
 		@if $direction == 'max-width' {

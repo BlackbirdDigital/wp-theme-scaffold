@@ -1,6 +1,6 @@
 {
-	"$schema": "https://json.schemastore.org/theme-v1.json",
-	"version": 1,
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
 	"settings": {
 		"custom": {
 			"colors": {
@@ -27,7 +27,7 @@
 				"success": "var(--wp--custom--colors--green)",
 				"info": "var(--wp--custom--colors--cyan)",
 				"background": "var(--wp--custom--colors--white)",
-				"text": "var(--wp--custom--colors--black)",
+				"foreground": "var(--wp--custom--colors--black)",
 				"muted": "var(--wp--custom--colors--grey2)",
 				"link": "var(--wp--custom--colors--blue)"
 			},
@@ -73,10 +73,10 @@
 			}
 		},
 		"border": {
-			"customColor": false,
-			"customRadius": false,
-			"customStyle": false,
-			"customWidth": false
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
 		},
 		"color": {
 			"custom": true,
@@ -107,9 +107,9 @@
 					"color": "var(--wp--custom--theme-colors--background)"
 				},
 				{
-					"name": "Text",
-					"slug": "text",
-					"color": "var(--wp--custom--theme-colors--text)"
+					"name": "Foreground",
+					"slug": "foreground",
+					"color": "var(--wp--custom--theme-colors--foreground)"
 				},
 				{
 					"name": "Muted",
@@ -123,17 +123,17 @@
 			"wideSize": "var(--wp--custom--layout--wide)"
 		},
 		"spacing": {
-			"customMargin": true,
-			"customPadding": true,
+			"margin": true,
+			"padding": true,
 			"units": [ "rem", "vh", "vw" ]
 		},
 		"typography": {
 			"customFontSize": false,
-			"customFontStyle": true,
-			"customFontWeight": true,
-			"customLineHeight": false,
-			"customTextDecorations": true,
-			"customTextTransforms": true,
+			"fontStyle": true,
+			"fontWeight": true,
+			"lineHeight": false,
+			"textDecoration": true,
+			"textTransform": true,
 			"dropCap": false,
 			"fontFamilies": [
 				{
@@ -184,9 +184,9 @@
 			"core/heading": {
 				"typography": {
 					"customFontSize": false,
-					"customFontStyle": false,
-					"customFontWeight": false,
-					"customLineHeight": false,
+					"fontStyle": false,
+					"fontWeight": false,
+					"lineHeight": false,
 					"fontSizes": [
 						{
 							"name": "H1",
@@ -224,9 +224,9 @@
 			"core/post-title": {
 				"typography": {
 					"customFontSize": false,
-					"customFontStyle": false,
-					"customFontWeight": false,
-					"customLineHeight": false,
+					"fontStyle": false,
+					"fontWeight": false,
+					"lineHeight": false,
 					"fontSizes": [
 						{
 							"name": "H1",

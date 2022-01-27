@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Theme Scaffold
+# Copyright (C) 2022 Theme Scaffold
 # This file is distributed under the same license as the Theme Scaffold package.
 msgid ""
 msgstr ""
@@ -73,19 +73,19 @@ msgstr ""
 msgid "Toggle Menu"
 msgstr ""
 
-#: inc/setup.php:99
+#: inc/setup.php:100
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:100
+#: inc/setup.php:101
 msgid "Secondary"
 msgstr ""
 
-#: inc/setup.php:114
+#: inc/setup.php:115
 msgid "Sidebar"
 msgstr ""
 
-#: inc/setup.php:116
+#: inc/setup.php:117
 msgid "Add widgets here."
 msgstr ""
 
