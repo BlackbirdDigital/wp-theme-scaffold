@@ -21,9 +21,6 @@
 
 /**
  * Get a custom map.
- *
- * WARNING: If you use this directly for values, you MUST use sass:string.unquote!
- * Instead, it is recommended to use get-var() below.
  */
 @function get-map( $map-name ) {
 	@if has-map( $map-name ) {
@@ -46,7 +43,7 @@
  */
 @function get( $map-name, $key ) {
 	$map: get-map( $map-name );
-	@return string.unquote( map.get( $map, $key ) );
+	@return map.get( $map, $key );
 }
 
 /**

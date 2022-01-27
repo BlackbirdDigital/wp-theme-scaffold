@@ -11,20 +11,24 @@ Object.keys( custom ).map( ( customKey ) => {
 } );
 
 /**
- *
+ * Create a Sass-compatible map.
  * @param {object} object Single-layer object with key-value pairs.
  * @returns {object} Object with quoted keys for maximum Sass compatibility.
  */
 function sassMap( object ) {
 	return Object.entries( object ).reduce( ( acc, [ key, value ] ) => {
-		// Both key and value are quoted. Keys in case they are a recognized CSS color name, and values for things like comma-separated lists.
-		acc[ quote( key ) ] = quote( value );
+		// Key must be quoted to avoid weirdness with color names and other reserved keywords.
+		// Comma-separated values are transformed into an array (sass list).
+		acc[ quote( key ) ] =
+			typeof value === 'string' && value.includes( ',' )
+				? value.split( ',' ).map( ( s ) => s.trim() )
+				: value;
 		return acc;
 	}, {} );
 }
 
 /**
- * Quoted string utility
+ * Quoted string utility.
  * @param {string} value String value to be quoted
  * @returns {string} Quoted string
  */
