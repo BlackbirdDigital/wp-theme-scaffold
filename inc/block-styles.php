@@ -5,10 +5,12 @@
  * @package theme-scaffold
  */
 
+namespace ThemeScaffold\BlockStyles;
+
 /**
  * Register block styles.
  */
-function theme_scaffold_block_styles() {
+function register() {
 	// Lead Paragraph: paragraph with large, bold text.
 	register_block_style(
 		'core/paragraph',
@@ -29,4 +31,4 @@ function theme_scaffold_block_styles() {
 		)
 	);
 }
-add_action( 'init', 'theme_scaffold_block_styles' );
+add_action( 'init', __NAMESPACE__ . 'register' );
