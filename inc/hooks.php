@@ -1,9 +1,11 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Functions which enhance the theme by hooking into WordPress.
  *
  * @package theme-scaffold
  */
+
+namespace ThemeScaffold\Hooks;
 
 /**
  * Adds custom classes to the array of body classes.
@@ -11,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function theme_scaffold_body_classes( $classes ) {
+function body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -24,14 +26,14 @@ function theme_scaffold_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'theme_scaffold_body_classes' );
+add_filter( 'body_class', __NAMESPACE__ . 'body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function theme_scaffold_pingback_header() {
+function pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'theme_scaffold_pingback_header' );
+add_action( 'wp_head', __NAMESPACE__ . 'pingback_header' );
