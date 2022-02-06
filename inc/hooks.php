@@ -26,7 +26,7 @@ function body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', __NAMESPACE__ . 'body_classes' );
+add_filter( 'body_class', __NAMESPACE__ . '\\body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
@@ -36,4 +36,4 @@ function pingback_header() {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', __NAMESPACE__ . 'pingback_header' );
+add_action( 'wp_head', __NAMESPACE__ . '\\pingback_header' );

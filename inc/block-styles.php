@@ -31,4 +31,4 @@ function register() {
 		)
 	);
 }
-add_action( 'init', __NAMESPACE__ . 'register' );
+add_action( 'init', __NAMESPACE__ . '\\register' );
