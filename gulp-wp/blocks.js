@@ -43,9 +43,9 @@ module.exports = {
 							style: {
 								type: 'css/mini-extract',
 								test: /[\\/]style(\.module)?\.(sc|sa|c)ss$/,
-								chunks: 'all',
 								// Remove the default renaming of any file named "style".
 								/*
+								chunks: 'all',
 								enforce: true,
 								name( module, chunks, cacheGroupKey ) {
 									return `${ cacheGroupKey }-${ chunks[ 0 ].name }`;
