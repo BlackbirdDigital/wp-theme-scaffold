@@ -17,7 +17,7 @@ get_header();
 			<h1 class="title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'theme-scaffold' ); ?></h1>
 		</header>
 
-		<div class="content block-container">
+		<div class="content">
 			<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'theme-scaffold' ); ?></p>
 
 		</div>

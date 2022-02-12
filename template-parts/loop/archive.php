@@ -15,7 +15,7 @@
 		?>
 	</header>
 
-	<div class="loop-archive__content content block-container hfeed">
+	<div class="loop-archive__content content hfeed">
 		<?php
 		while ( have_posts() ) :
 			the_post();
