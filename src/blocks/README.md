@@ -7,14 +7,10 @@ are building very custom-designed websites we often need very custom-designed
 blocks that don't make sense to try to abstract as a plugin that will survive
 across theme activations.
 
-Each block should be contained within a folder named for its base name (don't include the namespace). This folder should contain all files related to the block, including:
-- `block.json`:  Block metadata file (required)
-- `index.js`:    Entrypoint for editor functionality (required)
-- `style.scss`:  Front-end styles that will also be enqueued in the editor (recommended)
-- `editor.scss`: Editor-only style overrides
-- `script.js`:   Front and editor javascript enqueued if the block is present
-- `view.js`:     Front-end-only javascript enqueued if the block is present
+Each block should be contained within a folder named for its base name (don't include the namespace). This folder should contain all files related to the block, but at minimum it should contain a `block.json` metadata file.
 
-You can of course include other files/folders as needed, but only the root files will be copied/compiled to the dist folder.
+Any [defined assets](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#assets) in `block.json` will be compiled, as long as it is either the same extension or an expected variation (ts, jsx, or tsx for .js files, scss or sass for .css files). Defined assets should be in the root of the block folder, paths elsewhere are not intended or tested. You can of course include other files/folders as needed, but only the defined files will be copied/compiled (with any includes) to the dist folder.
+
+You can also include an index.php file, which will be automatically registered as the `render_callback` for a dynamic block (see inc/blocks.php).
 
 Check out the example block for more info.
