@@ -35,9 +35,9 @@
  * @param $default Default width to align child elements.
  */
 @mixin block-container( $default: default ) {
-	@include layout.container();
+	@include container();
 
 	> * {
-		@include layout.align();
+		@include align();
 	}
 }
