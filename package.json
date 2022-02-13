@@ -11,6 +11,7 @@
 		"build": "gulp build"
 	},
 	"dependencies": {
+		"@wordpress/icons": "^6.3.0",
 		"normalize.scss": "^0.1.0"
 	},
 	"devDependencies": {
