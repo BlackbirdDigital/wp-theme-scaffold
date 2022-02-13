@@ -6,8 +6,10 @@
 @use '../tools/respond';
 
 .site-header {
+	@include layout.container();
+
 	&__nav {
-		@include layout.container( 'extra-wide' );
+		@include layout.align( 'extra-wide' );
 
 		display: flex;
 		justify-content: space-between;
