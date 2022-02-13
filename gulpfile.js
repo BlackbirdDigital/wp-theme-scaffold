@@ -11,35 +11,6 @@
  */
 const gulp = require( 'gulp' );
 
-// TODO: merge blocks task into gulp-wp?
-const { config: watchConfig } = require( 'gulp-wp/tasks/watch' );
-const config = {
-	tasks: {
-		styles: {
-			watch: [ 'src/styles/**/*.*', 'theme.json' ],
-		},
-		build: {
-			build: [ 'styles', 'scripts', 'blocks' ],
-		},
-		clean: {
-			cleanDest: [ 'scripts', 'styles', 'blocks' ],
-		},
-		watch: {
-			tasks: [
-				...watchConfig.tasks,
-				{
-					task: 'blocks',
-					mirrorDeletion: [
-						'.css',
-						'.css.map',
-						'.php',
-						'.js',
-						'.json',
-					],
-				},
-			],
-		},
-	},
-};
+const config = {};
 
 const gulpWP = require( 'gulp-wp' )( gulp, config );
