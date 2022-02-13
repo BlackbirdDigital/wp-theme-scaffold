@@ -4,8 +4,19 @@
  * Import all block registrations and other editor customizations.
  */
 
-import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
+import { registerBlockCollection, registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
 import domReady from '@wordpress/dom-ready';
+import { __ } from '@wordpress/i18n';
+// @see https://wordpress.github.io/gutenberg/?path=/story/icons-icon--library
+import { info } from '@wordpress/icons';
+
+/**
+ * Theme block collection
+ */
+ registerBlockCollection( 'theme-scaffold', {
+	title: __( 'Theme Scaffold', 'theme-scaffold' ),
+	icon: info, // Replace with custom SVG icon markup.
+} );
 
 /**
  * Client-side block style registrations
