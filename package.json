@@ -15,7 +15,7 @@
 		"normalize.scss": "^0.1.0"
 	},
 	"devDependencies": {
-		"gulp-wp": "^0.5.0",
+		"gulp-wp": "^0.6.0",
 		"postcss-size": "^4.0.1",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
 		"prettier-eslint": "^13.0.0"
