@@ -29,6 +29,29 @@
 }
 
 /**
+ * Generates alignment classes.
+ */
+@mixin alignments() {
+	.alignnarrow {
+		@include align('narrow');
+	}
+
+	.alignwide {
+		@include align('wide');
+	}
+
+	.alignextrawide {
+		@include align('extra-wide');
+	}
+
+	.alignfull {
+		max-width: none;
+		width: auto !important; // Fixes width: 100% when parent has padding.
+		margin-inline: calc( #{theme.get-var( 'sizes', 'gutter' )} * -1 );
+	}
+}
+
+/**
  * Applies the container mixin to the element and a default align to immediate
  * child elements.
  *
@@ -40,4 +63,6 @@
 	> * {
 		@include align();
 	}
+
+	@include alignments();
 }
