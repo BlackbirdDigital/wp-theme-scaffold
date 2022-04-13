@@ -2,6 +2,14 @@
  * Gulp-WP customizations
  *
  * https://github.com/BlackbirdDigital/gulp-wp
+ *
+ * To use this file, you must change the npm scripts in package.json for start
+ * and build to `gulp` instead of `gulp-wp`.
+ *
+ * "scripts": {
+ *   "start": "gulp",
+ *   "build": "gulp build"
+ * },
  */
 
 /**

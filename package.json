@@ -7,15 +7,15 @@
 		"url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
 	},
 	"scripts": {
-		"start": "gulp",
-		"build": "gulp build"
+		"start": "gulp-wp",
+		"build": "gulp-wp build"
 	},
 	"dependencies": {
 		"@wordpress/icons": "^6.3.0",
 		"normalize.scss": "^0.1.0"
 	},
 	"devDependencies": {
-		"gulp-wp": "^0.6.1",
+		"gulp-wp": "^0.6.2",
 		"postcss-size": "^4.0.1",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
 		"prettier-eslint": "^13.0.0"
