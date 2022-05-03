@@ -97,12 +97,13 @@ function get_component( $name, $args = array() ) {
  *                        Default true.
  */
 function register_script( string $name, bool $enqueue = false, array $dependencies = array(), bool $footer = true ) {
-	$asset = require get_template_directory() . '/dist/js/' . $name . '.asset.php';
+	$asset  = require get_template_directory() . '/dist/js/' . $name . '.asset.php';
+	$handle = get_asset_handle( $name );
 
-	wp_register_script( get_asset_handle( $name ), get_template_directory_uri() . '/dist/js/' . $name . '.js', array_merge( $asset['dependencies'], $dependencies ), $asset['version'], $footer );
+	wp_register_script( $handle, get_template_directory_uri() . '/dist/js/' . $name . '.js', array_merge( $asset['dependencies'], $dependencies ), $asset['version'], $footer );
 
 	if ( $enqueue ) {
-		wp_enqueue_script( get_asset_handle( $name ) );
+		wp_enqueue_script( $handle );
 	}
 }
 
@@ -112,13 +113,16 @@ function register_script( string $name, bool $enqueue = false, array $dependenci
  * @param string  $name File name without extension.
  * @param boolean $enqueue Optional. Whether to enqueue the asset.
  *                         Default false.
+ * @param array   $dependencies Optional. Additional dependencies to include,
+ *                              aside from any found in the asset file.
  */
 function register_style( string $name, bool $enqueue = false, array $dependencies = array() ) {
-	$asset = require get_template_directory() . '/dist/css/' . $name . '.asset.php';
+	$asset  = require get_template_directory() . '/dist/css/' . $name . '.asset.php';
+	$handle = get_asset_handle( $name );
 
-	wp_register_style( get_asset_handle( $name ), get_template_directory_uri() . '/dist/css/' . $name . '.css', array_merge( $asset['dependencies'], $dependencies ), $asset['version'] );
+	wp_register_style( $handle, get_template_directory_uri() . '/dist/css/' . $name . '.css', array_merge( $asset['dependencies'], $dependencies ), $asset['version'] );
 
 	if ( $enqueue ) {
-		wp_enqueue_style( get_asset_handle( $name ) );
+		wp_enqueue_style( $handle );
 	}
 }
