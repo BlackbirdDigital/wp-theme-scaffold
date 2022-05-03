@@ -82,7 +82,9 @@ For a brief intro to the basic foundation of our scaffold styling system, see th
 
 There is a nod to SMACSS in our approach, but it is altered/extended for the WordPress theme context and ease-of-use. Most of the partial files throughout the folder structure are imported automatically without you having to remember to import them into an entrypoint file every time. This means that some ideas from SMACSS are bent or extended in order for automatic imports to work within the cascade.
 
-An important point to note is that there is a `context` tool available that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
+Please be aware that this scaffolding makes use of the latest features of Sass, particularly [Sass modules](https://sass-lang.com/blog/the-module-system-is-launched). Various tools are available that you muse `@use` in order to import into the current file's context, and they are namespaced to avoid global context pollution.
+
+An important tool you should familiarize yourself with is the `context` tool that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
 
 The folders in import order:
 
@@ -101,6 +103,8 @@ Utility classes, which SMACSS doesn't really account for, are generally classes 
 **3. Modules**
 
 These are our main BEM component class files. Each module file should be named the same as the "block" (from BEM's **Block**-Element-Modifier) so that when you need to update a module it is easy to find the file it resides in.
+
+*Note that many of these files correspond to the structure of the `template-parts` folder.*
 
 **4. Blocks**
 
