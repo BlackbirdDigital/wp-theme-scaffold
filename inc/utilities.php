@@ -108,7 +108,7 @@ function register_script( string $name, bool $enqueue = false, array $dependenci
 }
 
 /**
- * Enqueue a stype asset.
+ * Enqueue a style asset.
  *
  * @param string  $name File name without extension.
  * @param boolean $enqueue Optional. Whether to enqueue the asset.
