@@ -36,13 +36,33 @@ In this scaffold, we make use of the `settings.custom` property to define all of
 
 The `inc` folder houses the majority of the PHP files for the theme outside of the standard template hierarchy files.
 
-#### Components: /inc/components
+### Components: /components
 
-Templates that are meant to be self-contained and composable. Insert them with `get_component()`.
+Templates that are meant to be self-contained (not using contextual functions/template tags) and composable. Insert them with `ThemeScaffold\Utilities\get_component()`.
 
-#### Modules: /inc/modules
+See the [Components README](./components/README.md) for more information.
 
-More "traditional" theme scaffolds might have called this the "template-parts" folder. Insert them with `get_module()`.
+### Template Parts: /template-parts
+
+Template parts for building page and post templates modularly. Unlike Components, these should make full use of contextual functions/template tags. The scaffolding includes a starting point for organizing these into subfolders.
+
+*See the file header of all of the templates below for more info.*
+
+#### Content: /template-parts/content
+
+These files are explicitly for outputting content for posts, pages, and custom post types. They are named according to their role:
+
+- `entry.php`: For any post type that can by syndicated, meaning timestamped with author information. Create variations for different post types.
+- `page.php`: Not just for actual pages, but also any post type that is not syndicated, meaning not timestamped with author information and thus not compatible with an RSS-type feed. Create variations for different post types.
+- `excerpt.php`: For displaying a summary of a post meant to link to the content. Create variations for different styles of excerpt.
+
+#### Loop: /template-parts/loop
+
+These files are for outputting content in a classic `WP_Query` loop. Generally they are used on archive pages, but can also be used for template parts that display a list of recent posts, for example.
+
+#### Site: /template-parts/site
+
+These files make up the modular components of the site structure.
 
 ### Source Files: /src
 
