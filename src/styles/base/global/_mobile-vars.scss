@@ -1,0 +1,31 @@
+//
+// Global: mobile-vars.
+//
+// Handles swapping CSS custom property values for their mobile counterparts.
+//
+
+@use 'sass:string';
+
+@use '../../settings/theme';
+@use '../../tools/respond';
+
+@include respond.to( 'desktop', 'max-width' ) {
+	body {
+		// Swap each CSS var with it's mobile counterpoint value, if available.
+		@each $map-key, $map in theme.$custom {
+			$mobile: string.index( $map-key, '-mobile' );
+			@if $mobile {
+				$base: string.slice( $map-key, 1, $mobile - 1 );
+				@if theme.has-map( $base ) {
+					@each $key, $val in theme.get-map( $map-key ) {
+						@include theme.set-var(
+							$base,
+							$key,
+							theme.get-var( $map-key, $key )
+						);
+					}
+				}
+			}
+		}
+	}
+}
