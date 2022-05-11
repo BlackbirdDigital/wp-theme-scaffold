@@ -36,13 +36,33 @@ In this scaffold, we make use of the `settings.custom` property to define all of
 
 The `inc` folder houses the majority of the PHP files for the theme outside of the standard template hierarchy files.
 
-#### Components: /inc/components
+### Components: /components
 
-Templates that are meant to be self-contained and composable. Insert them with `get_component()`.
+Templates that are meant to be self-contained (not using contextual functions/template tags) and composable. Insert them with `ThemeScaffold\Utilities\get_component()`.
 
-#### Modules: /inc/modules
+See the [Components README](./components/README.md) for more information.
 
-More "traditional" theme scaffolds might have called this the "template-parts" folder. Insert them with `get_module()`.
+### Template Parts: /template-parts
+
+Template parts for building page and post templates modularly. Unlike Components, these should make full use of contextual functions/template tags. The scaffolding includes a starting point for organizing these into subfolders.
+
+*See the file header of all of the templates below for more info.*
+
+#### Content: /template-parts/content
+
+These files are explicitly for outputting content for posts, pages, and custom post types. They are named according to their role:
+
+- `entry.php`: For any post type that can by syndicated, meaning timestamped with author information. Create variations for different post types.
+- `page.php`: Not just for actual pages, but also any post type that is not syndicated, meaning not timestamped with author information and thus not compatible with an RSS-type feed. Create variations for different post types.
+- `excerpt.php`: For displaying a summary of a post meant to link to the content. Create variations for different styles of excerpt.
+
+#### Loop: /template-parts/loop
+
+These files are for outputting content in a classic `WP_Query` loop. Generally they are used on archive pages, but can also be used for template parts that display a list of recent posts, for example.
+
+#### Site: /template-parts/site
+
+These files make up the modular components of the site structure.
 
 ### Source Files: /src
 
@@ -62,7 +82,9 @@ For a brief intro to the basic foundation of our scaffold styling system, see th
 
 There is a nod to SMACSS in our approach, but it is altered/extended for the WordPress theme context and ease-of-use. Most of the partial files throughout the folder structure are imported automatically without you having to remember to import them into an entrypoint file every time. This means that some ideas from SMACSS are bent or extended in order for automatic imports to work within the cascade.
 
-An important point to note is that there is a `context` tool available that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
+Please be aware that this scaffolding makes use of the latest features of Sass, particularly [Sass modules](https://sass-lang.com/blog/the-module-system-is-launched). Various tools are available that you muse `@use` in order to import into the current file's context, and they are namespaced to avoid global context pollution.
+
+An important tool you should familiarize yourself with is the `context` tool that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
 
 The folders in import order:
 
@@ -81,6 +103,8 @@ Utility classes, which SMACSS doesn't really account for, are generally classes 
 **3. Modules**
 
 These are our main BEM component class files. Each module file should be named the same as the "block" (from BEM's **Block**-Element-Modifier) so that when you need to update a module it is easy to find the file it resides in.
+
+*Note that many of these files correspond to the structure of the `template-parts` folder.*
 
 **4. Blocks**
 
