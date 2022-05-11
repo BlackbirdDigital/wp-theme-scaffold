@@ -1,9 +1,9 @@
-/**
- * Settings: theme
- *
- * This file pulls the custom settings from the root theme.json.
- * See _theme-json.js for what is pulled from theme.json and how.
- */
+//
+// Settings: theme
+//
+// This file pulls the custom settings from the root theme.json.
+// See _theme-json.js for what is pulled from theme.json and how.
+//
 
 @use 'sass:map';
 @use 'sass:string';
@@ -12,16 +12,16 @@
 @forward '_theme-json.js';
 @use '_theme-json.js' as *;
 
-/**
- * Check if a custom map exists.
- */
+//
+// Check if a custom map exists.
+//
 @function has-map( $map-name ) {
 	@return map.has-key( $custom, $map-name );
 }
 
-/**
- * Get a custom map.
- */
+//
+// Get a custom map.
+//
 @function get-map( $map-name ) {
 	@if has-map( $map-name ) {
 		@return map.get( $custom, $map-name );
@@ -30,40 +30,40 @@
 	}
 }
 
-/**
- * Check if key exists in a custom map.
- */
+//
+// Check if key exists in a custom map.
+//
 @function has( $map-name, $key ) {
 	$map: get-map( $map-name );
 	@return map.has-key( $map, $key );
 }
 
-/**
- * Get a value from a custom map.
- */
+//
+// Get a value from a custom map.
+//
 @function get( $map-name, $key ) {
 	$map: get-map( $map-name );
 	@return map.get( $map, $key );
 }
 
-/**
- * Get the CSS custom property for a value from a custom map.
- */
+//
+// Get the CSS custom property for a value from a custom map.
+//
 @function get-var( $map-name, $key ) {
 	$map: get-map( $map-name );
 	@return var( --wp--custom--#{$map-name}--#{$key} );
 }
 
-/**
- * Get the CSS custom property name.
- */
+//
+// Get the CSS custom property name.
+//
 @function get-var-name( $map-name, $key ) {
 	@return --wp--custom--#{$map-name}--#{$key};
 }
 
-/**
- * Set the CSS custom property value within the current context.
- */
+//
+// Set the CSS custom property value within the current context.
+//
 @mixin set-var( $map-name, $key, $value ) {
 	#{get-var-name( $map-name, $key )}: $value;
 }

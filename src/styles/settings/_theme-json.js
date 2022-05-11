@@ -1,3 +1,11 @@
+/**
+ * Theme.json importer.
+ *
+ * Imports the custom settings from theme.json. Expects all top-level
+ * properties to be an object.
+ * Generally, you should @use settings/theme instead of this file.
+ */
+
 const theme = require( '../../../theme.json' );
 
 const { custom } = theme.settings;

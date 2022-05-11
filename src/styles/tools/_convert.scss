@@ -1,8 +1,8 @@
-/**
- * Tools: convert.
- *
- * Value conversion tools.
- */
+//
+// Tools: convert.
+//
+// Value conversion tools.
+//
 
 @use 'sass:list';
 @use 'sass:map';
@@ -12,11 +12,11 @@
 
 $base-font-size: 16; // px
 
-/**
- * Transform px value to em.
- *
- * Accepts both unitless and px unit arguments.
- */
+//
+// Transform px value to em.
+//
+// Accepts both unitless and px unit arguments.
+//
 @function px2em( $pixels, $context: $base-font-size ) {
 	@if ( math.is-unitless( $pixels ) ) {
 		$pixels: $pixels * 1px;
@@ -29,11 +29,11 @@ $base-font-size: 16; // px
 	@return $pixels / $context * 1em;
 }
 
-/**
- * Transform px value to rem.
- *
- * Accepts both unitless and px unit arguments.
- */
+//
+// Transform px value to rem.
+//
+// Accepts both unitless and px unit arguments.
+//
 @function px2rem( $pixels, $context: $base-font-size ) {
 	@if ( math.is-unitless( $pixels ) ) {
 		$pixels: $pixels * 1px;

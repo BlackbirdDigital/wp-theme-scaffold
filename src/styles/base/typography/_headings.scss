@@ -1,6 +1,6 @@
-/**
- * Typography: headings.
- */
+//
+// Typography: headings.
+//
 
 @use '../../settings/theme';
 @use '../../tools/respond';
@@ -12,11 +12,11 @@
 	}
 }
 
-/**
- * Set other default heading level attributes, like line height, weight, letter-spacing, etc.
- * These can be overridden by the heading block settings.
- * Eventually, these should probably be set via theme.json.
- */
+//
+// Set other default heading level attributes, like line height, weight, letter-spacing, etc.
+// These can be overridden by the heading block settings.
+// Eventually, these should probably be set via theme.json.
+//
 
 .has-h-1-font-size,
 .has-h-2-font-size,
