@@ -40,7 +40,7 @@ function attributes_from_array( $array ) {
 			if ( is_bool( $value ) ) {
 				$value = $value ? 'true' : 'false';
 			}
-			$acc[] = esc_html( $key ) . '="' . esc_attr( $array[ $key ] ) . '"';
+			$acc[] = esc_html( $key ) . '="' . esc_attr( $value ) . '"';
 			return $acc;
 		},
 		array()
