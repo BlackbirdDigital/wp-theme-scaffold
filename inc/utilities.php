@@ -33,7 +33,7 @@ function attributes_from_array( $array ) {
 		function( $acc, $key ) use ( $array ) {
 			$value = $array[ $key ];
 			// Skip null values.
-			if ( $value === null ) {
+			if ( null === $value ) {
 				return $acc;
 			}
 			// Transform boolean to string.

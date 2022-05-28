@@ -73,19 +73,19 @@ msgstr ""
 msgid "Toggle Menu"
 msgstr ""
 
-#: inc/setup.php:100
+#: inc/setup.php:103
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:101
+#: inc/setup.php:104
 msgid "Secondary"
 msgstr ""
 
-#: inc/setup.php:115
+#: inc/setup.php:118
 msgid "Sidebar"
 msgstr ""
 
-#: inc/setup.php:117
+#: inc/setup.php:120
 msgid "Add widgets here."
 msgstr ""
 
