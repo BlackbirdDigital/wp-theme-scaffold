@@ -6,6 +6,7 @@
 
 @include context.is-front {
 	.site {
+		width: 100%;
 		min-height: 100vh;
 		display: grid;
 		grid-template-columns: 1fr;
@@ -20,13 +21,18 @@
 		}
 	}
 
+	.site-header,
+	.site-content,
+	.site-footer {
+		min-width: 0; // Resolves issue with some elements forcing horizontal overflow.
+	}
+
 	.site-header {
 		grid-area: header;
 	}
 
 	.site-content {
 		grid-area: main;
-		overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 	}
 
 	.site-footer {
