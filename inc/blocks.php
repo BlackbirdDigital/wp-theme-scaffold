@@ -52,8 +52,13 @@ add_action( 'init', __NAMESPACE__ . '\\register_blocks' );
  * Used in register_blocks()
  */
 function block_plugins_url( $url, $path ) {
+	// Handle symlinked paths (generally only during local development).
+	$dir = get_template_directory();
+	if ( is_link( $dir ) ) {
+		$dir = readlink( $dir );
+	}
 	// Split the $url by the current theme slug and get just the file path.
-	$file = explode( get_template_directory(), $url )[1];
+	$file = explode( $dir, $url )[1];
 	// For some reason this is getting applied to the gutenberg plugin urls, so we check if the string explode above worked.
 	if ( empty( $file ) ) {
 		return $url;

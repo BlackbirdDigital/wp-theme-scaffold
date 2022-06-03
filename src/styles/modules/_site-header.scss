@@ -1,12 +1,15 @@
-/**
- * Module: site-header.
- */
+//
+// Module: site-header.
+//
 
 @use '../tools/layout';
+@use '../tools/respond';
 
 .site-header {
+	@include layout.container();
+
 	&__nav {
-		@include layout.container( 'extra-wide' );
+		@include layout.align( 'extra-wide' );
 
 		display: flex;
 		justify-content: space-between;
@@ -17,7 +20,7 @@
 		display: block;
 	}
 
-	@media screen and ( min-width: 37.5em ) {
+	@include respond.to( 'tablet' ) {
 		.menu-toggle {
 			display: none;
 		}

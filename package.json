@@ -1,7 +1,7 @@
 {
 	"name": "wp-theme-scaffold",
 	"description": "A scaffold for rapid custom theme development by Blackbird Digital",
-	"version": "0.2.0",
+	"version": "0.4.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/BlackbirdDigital/wp-theme-scaffold.git"
@@ -11,14 +11,14 @@
 		"build": "gulp-wp build"
 	},
 	"dependencies": {
+		"@wordpress/icons": "^6.3.0",
 		"normalize.scss": "^0.1.0"
 	},
 	"devDependencies": {
-		"gulp-wp": "^0.5.0",
+		"gulp-wp": "^0.6.3",
 		"postcss-size": "^4.0.1",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
-		"prettier-eslint": "^13.0.0",
-		"webpack-remove-empty-scripts": "^0.7.1"
+		"prettier-eslint": "^13.0.0"
 	},
 	"peerDependencies": {
 		"autoprefixer": "^10.3.7"

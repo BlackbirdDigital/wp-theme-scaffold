@@ -30,7 +30,7 @@
 
 	<?php theme_scaffold_post_thumbnail(); ?>
 
-	<div class="content-entry__content content entry-content block-container">
+	<div class="content-entry__content content entry-content">
 		<?php
 		the_content();
 

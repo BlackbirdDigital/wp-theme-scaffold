@@ -1,11 +1,13 @@
-/**
- * Module: site-footer.
- */
+//
+// Module: site-footer.
+//
 
 @use '../tools/layout';
 
 .site-footer {
+	@include layout.container();
+
 	&__content {
-		@include layout.container( 'extra-wide' );
+		@include layout.align( 'extra-wide' );
 	}
 }

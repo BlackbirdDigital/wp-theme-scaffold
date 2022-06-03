@@ -1,11 +1,11 @@
-/**
- * Utilities: alignments
- */
+//
+// Utilities: alignments.
+//
 
 @use '../settings/theme';
 @use '../tools/layout';
 
-// NOTE: block alignment styles can be found in tools/layout.
+@include layout.alignments;
 
 // RECOMMENDED STYLE
 .alignleft {

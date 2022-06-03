@@ -30,11 +30,13 @@ $atts = get_block_wrapper_attributes();
 
 <div <?php echo $atts; ?>>
 	<p>Hello Blocks</p>
-	<?php
-	/**
-	 * Output block content, which is the markup provided by `save()` in JS.
-	 * This is generally used for <InnerBlocks/>.
-	 */
-	echo $content;
-	?>
+	<div class="wp-block-theme-scaffold-example__content">
+		<?php
+		/**
+		 * Output block content, which is the markup provided by `save()` in JS.
+		 * This is generally used for <InnerBlocks/>.
+		 */
+		echo $content;
+		?>
+	</div>
 </div>

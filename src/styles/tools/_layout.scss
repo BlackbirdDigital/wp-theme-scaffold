@@ -1,6 +1,6 @@
-/**
- * Tools: layout
- */
+//
+// Tools: layout.
+//
 
 @use '../settings/theme';
 
@@ -10,21 +10,59 @@
 	margin-right: auto;
 }
 
-/**
- * Apply a max-width according to the standard widths in theme.json
- * settings.custom.layout
- *
- * @param $width narrow|default|wide|extra-wide
- */
-@mixin container( $width: default ) {
-	box-sizing: content-box;
-	width: 100%;
+//
+// A container adds inline padding, good for wrapping elements using align.
+//
+@mixin container() {
+	padding-inline: theme.get-var( 'sizes', 'gutter' );
+}
+
+//
+// Apply a max-width according to the standard widths in theme.json
+// settings.custom.layout
+//
+// @param $width narrow|default|wide|extra-wide
+//
+@mixin align( $width: default ) {
 	max-width: calc( #{theme.get-var( 'layout', $width )} );
 	margin-inline: auto;
-	padding-inline: theme.get-var( 'sizes', 'gutter' );
+}
 
-	// Reset box-sizing
-	> * {
-		box-sizing: border-box;
+//
+// Generates alignment classes.
+//
+@mixin alignments() {
+	.alignnarrow {
+		@include align('narrow');
 	}
+
+	.alignwide {
+		@include align('wide');
+	}
+
+	.alignextrawide {
+		@include align('extra-wide');
+	}
+
+	.alignfull {
+		max-width: none;
+		width: auto !important; // Fixes width: 100% when parent has padding.
+		margin-inline: calc( #{theme.get-var( 'sizes', 'gutter' )} * -1 );
+	}
+}
+
+//
+// Applies the container mixin to the element and a default align to immediate
+// child elements.
+//
+// @param $default Default width to align child elements.
+//
+@mixin block-container( $default: default ) {
+	@include container();
+
+	> * {
+		@include align();
+	}
+
+	@include alignments();
 }

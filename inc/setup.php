@@ -7,6 +7,9 @@
 
 namespace ThemeScaffold\Setup;
 
+use function ThemeScaffold\Utilities\register_script;
+use function ThemeScaffold\Utilities\register_style;
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -35,16 +38,16 @@ function setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	* Enable support for Post Thumbnails on posts and pages.
+	*
+	* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	*/
 	add_theme_support( 'post-thumbnails' );
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	* Switch default core markup for search form, comment form, and comments
+	* to output valid HTML5.
+	*/
 	add_theme_support(
 		'html5',
 		array(
@@ -146,13 +149,11 @@ add_action( 'init', __NAMESPACE__ . '\\register_assets' );
  * Enqueue scripts and styles.
  */
 function enqueue_assets() {
-	$style_asset = require get_template_directory() . '/dist/css/style.asset.php';
-	wp_enqueue_style( 'theme-scaffold-style', get_template_directory_uri() . '/dist/css/style.css', array(), $style_asset['version'] );
-
-	$themejs_asset = require get_template_directory() . '/dist/js/theme.asset.php';
-	wp_enqueue_script( 'theme-scaffold-script', get_template_directory_uri() . '/dist/js/theme.js', array(), $themejs_asset['version'], true );
-
 	wp_enqueue_style( 'google-fonts' );
+
+	register_style( 'style', true );
+
+	register_script( 'theme', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -166,10 +167,9 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
  * Note: individual blocks from /src/blocks are enqueued automatically by /inc/blocks.php.
  */
 function editor_assets() {
-	$editorjs_asset = require get_template_directory() . '/dist/js/editor.asset.php';
-	wp_enqueue_script( 'blackbird-blocks', get_template_directory_uri() . '/dist/js/editor.js', $editorjs_asset['dependencies'], $editorjs_asset['version'], true );
-
 	wp_enqueue_style( 'google-fonts' );
+
+	register_script( 'editor', true );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\editor_assets' );
 

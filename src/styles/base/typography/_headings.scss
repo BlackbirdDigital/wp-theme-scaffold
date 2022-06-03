@@ -1,25 +1,9 @@
-/**
- * Typography: headings.
- */
+//
+// Typography: headings.
+//
 
 @use '../../settings/theme';
 @use '../../tools/respond';
-
-/**
- * Responsive heading sizes are accomplished via CSS var updates.
- */
-@include respond.to( 'tablet', 'max-width' ) {
-	body {
-		// Swap each heading size CSS var with it's mobile counterpoint value, if available.
-		@each $key, $val in theme.get-map( 'heading-sizes-mobile' ) {
-			@include theme.set-var(
-				'heading-sizes',
-				$key,
-				theme.get-var( 'heading-sizes-mobile', $key )
-			);
-		}
-	}
-}
 
 // These size classes are already provided by WordPress for the Heading and Post Title blocks, but this makes them available to the rest of our theme.
 @each $key, $val in theme.get-map( 'heading-sizes' ) {
@@ -28,43 +12,35 @@
 	}
 }
 
-/**
- * Set other default heading level attributes, like line height, weight, letter-spacing, etc.
- * These can be overridden by the heading block settings.
- * Eventually, these should probably be set via theme.json.
- */
+//
+// Set other default heading level attributes, like line height, weight, letter-spacing, etc.
+// These can be overridden by the heading block settings.
+// Eventually, these should probably be set via theme.json.
+//
 
 .has-h-1-font-size,
 .has-h-2-font-size,
 .has-h-3-font-size,
 .has-h-4-font-size,
+.has-h-5-font-size,
 .has-h-6-font-size {
 	margin-block: 1em;
-	line-height: 1.5;
+	line-height: 1.25;
 	font-weight: 700;
 	font-family: theme.get-var( 'font-families', 'sans-serif' );
 }
 
-.has-h-1-font-size {
-	line-height: 1.1;
-}
+.has-h-1-font-size {}
 
-.has-h-2-font-size {
-	line-height: 1.15;
-}
+.has-h-2-font-size {}
 
-.has-h-3-font-size {
-	line-height: 1.25;
-}
+.has-h-3-font-size {}
 
-.has-h-4-font-size {
-}
+.has-h-4-font-size {}
 
-.has-h-5-font-size {
-}
+.has-h-5-font-size {}
 
-.has-h-6-font-size {
-}
+.has-h-6-font-size {}
 
 // Apply heading level styles to bare h1-6 tags.
 @for $i from 1 through 6 {

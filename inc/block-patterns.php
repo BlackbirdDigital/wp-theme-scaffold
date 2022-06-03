@@ -7,10 +7,12 @@
  * @package theme-scaffold
  */
 
+namespace ThemeScaffold\BlockPatterns;
+
 /**
  * Register block patterns.
  */
-function theme_scaffold_register_block_patterns() {
+function register() {
 	/*
 	register_block_pattern(
 		'theme-scaffold/example-pattern',
@@ -22,4 +24,4 @@ function theme_scaffold_register_block_patterns() {
 	);
 	*/
 }
-add_action( 'init', 'theme_scaffold_register_block_patterns' );
+add_action( 'init', __NAMESPACE__ . '\\register' );

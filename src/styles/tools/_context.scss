@@ -1,16 +1,16 @@
-/**
- * Tools: context.
- *
- * Use this module to flag styles for only the editor or front-end stylesheet.
- *
- * @use 'tools/context';
- * @include context.is-front {
- *   // ...front-end-only styles
- * }
- * @include context.is-editor {
- *   // ...editor-only styles
- * }
- */
+//
+// Tools: context.
+//
+// Use this module to flag styles for only the editor or front-end stylesheet.
+//
+// @use 'tools/context';
+// @include context.is-front {
+//   // ...front-end-only styles
+// }
+// @include context.is-editor {
+//   // ...editor-only styles
+// }
+//
 
 $is-editor: false !default;
 

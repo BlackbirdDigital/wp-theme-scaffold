@@ -1,6 +1,6 @@
-/**
- * Elements: text.
- */
+//
+// Elements: text.
+//
 
 @use '../../settings/theme';
 
@@ -42,7 +42,7 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted theme.get-var( 'theme-colors', 'text' );
+	border-bottom: 1px dotted theme.get-var( 'theme-colors', 'foreground' );
 	cursor: help;
 }
 

@@ -1,6 +1,6 @@
-/**
- * Editor stylesheet
- */
+//
+// Editor stylesheet.
+//
 
 // Set $is-editor to true, which will be inherited anywhere the tools/context module is used.
 @use 'tools/context' with (
@@ -16,3 +16,10 @@
 @import 'blocks/**/*';
 
 @import 'utilities/*';
+
+.acf-block-preview {
+	a {
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
