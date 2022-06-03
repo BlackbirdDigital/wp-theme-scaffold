@@ -1,0 +1,8 @@
+.acf-example-block {
+    &__text {
+        @extend .has-h-3-font-size;
+    }
+    &__content {
+
+    }
+}
