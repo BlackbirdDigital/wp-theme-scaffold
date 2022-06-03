@@ -22,6 +22,6 @@ use function ThemeScaffold\Utilities\get_component;
 			)
 		);
 		?>
-		<?php get_template_part( 'template-parts/site/navigation', null, array( 'id' => 'main-navigation' ) ); ?>
+		<?php get_template_part( 'template-parts/site/navigation', 'header', array( 'id' => 'main-navigation' ) ); ?>
 	</nav>
 </header><!-- .site-header -->

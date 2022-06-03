@@ -2,71 +2,33 @@
 // Module: site-navigation.
 //
 
-.site-navigation {
-	display: block;
+@use '../tools/context';
+@use '../tools/respond';
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.2 );
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
+@include context.is-front {
+	.site-navigation {
 		display: block;
-		text-decoration: none;
-	}
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.2s;
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+		&[aria-expanded="true"] {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		@include respond.to('desktop') {
+			visibility: visible;
+			opacity: 1;
+			transition: none;
+		}
+
+		@include respond.to('desktop', 'max-width') {
+			width: 100%;
+		}
+
+		&--footer {
+			display: block;
+		}
 	}
 }
