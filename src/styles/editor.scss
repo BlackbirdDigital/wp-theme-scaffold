@@ -16,3 +16,10 @@
 @import 'blocks/**/*';
 
 @import 'utilities/*';
+
+.acf-block-preview {
+	a {
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
