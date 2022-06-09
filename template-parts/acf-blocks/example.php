@@ -1,6 +1,8 @@
 <?php
 /**
- * Example Block Template.
+ * ACF Block: example.
+ *
+ * @package theme-scaffold
  */
 
 // Create id attribute allowing for custom "anchor" value.
@@ -18,11 +20,11 @@ if ( ! empty( $block['align'] ) ) {
 	$class_name .= ' align' . $block['align'];
 }
 
-// Load values and assing defaults.
+// Load values and assign defaults.
 $text = get_field( 'text' ) ?: 'Your text field here...';
 
 ?>
 <div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $class_name ); ?>">
 		<span class="acf-example-block__text"><?php echo esc_attr( $text ); ?></span>
-		<div class="acf-example-block__content"><InnerBlocks  /></div>
+		<div class="acf-example-block__content"><InnerBlocks /></div>
 </div>
