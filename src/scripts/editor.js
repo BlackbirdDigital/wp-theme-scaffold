@@ -4,17 +4,27 @@
  * Import all block registrations and other editor customizations.
  */
 
-import { registerBlockCollection, registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
+import {
+	registerBlockCollection,
+	registerBlockStyle,
+	unregisterBlockStyle,
+} from '@wordpress/blocks';
 import domReady from '@wordpress/dom-ready';
 import { __ } from '@wordpress/i18n';
 // @see https://wordpress.github.io/gutenberg/?path=/story/icons-icon--library
 import { info } from '@wordpress/icons';
 
 /**
- * Theme block collection
+ * Theme block collections.
  */
- registerBlockCollection( 'theme-scaffold', {
+// Native blocks with the "theme-scaffold" namespace.
+registerBlockCollection( 'theme-scaffold', {
 	title: __( 'Theme Scaffold', 'theme-scaffold' ),
+	icon: info, // Replace with custom SVG icon markup.
+} );
+// ACF blocks with the "acf" namespace.
+registerBlockCollection( 'acf', {
+	title: __( 'Theme Scaffold ACF', 'theme-scaffold' ),
 	icon: info, // Replace with custom SVG icon markup.
 } );
 
