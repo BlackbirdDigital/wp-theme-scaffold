@@ -13,21 +13,7 @@
 
 		display: flex;
 		justify-content: space-between;
-	}
-
-	/* Small menu. */
-	.site-navigation.toggled ul {
-		display: block;
-	}
-
-	@include respond.to( 'tablet' ) {
-		.menu-toggle {
-			display: none;
-		}
-
-		.site-navigation ul {
-			display: flex;
-		}
+		align-items: center;
 	}
 
 	/* Make sure logo link wraps around logo image. */

@@ -1,12 +1,14 @@
 //
 // Module: site-navigation.
 //
+@use '../tools/layout';
+@use '../tools/respond';
 
 .site-navigation {
 	display: block;
 
-	ul {
-		display: none;
+	ul#primary-menu {
+		display: flex;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -68,5 +70,36 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+
+	&__container {
+		display: none;
+		position: fixed;
+		inset: 0;
+		top: var( --global--admin-bar--height );
+		background-color: #fff;
+	}
+
+	/* Small menu. */
+	&.toggled {
+		.site-navigation__container {
+			display: block;
+			padding: var(--wp--custom--sizes--gutter);
+		}
+		ul#primary-menu {
+			flex-direction: column;
+		}
+	}
+
+	@include respond.to( 'tablet' ) {
+		.menu-toggle {
+			display: none;
+		}
+
+		.site-navigation__container {
+			display: block;
+			position: relative;
+			top: initial;
+		}
 	}
 }
