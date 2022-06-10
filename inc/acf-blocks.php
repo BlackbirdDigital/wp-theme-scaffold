@@ -7,13 +7,14 @@
  * @package theme-scaffold
  */
 
-add_action( 'acf/init', 'register_acf_blocks_init' );
+namespace ThemeScaffold\ACFBlocks;
+
 /**
- * Register Advanced Custom Field Blocks
+ * Register Advanced Custom Field Blocks.
  *
  * @return void
  */
-function register_acf_blocks_init() {
+function register() {
 
 	if ( function_exists( 'acf_register_block_type' ) ) {
 		// Register an example block.
@@ -32,3 +33,4 @@ function register_acf_blocks_init() {
 		);
 	}
 }
+add_action( 'acf/init', __NAMESPACE__ . '\\register' );
