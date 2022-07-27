@@ -8,8 +8,10 @@
  * When pressed, the button will toggle the aria-expanded attribute on both the button and the controlled element.
  *
  * @param {Node} button A button element with an aria-controls attribute.
+ * @param {object} options Options for the toggle functionality.
+ * @param {boolean} options.clickOutsideClose Whether to close the target element when clicking outside. Default true.
  */
-export function toggleExpanded( button ) {
+export function toggleExpanded( button, { clickOutsideClose = true } ) {
 	if ( ! button.hasAttribute( 'aria-controls' ) ) {
 		console.warn(
 			'Element missing aria-controls attribute for toggleExpanded:',
@@ -28,6 +30,11 @@ export function toggleExpanded( button ) {
 
 	// Toggle the aria-expanded value each time the button or outside the target is clicked.
 	document.addEventListener( 'click', function ( event ) {
+		console.log( button.contains( event.target ) );
+		if ( ! clickOutsideClose && ! button.contains( event.target ) ) {
+			return;
+		}
+
 		// Check if click is inside the menu.
 		if (
 			target.contains( event.target ) &&
@@ -57,10 +64,14 @@ export function toggleExpanded( button ) {
  * Apply toggleExpanded to all queried elements.
  *
  * @param {string} buttonsQuery A query selector for all buttons to apply the expanded toggle functionality to.
+ * @param {object} options Options for the toggle functionality. @see {@link toggleExpanded} for available options.
  */
-export function applyToggleExpanded( buttonsQuery = '.toggle-expanded' ) {
+export function applyToggleExpanded(
+	buttonsQuery = '.toggle-expanded',
+	options = {}
+) {
 	const buttons = document.querySelectorAll( buttonsQuery );
-	buttons.forEach( toggleExpanded );
+	buttons.forEach( ( button ) => toggleExpanded( button, options ) );
 }
 
 export default applyToggleExpanded;
