@@ -9,6 +9,7 @@
 
 	ul#primary-menu {
 		display: flex;
+		flex-direction: row;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -78,20 +79,21 @@
 		inset: 0;
 		top: var( --global--admin-bar--height );
 		background-color: #fff;
+		padding: var( --wp--custom--sizes--gutter );
 	}
 
 	/* Small menu. */
-	&.toggled {
+	&[aria-expanded='true'] {
 		.site-navigation__container {
 			display: block;
-			padding: var(--wp--custom--sizes--gutter);
-		}
-		ul#primary-menu {
-			flex-direction: column;
 		}
 	}
 
 	@include respond.to( 'tablet' ) {
+		ul#primary-menu {
+			flex-direction: row;
+		}
+
 		.menu-toggle {
 			display: none;
 		}
