@@ -21,13 +21,5 @@ applyToggleExpanded( '.menu-toggle' );
 /**
  * Make our menus and submenus focusable with the tab key, and also add a
  * "focus" class.
- *
- * Note: Make sure if you add a custom `menu_class` to include the standard menu
- * class as well:
- *
- * 		wp_nav_menu( array(
- * 			'theme_location' => 'primary',
- * 			'menu_class'     => 'menu menu--primary',
- * 		) );
  */
 applyMenuFocus( '.menu, [class^="menu--"]' );
