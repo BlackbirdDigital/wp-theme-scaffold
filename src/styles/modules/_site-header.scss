@@ -2,18 +2,28 @@
 // Module: site-header.
 //
 
+@use '../settings/theme';
 @use '../tools/layout';
 @use '../tools/respond';
 
 .site-header {
 	@include layout.container();
+	background-color: theme.get-var( 'theme-colors', 'background' );
 
 	&__nav {
 		@include layout.align( 'extra-wide' );
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	.menu-toggle {
+		position: relative;
+		z-index: 100;
+
+		@include respond.to( 'desktop' ) {
+			display: none;
+		}
 	}
 
 	/* Make sure logo link wraps around logo image. */
