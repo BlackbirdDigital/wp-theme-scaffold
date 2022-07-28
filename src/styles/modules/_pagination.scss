@@ -2,9 +2,9 @@
 // Module: pagination.
 //
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+.comment-navigation, // the_comment_navigation()
+.post-navigation // the_post_navigation()
+{
 	.site-content & {
 		margin: 0 0 1.5em;
 	}

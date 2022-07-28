@@ -24,8 +24,10 @@
 			get_template_part( 'template-parts/content/excerpt', get_post_type() );
 
 		endwhile;
-
-		the_posts_navigation();
 		?>
 	</div>
+
+	<footer class="loop-archive__footer footer">
+		<?php get_template_part( 'template-parts/nav/pagination', get_post_type() ); ?>
+	</footer>
 </section>

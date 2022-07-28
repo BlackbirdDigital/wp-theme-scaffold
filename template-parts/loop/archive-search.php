@@ -26,8 +26,10 @@
 			get_template_part( 'template-parts/content/excerpt', 'search' );
 
 		endwhile;
-
-		the_posts_navigation();
 		?>
 	</div>
+
+	<footer class="loop-archive__footer footer">
+		<?php get_template_part( 'template-parts/nav/pagination', 'search' ); ?>
+	</footer>
 </section>
