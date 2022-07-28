@@ -144,7 +144,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry.php:39, template-parts/content/page.php:28
+#: template-parts/content/entry.php:37, template-parts/content/page.php:28
 msgid "Pages:"
 msgstr ""
 

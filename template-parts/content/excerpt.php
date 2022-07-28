@@ -30,10 +30,8 @@ $args = wp_parse_args( $args, $defaults );
 			if ( 'post' === get_post_type() ) :
 				?>
 					<div class="content-excerpt__meta">
-						<?php
-						theme_scaffold_posted_on();
-						theme_scaffold_posted_by();
-						?>
+						<?php get_template_part( 'template-parts/tag/date', get_post_type() ); ?>
+						<?php get_template_part( 'template-parts/tag/author', get_post_type() ); ?>
 					</div>
 				<?php
 			endif;

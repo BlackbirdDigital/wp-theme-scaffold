@@ -21,9 +21,7 @@
 			?>
 			<div class="content-entry__meta meta">
 				<?php get_template_part( 'template-parts/tag/date', get_post_type() ); ?>
-				<?php
-				theme_scaffold_posted_by();
-				?>
+				<?php get_template_part( 'template-parts/tag/author', get_post_type() ); ?>
 			</div>
 		<?php endif; ?>
 	</header>
