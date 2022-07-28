@@ -6,6 +6,7 @@
 
 .site-footer {
 	@include layout.container();
+	text-align: center;
 
 	&__content {
 		@include layout.align( 'wide' );

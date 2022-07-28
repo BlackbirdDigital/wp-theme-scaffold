@@ -24,7 +24,21 @@ $attributes = array_subset( $args, array( 'id' ) );
 			'theme_location' => 'primary-footer',
 			'menu_id'        => 'primary-footer-menu',
 			'menu_class'     => 'menu--primary-footer site-navigation__menu--primary-footer',
+			'container'      => false,
 			'fallback_cb'    => '__return_false',
+			'depth'          => 1,
+		)
+	);
+	?>
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'secondary-footer',
+			'menu_id'        => 'secondary-footer-menu',
+			'menu_class'     => 'menu--secondary-footer site-navigation__menu--secondary-footer',
+			'container'      => false,
+			'fallback_cb'    => '__return_false',
+			'depth'          => 1,
 		)
 	);
 	?>

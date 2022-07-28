@@ -6,9 +6,28 @@
 @use '../tools/layout';
 @use '../tools/respond';
 
+%reset {
+	ul {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: block;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
+}
+
 .site-navigation {
 	$self: &;
 
+	@extend %reset;
 	position: absolute;
 
 	@include respond.to( 'desktop' ) {
@@ -76,7 +95,7 @@
 		}
 	}
 
-	%menu {
+	%header-menu {
 		display: flex;
 		gap: 1rem;
 		flex-direction: column;
@@ -122,20 +141,42 @@
 	}
 
 	&__menu--primary {
-		@extend %menu;
+		@extend %header-menu;
 
 		a {
 			color: theme.get-var( 'theme-colors', 'foreground' );
 			font-weight: bold;
 		}
+
+		.current_page_item,
+		.current-menu-item,
+		.current_page_parent,
+		.current_-menu-parent,
+		.current_page_ancestor,
+		.current-menu-ancestor {
+			a {
+				color: theme.get-var( 'theme-colors', 'primary' );
+			}
+		}
 	}
 
 	&__menu--secondary {
-		@extend %menu;
+		@extend %header-menu;
 		font-size: 0.8rem;
 
 		a {
 			color: theme.get-var( 'theme-colors', 'muted' );
+		}
+
+		.current_page_item,
+		.current-menu-item,
+		.current_page_parent,
+		.current_-menu-parent,
+		.current_page_ancestor,
+		.current-menu-ancestor {
+			a {
+				color: theme.get-var( 'theme-colors', 'secondary' );
+			}
 		}
 	}
 
@@ -151,19 +192,33 @@
 		padding-left: 1rem;
 	}
 
-	ul {
-		display: block;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+	// Footer.
+	&--footer {
+		@extend %reset;
 
-	li {
-		display: block;
-	}
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-block: theme.get-var( 'sizes', 'gutter' );
 
-	a {
-		display: inline-block;
-		text-decoration: none;
+		%footer-menu {
+			display: flex;
+			gap: 1rem;
+			flex-direction: column;
+			justify-content: center;
+			font-family: theme.get-var( 'font-families', 'sans-serif' );
+
+			@include respond.to( 'desktop' ) {
+				flex-direction: row;
+			}
+		}
+
+		#{$self}__menu--primary-footer {
+			@extend %footer-menu;
+		}
+
+		#{$self}__menu--secondary-footer {
+			@extend %footer-menu;
+		}
 	}
 }
