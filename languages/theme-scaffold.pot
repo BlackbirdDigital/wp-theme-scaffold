@@ -94,7 +94,11 @@ msgid "Footer Secondary"
 msgstr ""
 
 #: inc/setup.php:120
-msgid "Add widgets here."
+msgid "Footer"
+msgstr ""
+
+#: inc/setup.php:122
+msgid "Footer blocks."
 msgstr ""
 
 #. translators: %s: post date.

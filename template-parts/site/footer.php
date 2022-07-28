@@ -13,5 +13,9 @@
 			<?php get_template_part( 'template-parts/site/branding', 'footer' ); ?>
 			<?php get_template_part( 'template-parts/site/navigation', 'footer' ); ?>
 		</nav>
+
+		<div class="site-footer__widgets">
+			<?php get_sidebar( 'footer' ); ?>
+		</div>
 	</div>
 </footer><!-- .site-footer -->

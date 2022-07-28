@@ -117,11 +117,11 @@ add_action( 'init', __NAMESPACE__ . '\\menus' );
 function widget_areas() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'theme-scaffold' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'theme-scaffold' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'name'          => esc_html__( 'Footer', 'theme-scaffold' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Footer blocks.', 'theme-scaffold' ),
+			'before_widget' => '',
+			'after_widget'  => '',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
