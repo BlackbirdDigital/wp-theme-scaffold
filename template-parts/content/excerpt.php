@@ -43,4 +43,8 @@ $args = wp_parse_args( $args, $defaults );
 	<div class="content-excerpt__content entry-summary">
 		<?php the_excerpt(); ?>
 	</div>
+
+	<div class="content-excerpt__footer">
+		<?php // get_template_part( 'template-parts/tag/comment-link', get_post_type() ); ?>
+	</div>
 </article>

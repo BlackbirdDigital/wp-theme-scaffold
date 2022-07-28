@@ -43,10 +43,8 @@
 
 	<footer class="content-entry__footer footer">
 		<?php if ( 'post' === get_post_type() ) : ?>
-			<div class = 'footer__taxonomies' >
-				<?php
-				get_template_part( 'template-parts/tag/term-list', get_post_type(), array( 'taxonomy' => 'category' ) );
-				?>
+			<div class="content-entry__meta meta">
+				<?php get_template_part( 'template-parts/tag/term-list', get_post_type(), array( 'taxonomy' => 'category' ) ); ?>
 				<?php get_template_part( 'template-parts/tag/term-list', get_post_type() ); ?>
 			</div>
 		<?php endif; ?>

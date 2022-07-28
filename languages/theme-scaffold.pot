@@ -135,7 +135,8 @@ msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
-#: inc/template-tags.php:81
+#. translators: %s: post title
+#: inc/template-tags.php:81, template-parts/tag/comment-link.php:19
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
