@@ -17,12 +17,12 @@ $args = wp_parse_args( $args, $defaults );
 		<?php
 			the_title(
 				sprintf(
-					'<h$1%s class="content-excerpt__title entry-title"><a href="$2%s" rel="bookmark">',
+					'<h%1$s class="content-excerpt__title entry-title"><a href="%2$s" rel="bookmark">',
 					$args['heading_level'],
 					esc_url( get_permalink() )
 				),
 				sprintf(
-					'</a></h$1%s>',
+					'</a></h%1$s>',
 					$args['heading_level']
 				)
 			);
