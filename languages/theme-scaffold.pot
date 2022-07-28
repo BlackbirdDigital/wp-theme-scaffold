@@ -26,18 +26,18 @@ msgid "It looks like nothing was found at this location."
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
-#: comments.php:41
+#: comments.php:40
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:35
+#: comments.php:34
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:67
 msgid "Comments are closed."
 msgstr ""
 

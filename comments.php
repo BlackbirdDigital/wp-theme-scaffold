@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying comments
+ * The template for displaying comments.
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
+ * This is the template that displays the area of the page that contains both
+ * the current comments and the comment form.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,13 +20,12 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments">
 
 	<?php
-	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments__title">
 			<?php
 			$theme_scaffold_comment_count = get_comments_number();
 			if ( '1' === $theme_scaffold_comment_count ) {
@@ -36,7 +35,7 @@ if ( post_password_required() ) {
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( 
+				printf(
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $theme_scaffold_comment_count, 'comments title', 'theme-scaffold' ) ),
 					number_format_i18n( $theme_scaffold_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -44,11 +43,11 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ol class="comments__list">
 			<?php
 			wp_list_comments(
 				array(
@@ -57,7 +56,7 @@ if ( post_password_required() ) {
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</ol>
 
 		<?php
 		the_comments_navigation();
@@ -65,7 +64,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'theme-scaffold' ); ?></p>
+			<p class="comments__closed"><?php esc_html_e( 'Comments are closed.', 'theme-scaffold' ); ?></p>
 			<?php
 		endif;
 
@@ -74,4 +73,4 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-</div><!-- #comments -->
+</div><!-- .comments -->
