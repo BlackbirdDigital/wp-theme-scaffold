@@ -20,8 +20,8 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="content-entry__meta meta">
+				<?php get_template_part( 'template-parts/tag/date', get_post_type() ); ?>
 				<?php
-				theme_scaffold_posted_on();
 				theme_scaffold_posted_by();
 				?>
 			</div>
