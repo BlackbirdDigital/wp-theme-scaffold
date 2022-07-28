@@ -10,6 +10,7 @@
 $defaults = array(
 	'element' => 'span',
 	'format'  => '',
+	'linked'  => false,
 );
 
 $args = wp_parse_args( $args, $defaults );
@@ -20,9 +21,16 @@ $time_string          = sprintf(
 	esc_attr( get_the_date( DATE_W3C ) ),
 	esc_html( get_the_date( $args['format'] ) ),
 );
+
+$date_format = $args['linked'] ? '<a class="tag-date__date" href="%2$s">%1$s</a>' : '<span class="tag-date__date">%1$s</span>';
+$date        = sprintf(
+	$date_format,
+	$time_string,
+	esc_url( get_permalink() )
+);
 ?>
 
 <<?php echo esc_html( $args['element'] ); ?> class="tag-date">
 	<span class="tag-date__label"><?php echo esc_html_x( 'Posted on', 'post date', 'davidwilkinson' ); ?></span>
-	<span class="tag-date__date"><?php echo $time_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<?php echo $date; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </<?php echo esc_html( $args['element'] ); ?>>
