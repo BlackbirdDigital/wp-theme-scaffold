@@ -100,8 +100,10 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 function menus() {
 	register_nav_menus(
 		array(
-			'primary'   => esc_html__( 'Primary', 'theme-scaffold' ),
-			'secondary' => esc_html__( 'Secondary', 'theme-scaffold' ),
+			'primary'          => esc_html__( 'Primary', 'theme-scaffold' ),
+			'secondary'        => esc_html__( 'Secondary', 'theme-scaffold' ),
+			'primary-footer'   => esc_html__( 'Footer Primary', 'theme-scaffold' ),
+			'secondary-footer' => esc_html__( 'Footer Secondary', 'theme-scaffold' ),
 		)
 	);
 }
