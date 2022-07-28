@@ -13,6 +13,8 @@ $defaults = array(
 	'linked'  => true,
 );
 
+$args = wp_parse_args( $args, $defaults );
+
 $byline_format = $args['linked'] ? '<a class="tag-author__author" href="%2$s">%1$s</a>' : '<span class="tag-author__author">%1$s</span>';
 $byline        = sprintf(
 	$byline_format,
