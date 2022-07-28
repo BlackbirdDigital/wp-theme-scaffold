@@ -170,6 +170,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
+#: template-parts/nav/pagination.php:25
+msgctxt "pagination label"
+msgid "Page navigation"
+msgstr ""
+
 #: template-parts/tag/author.php:12
 msgctxt "post author byline"
 msgid "by"
