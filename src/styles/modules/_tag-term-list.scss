@@ -18,7 +18,7 @@
 
 	// Target specific taxonomy (post_tag) with data attribute.
 	&[data-taxonomy='post_tag'] {
-		#{$self}__list {
+		#{$self}__terms {
 			a,
 			span {
 				&:before {
