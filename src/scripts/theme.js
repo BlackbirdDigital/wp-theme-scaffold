@@ -3,7 +3,6 @@
  */
 
 import { applyToggleExpanded } from './theme/toggle-expanded';
-import { applyMenuFocus } from './theme/menu-focus';
 
 /**
  * Make our menu toggle buttons expand the element defined in its aria-controls
@@ -17,9 +16,3 @@ import { applyMenuFocus } from './theme/menu-focus';
  * example, an FAQ section.
  */
 applyToggleExpanded( '.menu-toggle' );
-
-/**
- * Make our menus and submenus focusable with the tab key, and also add a
- * "focus" class.
- */
-applyMenuFocus( '.menu, [class^="menu--"]' );
