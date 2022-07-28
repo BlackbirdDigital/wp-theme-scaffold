@@ -1,0 +1,10 @@
+@use '../utilities/accessibility';
+
+.tag-date {
+	display: inline-block;
+	white-space: nowrap;
+
+	&__label {
+		@extend .screen-reader-text;
+	}
+}

@@ -1,0 +1,30 @@
+@use '../utilities/accessibility';
+
+.tag-term-list {
+	$self: &;
+
+	display: block;
+
+	&__label {
+		@extend .screen-reader-text;
+	}
+
+	&__terms {
+		a,
+		span {
+			white-space: nowrap;
+		}
+	}
+
+	// Target specific taxonomy (post_tag) with data attribute.
+	&[data-taxonomy='post_tag'] {
+		#{$self}__list {
+			a,
+			span {
+				&:before {
+					content: '#';
+				}
+			}
+		}
+	}
+}
