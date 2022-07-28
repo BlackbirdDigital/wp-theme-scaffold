@@ -2,7 +2,92 @@
 // Module: menu-toggle.
 //
 
+@use 'sass:math';
+@use '../settings/theme';
+
+$line-width: 0.125em;
+$line-spacing: 0.5em;
+$color: theme.get-var( 'theme-colors', 'foreground' );
+
 .menu-toggle {
-    position: relative;
-    z-index: 1;
+	$self: &;
+
+	font-size: 1rem;
+	box-sizing: content-box;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	padding: 0;
+	width: 2.25rem;
+	height: 2.25rem;
+	border: none;
+	background-color: transparent;
+	transition: transform 0.2s;
+	cursor: pointer;
+
+	// Default hover state.
+	&:hover,
+	&:focus {
+		border-color: transparent;
+		transform: scale( 1.05 );
+	}
+
+	// Keyboard focus
+	&:focus-visible {
+		//outline: 2px solid $color;
+	}
+
+	// Default state
+	&__icon {
+		top: 50%;
+		margin-top: -( math.div( $line-width, 2 ) );
+
+		// Lines
+		&,
+		&::before,
+		&::after {
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: $line-width;
+			background-color: $color;
+			transition: 0.2s;
+			transform: none;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+		}
+
+		&::before {
+			top: -( $line-spacing + $line-width );
+		}
+
+		&::after {
+			top: ( $line-spacing + $line-width );
+		}
+	}
+
+	// Expanded state (X)
+	&[aria-expanded='true'] {
+		#{$self}__icon {
+			transform: rotate( -45deg );
+
+			&::before {
+				transform: translateY( #{$line-spacing + $line-width} )
+					rotate( 90deg );
+			}
+
+			&::after {
+				transform: translateY( #{- ( $line-spacing + $line-width )} )
+					rotate( 90deg );
+			}
+		}
+
+		// Expanded hover state.
+		&:hover {
+		}
+	}
 }
