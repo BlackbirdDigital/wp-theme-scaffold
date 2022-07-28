@@ -18,7 +18,7 @@ $args = wp_parse_args( $args, $defaults );
 
 $term_list = '';
 if ( $args['linked'] ) {
-	$term_list = get_the_term_list( get_the_ID(), $args['taxonomy'], '', esc_html__( ', ', 'theme-scaffold' ), '' );
+	$term_list = get_the_term_list( get_the_ID(), $args['taxonomy'], '', esc_html_x( ', ', 'term list separator', 'theme-scaffold' ), '' );
 } else {
 	$terms = get_the_terms( get_the_ID(), $args['taxonomy'] );
 	if ( is_array( $terms ) && $terms[0] instanceof WP_Term ) {
@@ -33,7 +33,7 @@ if ( $args['linked'] ) {
 	}
 }
 
-if ( $term_list ) :
+if ( $term_list && ! is_wp_error( $term_list ) ) :
 	?>
 
 <<?php echo esc_html( $args['element'] ); ?> class="tag-term-list" data-taxonomy="<?php echo esc_attr( $args['taxonomy'] ); ?>">
