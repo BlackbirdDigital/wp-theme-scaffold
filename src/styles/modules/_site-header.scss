@@ -2,31 +2,27 @@
 // Module: site-header.
 //
 
+@use '../settings/theme';
 @use '../tools/layout';
 @use '../tools/respond';
 
 .site-header {
 	@include layout.container();
+	background-color: theme.get-var( 'theme-colors', 'background' );
 
 	&__nav {
 		@include layout.align( 'extra-wide' );
-
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 
-	/* Small menu. */
-	.site-navigation.toggled ul {
-		display: block;
-	}
+	.menu-toggle {
+		position: relative;
+		z-index: 100;
 
-	@include respond.to( 'tablet' ) {
-		.menu-toggle {
+		@include respond.to( 'desktop' ) {
 			display: none;
-		}
-
-		.site-navigation ul {
-			display: flex;
 		}
 	}
 

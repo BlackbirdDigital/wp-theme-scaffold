@@ -1,17 +1,17 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar containing the footer widget area.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package theme-scaffold
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'footer' ) ) {
 	return;
 }
 ?>
 
-<aside id="sidebar-primary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside>
+<div class="sidebar-footer widget-area">
+	<?php dynamic_sidebar( 'footer' ); ?>
+</div>

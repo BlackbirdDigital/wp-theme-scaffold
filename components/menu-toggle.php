@@ -26,4 +26,5 @@ $attributes = array_subset( $args, array( 'id', 'aria-controls', 'aria-expanded'
 	class="menu-toggle"
 	<?php attributes_from_array( $attributes ); ?>
 >
+	<span class="menu-toggle__icon"></span>
 </button>

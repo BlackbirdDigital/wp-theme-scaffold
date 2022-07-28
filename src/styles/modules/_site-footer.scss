@@ -6,8 +6,15 @@
 
 .site-footer {
 	@include layout.container();
+	text-align: center;
 
 	&__content {
-		@include layout.align( 'extra-wide' );
+		@include layout.align( 'wide' );
+	}
+
+	&__nav {
+	}
+
+	&__widgets {
 	}
 }

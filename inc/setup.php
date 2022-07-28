@@ -100,8 +100,10 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 function menus() {
 	register_nav_menus(
 		array(
-			'primary'   => esc_html__( 'Primary', 'theme-scaffold' ),
-			'secondary' => esc_html__( 'Secondary', 'theme-scaffold' ),
+			'primary'          => esc_html__( 'Primary', 'theme-scaffold' ),
+			'secondary'        => esc_html__( 'Secondary', 'theme-scaffold' ),
+			'primary-footer'   => esc_html__( 'Footer Primary', 'theme-scaffold' ),
+			'secondary-footer' => esc_html__( 'Footer Secondary', 'theme-scaffold' ),
 		)
 	);
 }
@@ -115,11 +117,11 @@ add_action( 'init', __NAMESPACE__ . '\\menus' );
 function widget_areas() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'theme-scaffold' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'theme-scaffold' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'name'          => esc_html__( 'Footer', 'theme-scaffold' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Footer blocks.', 'theme-scaffold' ),
+			'before_widget' => '',
+			'after_widget'  => '',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
