@@ -114,7 +114,7 @@ msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:61
+#: inc/template-tags.php:61, template-parts/tag/term-list.php:20
 msgid ", "
 msgstr ""
 
@@ -167,4 +167,19 @@ msgstr ""
 #. translators: %s: search query.
 #: template-parts/loop/archive-search.php:15
 msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/tag/author.php:13
+msgctxt "post author byline"
+msgid "by"
+msgstr ""
+
+#: template-parts/tag/date.php:34
+msgctxt "post date"
+msgid "Posted on"
+msgstr ""
+
+#: template-parts/tag/term-list.php:39
+msgctxt "post tags"
+msgid "Posted in"
 msgstr ""

@@ -4,7 +4,7 @@
  *
  * Output the post date.
  *
- * @package davidwilkinson
+ * @package theme-scaffold
  */
 
 $defaults = array(
@@ -31,6 +31,6 @@ $date        = sprintf(
 ?>
 
 <<?php echo esc_html( $args['element'] ); ?> class="tag-date">
-	<span class="tag-date__label"><?php echo esc_html_x( 'Posted on', 'post date', 'davidwilkinson' ); ?></span>
+	<span class="tag-date__label"><?php echo esc_html_x( 'Posted on', 'post date', 'theme-scaffold' ); ?></span>
 	<?php echo $date; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </<?php echo esc_html( $args['element'] ); ?>>
