@@ -1,0 +1,26 @@
+//
+// Module: content-excerpt.
+//
+
+.content-excerpt {
+	&__header {
+	}
+
+	&__title {
+	}
+
+	&__meta {
+	}
+
+	&__content {
+	}
+
+	&__footer {
+	}
+
+	// Variations.
+
+	&--search {
+		@extend .content-excerpt;
+	}
+}

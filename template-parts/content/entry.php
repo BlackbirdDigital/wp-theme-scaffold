@@ -2,10 +2,9 @@
 /**
  * Partial: content-entry.
  *
- * This partial is meant for any post type that can by syndicated, meaning
+ * This partial is meant for any post type that can be syndicated, meaning
  * timestamped with author information. Note the hAtom classes entry-title and
- * entry-content are present, and others are added by the theme_scaffold
- * template tags.
+ * entry-content are present, and others are added by the "tag" template-parts.
  *
  * @package theme-scaffold
  */

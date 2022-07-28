@@ -2,6 +2,8 @@
 /**
  * Partial: content-none.
  *
+ * Displayed when there are no posts in a loop.
+ *
  * @package theme-scaffold
  */
 

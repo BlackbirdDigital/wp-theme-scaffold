@@ -2,6 +2,8 @@
 /**
  * Partial: content-excerpt.
  *
+ * Used to display a post excerpt in feeds and archives.
+ *
  * @package theme-scaffold
  */
 

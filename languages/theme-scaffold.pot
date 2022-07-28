@@ -145,28 +145,28 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry.php:37, template-parts/content/page.php:28
+#: template-parts/content/entry.php:36, template-parts/content/page.php:28
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content/none.php:12
+#: template-parts/content/none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content/none.php:42
+#: template-parts/content/none.php:44
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/none.php:35
+#: template-parts/content/none.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content/none.php:22
+#: template-parts/content/none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #. translators: %s: search query.
-#: template-parts/loop/archive-search.php:15
+#: template-parts/loop/archive-search.php:17
 msgid "Search Results for: %s"
 msgstr ""
 

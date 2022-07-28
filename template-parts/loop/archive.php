@@ -2,6 +2,8 @@
 /**
  * Partial: loop-archive.
  *
+ * Output a feed of post excerpts with pagination.
+ *
  * @package theme-scaffold
  */
 

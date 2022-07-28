@@ -2,6 +2,8 @@
 /**
  * Partial: content-excerpt, search variation.
  *
+ * Used to display a standardized post excerpt in search results.
+ *
  * @package theme-scaffold
  */
 

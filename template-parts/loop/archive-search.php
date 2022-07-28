@@ -1,6 +1,8 @@
 <?php
 /**
- * Partial: loop-search.
+ * Partial: loop-archive, search variation.
+ *
+ * Output a feed of results from a search query with pagination.
  *
  * @package theme-scaffold
  */
