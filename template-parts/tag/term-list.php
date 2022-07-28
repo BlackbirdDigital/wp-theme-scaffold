@@ -8,9 +8,10 @@
  */
 
 $defaults = array(
-	'taxonomy' => 'post_tag',
 	'element'  => 'span',
+	'label'    => esc_html_x( 'Posted in', 'post tags label', 'theme-scaffold' ),
 	'linked'   => true,
+	'taxonomy' => 'post_tag',
 );
 
 $args = wp_parse_args( $args, $defaults );
@@ -36,8 +37,8 @@ if ( $term_list ) :
 	?>
 
 <<?php echo esc_html( $args['element'] ); ?> class="tag-term-list" data-taxonomy="<?php echo esc_attr( $args['taxonomy'] ); ?>">
-	<span class="tag-term-list__label"><?php echo esc_html_x( 'Posted in', 'post tags', 'theme-scaffold' ); ?></span>
-	<span class="tag-term-list__list"><?php echo $term_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<span class="tag-term-list__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<span class="tag-term-list__terms"><?php echo $term_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 </<?php echo esc_html( $args['element'] ); ?>>
 
 	<?php

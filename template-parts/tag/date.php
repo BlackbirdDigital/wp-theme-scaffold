@@ -10,6 +10,7 @@
 $defaults = array(
 	'element' => 'span',
 	'format'  => '',
+	'label'   => esc_html_x( 'Posted on', 'post date label', 'theme-scaffold' ),
 	'linked'  => false,
 );
 
@@ -31,6 +32,6 @@ $date        = sprintf(
 ?>
 
 <<?php echo esc_html( $args['element'] ); ?> class="tag-date">
-	<span class="tag-date__label"><?php echo esc_html_x( 'Posted on', 'post date', 'theme-scaffold' ); ?></span>
+	<span class="tag-date__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 	<?php echo $date; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </<?php echo esc_html( $args['element'] ); ?>>

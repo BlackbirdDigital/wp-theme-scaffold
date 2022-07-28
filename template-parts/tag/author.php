@@ -9,8 +9,8 @@
 
 $defaults = array(
 	'element' => 'span',
-	'linked'  => true,
 	'label'   => esc_html_x( 'by', 'post author byline', 'theme-scaffold' ),
+	'linked'  => true,
 );
 
 $byline_format = $args['linked'] ? '<a class="tag-author__author" href="%2$s">%1$s</a>' : '<span class="tag-author__author">%1$s</span>';
