@@ -14,11 +14,15 @@
 	}
 
 	&__nav {
+	}
+
+	&__links {
 		display: flex;
 		gap: theme.get-var( 'sizes', 'gutter' );
 		justify-content: center;
 	}
 
+	// Each item has a `page-numbers` class.
 	.page-numbers {
 		&.current {
 		}
@@ -27,6 +31,10 @@
 		}
 
 		&.next {
+		}
+
+		// Elipsis indicate pages inbetween, not linked.
+		&.dots {
 		}
 	}
 }

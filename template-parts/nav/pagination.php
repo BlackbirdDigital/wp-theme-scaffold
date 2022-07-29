@@ -2,7 +2,7 @@
 /**
  * Partial: nav-pagination.
  *
- * Output numbered pagination links with prev/next for the current query.
+ * Output numbered pagination links with prev/next for the current archive/feed.
  *
  * This template can be used for custom pagination if you pass some options to
  * `paginate_links_args` if you know the current page and max pages:
@@ -33,7 +33,9 @@ $args = wp_parse_args( $args, $defaults );
 	<nav class="nav-pagination__nav">
 		<?php // Using h2 to provide a heading to the nav section. ?>
 		<h2 class="nav-pagination__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
-		<?php echo paginate_links( $args['paginate_links_args'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<div class="nav-pagination__links">
+			<?php echo paginate_links( $args['paginate_links_args'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		</div>
 	</nav>
 </div>
 
