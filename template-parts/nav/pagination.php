@@ -22,7 +22,7 @@
  */
 
 $defaults = array(
-	'label'               => esc_html_x( 'Page navigation', 'pagination label', 'theme-scaffold' ),
+	'label'               => _x( 'Page navigation', 'pagination label', 'theme-scaffold' ),
 	'paginate_links_args' => array(),
 );
 
@@ -32,7 +32,7 @@ $args = wp_parse_args( $args, $defaults );
 <div class="nav-pagination">
 	<nav class="nav-pagination__nav">
 		<?php // Using h2 to provide a heading to the nav section. ?>
-		<h2 class="nav-pagination__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+		<h2 class="nav-pagination__label"><?php echo esc_html( $args['label'] ); ?></h2>
 		<div class="nav-pagination__links">
 			<?php echo paginate_links( $args['paginate_links_args'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</div>

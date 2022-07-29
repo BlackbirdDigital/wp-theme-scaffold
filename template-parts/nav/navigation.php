@@ -16,7 +16,7 @@ $defaults = array(
 	'in_same_term'       => false,
 	'excluded_terms'     => '',
 	'taxonomy'           => 'category',
-	'label' => __( 'Post navigation', 'theme-scaffold' ),
+	'label' => _x( 'Post navigation', 'post prev/next links label', 'theme-scaffold' ),
 	'class'              => 'post-navigation',
 );
 
@@ -26,7 +26,7 @@ $args = wp_parse_args( $args, $defaults );
 <div class="nav-navigation">
 	<nav class="nav-navigation__nav">
 		<?php // Using h2 to provide a heading to the nav section. ?>
-		<h2 class="nav-navigation__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h2>
+		<h2 class="nav-navigation__label"><?php echo esc_html( $args['label'] ); ?></h2>
 		<div class="nav-navigation__links">
 			<?php
 			previous_post_link(

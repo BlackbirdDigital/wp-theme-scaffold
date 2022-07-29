@@ -7,11 +7,11 @@
 .nav-navigation {
 	margin-block: theme.get-var( 'sizes', 'gutter' );
 
-	&__label {
-		@extend .screen-reader-text;
+	&__nav {
 	}
 
-	&__nav {
+	&__label {
+		@extend .screen-reader-text;
 	}
 
 	&__links {

@@ -163,6 +163,7 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: template-parts/nav/navigation.php:19
+msgctxt "post prev/next links label"
 msgid "Post navigation"
 msgstr ""
 
