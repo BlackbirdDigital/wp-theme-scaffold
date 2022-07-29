@@ -1,0 +1,35 @@
+//
+// Module: nav-navigation.
+//
+
+@use '../settings/theme';
+
+.nav-navigation {
+	margin-block: theme.get-var( 'sizes', 'gutter' );
+
+	&__label {
+		@extend .screen-reader-text;
+	}
+
+	&__nav {
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: row;
+		flex-flow: row wrap;
+		gap: theme.get-var( 'sizes', 'gutter' );
+		justify-content: space-between;
+	}
+
+	&__link {
+		flex: 1 1 18.75rem;
+
+		&--prev {
+		}
+
+		&--next {
+			text-align: right;
+		}
+	}
+}

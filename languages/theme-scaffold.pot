@@ -45,14 +45,6 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: single.php:28
-msgid "Previous:"
-msgstr ""
-
-#: single.php:29
-msgid "Next:"
-msgstr ""
-
 #: style.css:2
 msgid "Theme Scaffold"
 msgstr ""
@@ -168,6 +160,10 @@ msgstr ""
 #. translators: %s: search query.
 #: template-parts/loop/archive-search.php:17
 msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/nav/navigation.php:19
+msgid "Post navigation"
 msgstr ""
 
 #: template-parts/nav/pagination.php:25

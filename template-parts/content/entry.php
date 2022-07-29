@@ -47,5 +47,7 @@
 				<?php get_template_part( 'template-parts/tag/term-list', get_post_type() ); ?>
 			</div>
 		<?php endif; ?>
+
+		<?php get_template_part( 'template-parts/nav/navigation', get_post_type() ); ?>
 	</footer>
 </article>
