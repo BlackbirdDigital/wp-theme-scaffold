@@ -20,15 +20,10 @@
 	<?php theme_scaffold_post_thumbnail(); ?>
 
 	<div class="content-page__content content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theme-scaffold' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+		<?php the_content(); ?>
 	</div>
+
+	<footer class="content-page__footer footer">
+		<?php get_template_part( 'template-parts/nav/page-links', get_post_type() ); ?>
+	</footer>
 </article>

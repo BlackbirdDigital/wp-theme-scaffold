@@ -137,10 +137,6 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry.php:36, template-parts/content/page.php:28
-msgid "Pages:"
-msgstr ""
-
 #: template-parts/content/none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -165,6 +161,11 @@ msgstr ""
 #: template-parts/nav/navigation.php:19
 msgctxt "post prev/next links label"
 msgid "Post navigation"
+msgstr ""
+
+#: template-parts/nav/page-links.php:11
+msgctxt "post page links label"
+msgid "Pages:"
 msgstr ""
 
 #: template-parts/nav/pagination.php:25
