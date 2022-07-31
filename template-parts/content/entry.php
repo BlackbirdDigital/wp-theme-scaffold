@@ -22,10 +22,12 @@
 				<?php get_template_part( 'template-parts/tag/date', get_post_type() ); ?>
 				<?php get_template_part( 'template-parts/tag/author', get_post_type() ); ?>
 			</div>
-		<?php endif; ?>
-	</header>
+			<?php
+		endif;
 
-	<?php theme_scaffold_post_thumbnail(); ?>
+		get_template_part( 'template-parts/tag/thumbnail', get_post_type() );
+		?>
+	</header>
 
 	<div class="content-entry__content content entry-content">
 		<?php the_content(); ?>

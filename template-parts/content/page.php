@@ -14,10 +14,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'content-page' ); ?>>
 	<header class="content-page__header header">
-		<?php the_title( '<h1 class="content-page__title title">', '</h1>' ); ?>
-	</header>
+		<?php
+		the_title( '<h1 class="content-page__title title">', '</h1>' );
 
-	<?php theme_scaffold_post_thumbnail(); ?>
+		get_template_part( 'template-parts/tag/thumbnail', get_post_type() );
+		?>
+	</header>
 
 	<div class="content-page__content content">
 		<?php the_content(); ?>
