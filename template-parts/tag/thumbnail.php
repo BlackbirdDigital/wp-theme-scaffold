@@ -9,10 +9,9 @@
 
 $defaults = array(
 	'hide_if_block_present' => false, // If true, hide on single post if core/post-featured-image block is used within the post.
-	'linked'       => false,
-	'post' => null,
-	'size' => 'large',
-	'thumbnail_attrs' => array(),
+	'linked'                => false,
+	'size'                  => 'large',
+	'thumbnail_attrs'       => array(),
 );
 
 $args = wp_parse_args( $args, $defaults );
@@ -20,16 +19,16 @@ $args = wp_parse_args( $args, $defaults );
 if (
 	has_post_thumbnail()
 	&& ! (
-		is_single()
+		is_singular()
 		&& $args['hide_if_block_present']
-		&& has_block( 'core/post-featured-image', $args['post'] )
+		&& has_block( 'core/post-featured-image' )
 	)
 ) :
 
 	$thumbnail_format = $args['linked'] ? '<a class="tag-thumbnail__link" href="%2$s">%1$s</a>' : '%1$s';
 	$thumbnail        = sprintf(
 		$thumbnail_format,
-		get_the_post_thumbnail( $args['post'], $args['size'], $args['thumbnail_attrs'] ),
+		get_the_post_thumbnail( null, $args['size'], $args['thumbnail_attrs'] ),
 		esc_url( get_permalink() )
 	);
 ?>
