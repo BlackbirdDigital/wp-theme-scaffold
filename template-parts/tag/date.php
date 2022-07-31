@@ -8,9 +8,9 @@
  */
 
 $defaults = array(
-	'format'  => '',
-	'label'   => esc_html_x( 'Posted on', 'post date label', 'theme-scaffold' ),
-	'linked'  => false,
+	'format' => '',
+	'label'  => esc_html_x( 'Posted on', 'post date label', 'theme-scaffold' ),
+	'linked' => false,
 );
 
 $args = wp_parse_args( $args, $defaults );

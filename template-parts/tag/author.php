@@ -8,8 +8,8 @@
  */
 
 $defaults = array(
-	'label'   => esc_html_x( 'by', 'post author byline', 'theme-scaffold' ),
-	'linked'  => true,
+	'label'  => esc_html_x( 'by', 'post author byline', 'theme-scaffold' ),
+	'linked' => true,
 );
 
 $args = wp_parse_args( $args, $defaults );
