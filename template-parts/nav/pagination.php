@@ -8,7 +8,7 @@
  * `paginate_links_args` if you know the current page and max pages:
  *
  * get_template_part(
- *     'template-parts/loop/pagination',
+ *     'template-parts/nav/pagination',
  *     'context',
  *     array(
  *         'paginate_links_args' => array(
