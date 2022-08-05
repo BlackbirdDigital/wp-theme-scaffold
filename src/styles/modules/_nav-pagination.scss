@@ -1,0 +1,40 @@
+//
+// Module: nav-pagination.
+//
+
+@use '../settings/theme';
+@use '../tools/layout';
+@use '../utilities/accessibility';
+
+.nav-pagination {
+	margin-block: theme.get-var( 'sizes', 'gutter' );
+
+	&__nav {
+	}
+
+	&__label {
+		@extend .screen-reader-text;
+	}
+
+	&__links {
+		display: flex;
+		gap: theme.get-var( 'sizes', 'gutter' );
+		justify-content: center;
+	}
+
+	// Each item has a `page-numbers` class.
+	.page-numbers {
+		&.current {
+		}
+
+		&.prev {
+		}
+
+		&.next {
+		}
+
+		// Elipsis indicate pages inbetween, not linked.
+		&.dots {
+		}
+	}
+}

@@ -2,6 +2,8 @@
 /**
  * Partial: loop-archive.
  *
+ * Output a feed of post excerpts with pagination.
+ *
  * @package theme-scaffold
  */
 
@@ -24,8 +26,10 @@
 			get_template_part( 'template-parts/content/excerpt', get_post_type() );
 
 		endwhile;
-
-		the_posts_navigation();
 		?>
 	</div>
+
+	<footer class="loop-archive__footer footer">
+		<?php get_template_part( 'template-parts/nav/pagination', get_post_type() ); ?>
+	</footer>
 </section>

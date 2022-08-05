@@ -2,10 +2,9 @@
 /**
  * Partial: content-entry.
  *
- * This partial is meant for any post type that can by syndicated, meaning
+ * This partial is meant for any post type that can be syndicated, meaning
  * timestamped with author information. Note the hAtom classes entry-title and
- * entry-content are present, and others are added by the theme_scaffold
- * template tags.
+ * entry-content are present, and others are added by the "tag" template-parts.
  *
  * @package theme-scaffold
  */
@@ -20,30 +19,30 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="content-entry__meta meta">
-				<?php
-				theme_scaffold_posted_on();
-				theme_scaffold_posted_by();
-				?>
+				<?php get_template_part( 'template-parts/tag/date', get_post_type() ); ?>
+				<?php get_template_part( 'template-parts/tag/author', get_post_type() ); ?>
 			</div>
-		<?php endif; ?>
+			<?php
+		endif;
+
+		get_template_part( 'template-parts/tag/thumbnail', get_post_type() );
+		?>
 	</header>
 
-	<?php theme_scaffold_post_thumbnail(); ?>
-
 	<div class="content-entry__content content entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theme-scaffold' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+		<?php the_content(); ?>
 	</div>
 
 	<footer class="content-entry__footer footer">
-		<?php theme_scaffold_entry_footer(); ?>
+		<?php get_template_part( 'template-parts/nav/page-links', get_post_type() ); ?>
+
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="content-entry__meta meta">
+				<?php get_template_part( 'template-parts/tag/term-list', get_post_type(), array( 'taxonomy' => 'category' ) ); ?>
+				<?php get_template_part( 'template-parts/tag/term-list', get_post_type() ); ?>
+			</div>
+		<?php endif; ?>
+
+		<?php get_template_part( 'template-parts/nav/navigation', get_post_type() ); ?>
 	</footer>
 </article>

@@ -1,15 +1,11 @@
 //
-// Module: content-entry.
+// Module: loop-archive.
 //
 
 @use '../tools/context';
 
 @include context.is-front {
 	.loop-archive {
-		&--search {
-			@extend .loop-archive;
-		}
-
 		&__header {
 		}
 
@@ -17,6 +13,15 @@
 		}
 
 		&__content {
+		}
+
+		&__footer {
+		}
+
+		// Variations.
+
+		&--search {
+			@extend .loop-archive;
 		}
 	}
 }

@@ -87,7 +87,8 @@ $color: theme.get-var( 'theme-colors', 'foreground' );
 		}
 
 		// Expanded hover state.
-		&:hover {
+		&:hover,
+		&:focus {
 		}
 	}
 }

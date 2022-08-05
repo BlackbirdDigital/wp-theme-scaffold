@@ -1,0 +1,31 @@
+//
+// Module: nav-page-links.
+//
+
+@use '../settings/theme';
+
+.nav-page-links {
+	margin-block: theme.get-var( 'sizes', 'gutter' );
+
+	&__nav {
+		display: flex;
+		gap: 0.5rem;
+		align-items: baseline;
+		justify-content: center;
+	}
+
+	&__label {
+		font-size: 1rem;
+		font-weight: normal;
+		margin: 0;
+	}
+
+	&__links {
+	}
+
+	// Each item has a `post-page-numbers` class.
+	.post-page-numbers {
+		&.current {
+		}
+	}
+}

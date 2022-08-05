@@ -1,0 +1,10 @@
+@use '../utilities/accessibility';
+
+.tag-author {
+	&__label {
+		//@extend .screen-reader-text;
+	}
+
+	&__author {
+	}
+}

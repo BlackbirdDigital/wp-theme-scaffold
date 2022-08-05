@@ -1,6 +1,8 @@
 <?php
 /**
- * Partial: loop-search.
+ * Partial: loop-archive, search variation.
+ *
+ * Output a feed of results from a search query with pagination.
  *
  * @package theme-scaffold
  */
@@ -26,8 +28,10 @@
 			get_template_part( 'template-parts/content/excerpt', 'search' );
 
 		endwhile;
-
-		the_posts_navigation();
 		?>
 	</div>
+
+	<footer class="loop-archive__footer footer">
+		<?php get_template_part( 'template-parts/nav/pagination', 'search' ); ?>
+	</footer>
 </section>
