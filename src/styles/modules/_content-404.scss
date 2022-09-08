@@ -1,0 +1,18 @@
+//
+// Module: content-404.
+//
+
+@use '../tools/context';
+
+@include context.is-front {
+	.content-404 {
+		&__header {
+		}
+
+		&__title {
+		}
+
+		&__content {
+		}
+	}
+}
