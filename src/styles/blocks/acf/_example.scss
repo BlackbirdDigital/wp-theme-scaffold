@@ -1,8 +1,11 @@
-.acf-example-block {
-    &__text {
-        @extend .has-h-3-font-size;
-    }
-    &__content {
+//
+// Block: acf/example.
+//
 
-    }
+.acf-example-block {
+	&__text {
+		@extend .has-h-3-font-size;
+	}
+	&__content {
+	}
 }
