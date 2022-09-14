@@ -42,18 +42,22 @@ export const toggleExpanded = ( target, { clickOutsideClose = true } ) => {
 
 	// Toggle the aria-expanded value each time the button or outside the target is clicked.
 	document.addEventListener( 'click', ( event ) => {
-		if (
-			! clickOutsideClose &&
-			event.target.getAttribute( 'aria-controls' ) !== targetId
-		) {
+		// Whether a toggle button was clicked.
+		let buttonClick = false;
+		for ( let i = 0; i < buttons.length; i++ ) {
+			if ( buttons.item( i ).contains( event.target ) ) {
+				buttonClick = true;
+				break;
+			}
+		}
+
+		// If NOT allowing for click outside to close the target, don't continue if the click was outside the target.
+		if ( ! clickOutsideClose && ! buttonClick ) {
 			return;
 		}
 
 		// If click is inside the menu and not a toggle button, don't continue.
-		if (
-			target.contains( event.target ) &&
-			event.target.getAttribute( 'aria-controls' ) !== targetId
-		) {
+		if ( target.contains( event.target ) && ! buttonClick ) {
 			return;
 		}
 
@@ -61,10 +65,7 @@ export const toggleExpanded = ( target, { clickOutsideClose = true } ) => {
 		const expanded = target.getAttribute( 'aria-expanded' ) === 'true';
 
 		// If not expanded, only the button should expand the target.
-		if (
-			! expanded &&
-			event.target.getAttribute( 'aria-controls' ) !== targetId
-		) {
+		if ( ! expanded && ! buttonClick ) {
 			return;
 		}
 
