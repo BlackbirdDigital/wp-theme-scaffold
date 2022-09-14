@@ -15,4 +15,4 @@ import { applyToggleExpanded } from './theme/toggle-expanded';
  * This can be used for any other toggle button that expands any element, for
  * example, an FAQ section.
  */
-applyToggleExpanded( '.menu-toggle' );
+applyToggleExpanded( 'main-navigation' );

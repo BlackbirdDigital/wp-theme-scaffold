@@ -2,6 +2,8 @@
  * Toggle area-expanded attributes via aria-controls.
  */
 
+const controlled = [];
+
 /**
  * Link button with controlled element via aria-controls attribute.
  *
@@ -11,35 +13,51 @@
  * @param {object} options Options for the toggle functionality.
  * @param {boolean} options.clickOutsideClose Whether to close the target element when clicking outside. Default true.
  */
-export function toggleExpanded( button, { clickOutsideClose = true } ) {
-	if ( ! button.hasAttribute( 'aria-controls' ) ) {
+export const toggleExpanded = ( target, { clickOutsideClose = true } ) => {
+	const targetId = target.id;
+	const buttons = document.querySelectorAll(
+		'[aria-controls="' + targetId + '"]'
+	);
+
+	if ( buttons.lenth === 0 ) {
 		console.warn(
-			'Element missing aria-controls attribute for toggleExpanded:',
-			button
+			'No buttons found with aria-controls="' + targetId + '".'
 		);
 		return;
 	}
 
-	const targetId = button.getAttribute( 'aria-controls' );
-	const target = document.getElementById( targetId );
+	// Only set event listeners once per target.
+	if ( controlled.includes( target ) ) {
+		return;
+	}
+
+	controlled.push( target );
 
 	const startExpanded =
 		target.getAttribute( 'aria-expanded' ) === 'true' ? 'true' : 'false';
 	target.setAttribute( 'aria-expanded', startExpanded );
-	button.setAttribute( 'aria-expanded', startExpanded );
+	buttons.forEach( ( button ) =>
+		button.setAttribute( 'aria-expanded', startExpanded )
+	);
 
 	// Toggle the aria-expanded value each time the button or outside the target is clicked.
-	document.addEventListener( 'click', function ( event ) {
-		console.log( button.contains( event.target ) );
-		if ( ! clickOutsideClose && ! button.contains( event.target ) ) {
+	document.addEventListener( 'click', ( event ) => {
+		// Whether a toggle button was clicked.
+		let buttonClick = false;
+		for ( let i = 0; i < buttons.length; i++ ) {
+			if ( buttons.item( i ).contains( event.target ) ) {
+				buttonClick = true;
+				break;
+			}
+		}
+
+		// If NOT allowing for click outside to close the target, don't continue if the click was outside the target.
+		if ( ! clickOutsideClose && ! buttonClick ) {
 			return;
 		}
 
-		// Check if click is inside the menu.
-		if (
-			target.contains( event.target ) &&
-			! button.contains( event.target )
-		) {
+		// If click is inside the menu and not a toggle button, don't continue.
+		if ( target.contains( event.target ) && ! buttonClick ) {
 			return;
 		}
 
@@ -47,7 +65,7 @@ export function toggleExpanded( button, { clickOutsideClose = true } ) {
 		const expanded = target.getAttribute( 'aria-expanded' ) === 'true';
 
 		// If not expanded, only the button should expand the target.
-		if ( ! expanded && ! button.contains( event.target ) ) {
+		if ( ! expanded && ! buttonClick ) {
 			return;
 		}
 
@@ -56,22 +74,24 @@ export function toggleExpanded( button, { clickOutsideClose = true } ) {
 				? 'false'
 				: 'true';
 		target.setAttribute( 'aria-expanded', newExpanded );
-		button.setAttribute( 'aria-expanded', newExpanded );
+		buttons.forEach( ( button ) =>
+			button.setAttribute( 'aria-expanded', newExpanded )
+		);
 	} );
-}
+};
 
 /**
  * Apply toggleExpanded to all queried elements.
  *
- * @param {string} buttonsQuery A query selector for all buttons to apply the expanded toggle functionality to.
+ * @param {string} targetID The id attribute for all targets to apply the expanded toggle functionality to.
  * @param {object} options Options for the toggle functionality. @see {@link toggleExpanded} for available options.
  */
-export function applyToggleExpanded(
-	buttonsQuery = '.toggle-expanded',
+export const applyToggleExpanded = (
+	targetID = '#main-navigation',
 	options = {}
-) {
-	const buttons = document.querySelectorAll( buttonsQuery );
-	buttons.forEach( ( button ) => toggleExpanded( button, options ) );
-}
+) => {
+	const target = document.getElementById( targetID );
+	toggleExpanded( target, options );
+};
 
 export default applyToggleExpanded;
