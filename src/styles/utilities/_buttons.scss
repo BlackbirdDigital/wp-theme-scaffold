@@ -1,0 +1,257 @@
+//
+// Utility: buttons.
+//
+// Handles button styles that can be extended or used via mixin.
+//
+
+@use "../settings/theme";
+@use "../tools/convert" as *;
+
+// Minimal base button styles that standardize layout and transitions.
+@mixin button-base {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	transition: all 0.2s;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: theme.get-var("font-families", "sans-serif");
+	font-weight: normal;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	// Shorten transition when pressing button.
+	&:active {
+		transition: all 0.05s;
+
+		&::after {
+			transition: all 0.05s;
+		}
+
+		svg {
+			transition: all 0.05s;
+		}
+	}
+
+	&::after {
+		transition: all 0.2s;
+	}
+
+	svg {
+		transition: all 0.2s;
+		size: px2em(24);
+		fill: currentColor;
+	}
+}
+
+// Add an arrow to any button.
+@mixin has-arrow {
+	text-decoration: none !important;
+
+	&::after {
+		content: "❯";
+		display: block;
+		size: 1em;
+	}
+
+	&:hover,
+	&:focus {
+		&::after {
+			transform: translateX(0.1em);
+		}
+	}
+
+	&:active {
+		&::after {
+			transform: translateX(0);
+		}
+	}
+}
+
+// Button with filled background.
+@mixin button-filled {
+	--has-background-color: #{theme.get-var("theme-colors", "primary")};
+	--has-color: #{theme.get-var("theme-colors", "background")};
+	@include button-base;
+	border: 2px solid var(--has-background-color);
+	border-radius: 0.25em;
+	background: var(--has-background-color);
+	color: var(--has-color);
+	line-height: 1;
+	padding: 0.5em 1em 0.4em;
+	font-weight: normal;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 0 0.15rem var(--has-background-color);
+		background: var(--has-background-color);
+		color: var(--has-color);
+		text-decoration: none;
+	}
+
+	&:active {
+		box-shadow: none;
+		background: var(--has-background-color);
+		color: var(--has-color);
+		text-decoration: none;
+	}
+}
+%button-filled {
+	@include button-filled;
+}
+
+// Button with outline.
+@mixin button-outline {
+	--has-background-color: #{theme.get-var("theme-colors", "primary")};
+	--has-color: #{theme.get-var("theme-colors", "primary")};
+	@include button-base;
+	border: 2px solid var(--has-background-color);
+	border-radius: 0.25em;
+	background: transparent;
+	color: var(--has-color);
+	line-height: 1;
+	padding: 0.5em 1em 0.4em;
+	font-weight: normal;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 0 0.15rem var(--has-background-color);
+		background: transparent;
+		color: var(--has-color);
+		text-decoration: none;
+	}
+
+	&:active {
+		box-shadow: none;
+		background-color: var(--has-background-color);
+		color: theme.get-var("theme-colors", "background");
+		text-decoration: none;
+	}
+}
+%button-outline {
+	@include button-outline;
+}
+
+// Link-style "button".
+@mixin button-link {
+	--has-background-color: #{theme.get-var("theme-colors", "accent")}; // arrow
+	--has-color: #{theme.get-var("theme-colors", "primary")};
+	@include button-base;
+	border: none;
+	background: transparent !important;
+	color: var(--has-color);
+	line-height: 1;
+	padding: 0;
+	text-decoration: underline;
+
+	// You may want to default to a different color when the background is dark.
+	/*
+	.has-background:not(.has-background-background-color) & {
+		--has-color: #{theme.get-var('theme-colors', 'background')};
+	}
+	*/
+
+	&:hover,
+	&:focus {
+		color: var(--has-color);
+		background: transparent;
+		box-shadow: none;
+		text-decoration: underline;
+	}
+
+	&:active {
+		color: var(--has-color);
+		background: transparent;
+		box-shadow: none;
+		text-decoration: underline;
+	}
+}
+%button-link {
+	@include button-link;
+}
+
+// Link button with arrow.
+@mixin button-link-arrow {
+	@include button-link;
+	text-decoration: none;
+
+	// Arrow uses background color.
+	@include has-arrow;
+	&::after {
+		color: var(--has-background-color);
+	}
+}
+%button-link-arrow {
+	@include button-link-arrow;
+}
+
+// Icon-only button.
+@mixin button-icon {
+	@include button-base;
+	border: none;
+	background: transparent;
+	border-radius: 0;
+	color: inherit;
+	line-height: 1;
+	padding: 0.5em;
+
+	&:hover,
+	&:focus {
+		background: transparent;
+		box-shadow: none;
+
+		svg {
+			transform: scale(1.05);
+		}
+	}
+
+	&:active {
+		background: transparent;
+		box-shadow: none;
+
+		svg {
+			transform: scale(0.98);
+		}
+	}
+}
+%button-icon {
+	@include button-icon;
+}
+
+// Icon button with filled background.
+@mixin button-icon-filled {
+	--has-background-color: #{theme.get-var("theme-colors", "secondary")};
+	--has-color: #{theme.get-var("theme-colors", "background")};
+	@include button-icon;
+	background: var(--has-background-color);
+	border-radius: theme.get-var("sizes", "border-radius-small");
+	color: var(--has-color);
+	padding: 0.5em;
+
+	&:hover,
+	&:focus {
+		background: var(--has-background-color);
+		box-shadow: 0 0 0 0.15rem var(--has-background-color);
+		color: var(--has-color);
+
+		svg {
+			transform: scale(1);
+		}
+	}
+
+	&:active {
+		background: var(--has-background-color);
+		box-shadow: none;
+		color: var(--has-color);
+
+		svg {
+			transform: scale(1);
+		}
+	}
+}
+%button-icon-filled {
+	@include button-icon-filled;
+}
