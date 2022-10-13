@@ -295,5 +295,14 @@
 				}
 			}
 		}
+	},
+	"styles": {
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--custom--theme-colors--link)"
+				}
+			}
+		}
 	}
 }
