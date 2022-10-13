@@ -11,6 +11,7 @@ namespace ThemeScaffold\BlockStyles;
  * Register block styles.
  */
 function register() {
+	/*
 	// Lead Paragraph: paragraph with large, bold text.
 	register_block_style(
 		'core/paragraph',
@@ -20,13 +21,14 @@ function register() {
 			'style' => 'theme-scaffold-style',
 		)
 	);
+	*/
 
-	// Plain Button: button with only text, no background.
+	// Link Button: button with only text, no background.
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'plain',
-			'label' => 'Plain',
+			'name'  => 'link',
+			'label' => 'Link',
 			'style' => 'theme-scaffold-style',
 		)
 	);

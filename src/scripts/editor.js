@@ -32,11 +32,11 @@ registerBlockCollection( 'acf', {
  * Client-side block style registrations
  */
 ( () => {
-	// Button "plain"
+	// Button "link"
 	/*
 	registerBlockStyle( 'core/button', {
-		name: 'plain',
-		label: 'Plain',
+		name: 'link',
+		label: 'Link',
 		style: 'theme-style',
 	} );
 	*/
@@ -46,5 +46,5 @@ registerBlockCollection( 'acf', {
  * Client-side block style unregistrations must happen on domReady
  */
 domReady( () => {
-	//unregisterBlockStyle( 'core/button', 'fill' );
+	//unregisterBlockStyle( 'core/button', 'outline' );
 } );
