@@ -24,12 +24,19 @@ Senior Developer: Phil Hoyt    @philhoyt
 Senior Designer:  Jack Watson  @jackwatson05
 
 
+/* TOOLS */
+
+This site was built with Blackbird Digital's WordPress Theme Scaffold:
+https://github.com/BlackbirdDigital/wp-theme-scaffold
+
+
 /* ABOUT */
 
 Blackbird Digital is a small, versatile team of creatives making custom websites
 and apps for our clients with WordPress and React Native.
 
-Always chasing the cutting-edge, we are constantly honing our craft and contributing back to the open-source projects that enable our success.
+Always chasing the cutting-edge, we are constantly honing our craft and
+contributing back to the open-source projects that enable our success.
 
 
 /* humanstxt.org */
