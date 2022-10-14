@@ -4,12 +4,12 @@
  *
  * Output the post date.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
 	'format' => '',
-	'label'  => esc_html_x( 'Posted on', 'post date label', 'theme-scaffold' ),
+	'label'  => esc_html_x( 'Posted on', 'post date label', 'themescaffold' ),
 	'linked' => false,
 );
 

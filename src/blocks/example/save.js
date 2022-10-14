@@ -3,7 +3,7 @@
  */
 
 // WordPress
-import { useBlockProps , useInnerBlocksProps } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 export default function save() {
 	// If a dynamic block, return null or <InnerBlocks.Content />
@@ -13,7 +13,7 @@ export default function save() {
 	/*
 	const blockProps = useBlockProps.save();
 	const innerBlocksProps = useInnerBlocksProps.save( {
-		className: 'wp-block-theme-scaffold-example__content',
+		className: 'wp-block-themescaffold-example__content',
 	} );
 	return (
 		<div { ...blockProps }>

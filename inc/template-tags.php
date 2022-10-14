@@ -4,7 +4,7 @@
  *
  * Note: functions defined here are not namespaced!
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 if ( ! function_exists( 'wp_body_open' ) ) :

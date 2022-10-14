@@ -4,7 +4,7 @@
  *
  * Used to display a standardized post excerpt in search results.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(

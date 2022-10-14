@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Hooks;

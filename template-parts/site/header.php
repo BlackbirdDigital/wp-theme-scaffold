@@ -2,7 +2,7 @@
 /**
  * Partial: site-header.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 use function ThemeScaffold\Utilities\get_component;

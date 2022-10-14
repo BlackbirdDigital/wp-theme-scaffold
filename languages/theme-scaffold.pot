@@ -1,8 +1,8 @@
-# Copyright (C) 2022 Theme Scaffold
-# This file is distributed under the same license as the Theme Scaffold package.
+# Copyright (C) 2022 WP Theme Scaffold
+# This file is distributed under the same license as the WP Theme Scaffold package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Theme Scaffold\n"
+"Project-Id-Version: WP Theme Scaffold\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,11 +35,11 @@ msgid "Skip to content"
 msgstr ""
 
 #: style.css:2
-msgid "Theme Scaffold"
+msgid "WP Theme Scaffold"
 msgstr ""
 
 #: style.css:3
-msgid "https://github.com/BlackbirdDigital/wp-theme-scaffold"
+msgid "https://github.com/BlackbirdDigital/wp-themescaffold"
 msgstr ""
 
 #: style.css:4

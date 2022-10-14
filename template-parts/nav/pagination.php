@@ -18,11 +18,11 @@
  *     )
  * );
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
-	'label'               => _x( 'Page navigation', 'pagination label', 'theme-scaffold' ),
+	'label'               => _x( 'Page navigation', 'pagination label', 'themescaffold' ),
 	'paginate_links_args' => array(),
 );
 

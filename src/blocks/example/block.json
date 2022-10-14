@@ -1,14 +1,14 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "theme-scaffold/example",
+	"name": "themescaffold/example",
 	"version": "1.0.0",
 	"title": "Example",
-	"description": "Theme Scaffold example block.",
+	"description": "WP Theme Scaffold example block.",
 	"category": "theme",
 	"icon": "info",
 	"keywords": [ "example" ],
-	"textdomain": "theme-scaffold",
+	"textdomain": "themescaffold",
 	"attributes": {
 		"text": {
 			"type": "string",
@@ -22,5 +22,4 @@
 	"editorStyle": "file:./editor.css",
 	"style": "file:./style.css",
 	"viewScript": "file:./view.js"
-
 }

@@ -17,14 +17,14 @@ import { info } from '@wordpress/icons';
 /**
  * Theme block collections.
  */
-// Native blocks with the "theme-scaffold" namespace.
-registerBlockCollection( 'theme-scaffold', {
-	title: __( 'Theme Scaffold', 'theme-scaffold' ),
+// Native blocks with the "themescaffold" namespace.
+registerBlockCollection( 'themescaffold', {
+	title: __( 'WP Theme Scaffold', 'themescaffold' ),
 	icon: info, // Replace with custom SVG icon markup.
 } );
 // ACF blocks with the "acf" namespace.
 registerBlockCollection( 'acf', {
-	title: __( 'Theme Scaffold ACF', 'theme-scaffold' ),
+	title: __( 'WP Theme Scaffold ACF', 'themescaffold' ),
 	icon: info, // Replace with custom SVG icon markup.
 } );
 

@@ -4,7 +4,7 @@
  *
  * Output a feed of results from a search query with pagination.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<h1 class="loop-archive__title title">
 			<?php
 			/* translators: %s: search query. */
-			printf( esc_html__( 'Search Results for: %s', 'theme-scaffold' ), '<span>' . get_search_query() . '</span>' );
+			printf( esc_html__( 'Search Results for: %s', 'themescaffold' ), '<span>' . get_search_query() . '</span>' );
 			?>
 		</h1>
 	</header>
