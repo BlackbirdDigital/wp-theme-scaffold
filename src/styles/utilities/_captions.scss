@@ -1,15 +1,15 @@
 //
-// Utilities: captions.
+// Utility: captions.
 //
 
-@use '../tools/layout';
+@use "../tools/layout";
 
 // RECOMMENDED STYLE
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 
-	img[class*='wp-image-'] {
+	img[class*="wp-image-"] {
 		@include layout.center-block;
 	}
 

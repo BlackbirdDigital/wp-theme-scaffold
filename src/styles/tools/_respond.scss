@@ -1,13 +1,13 @@
 //
-// Tools: respond.
+// Tool: respond.
 //
 // Media query tools.
 //
 
-@use 'sass:map';
-@use 'sass:math';
-@use '../settings/theme';
-@use '../tools/convert';
+@use "sass:map";
+@use "sass:math";
+@use "../settings/theme";
+@use "../tools/convert";
 
 //
 // This mixin allows you to use one of the standard breakpoints set in the
@@ -19,14 +19,14 @@
 //
 // Though at that point you might as well just use a standard @media rule.
 //
-@mixin to( $breakpoint, $direction: 'min-width' ) {
-	$breakpoints: theme.get-map( 'breakpoints' );
-	@if map.has-key( $breakpoints, $breakpoint ) {
-		$width: theme.get( 'breakpoints', $breakpoint );
+@mixin to($breakpoint, $direction: "min-width") {
+	$breakpoints: theme.get-map("breakpoints");
+	@if map.has-key($breakpoints, $breakpoint) {
+		$width: theme.get("breakpoints", $breakpoint);
 		// If max-width, treat like <, not <=.
 		// NOTE: Once Media Queries Level 4 Range Syntax is well supported this will be much easier: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4
-		@if $direction == 'max-width' {
-			@if math.unit( $width ) == 'px' {
+		@if $direction == "max-width" {
+			@if math.unit($width) == "px" {
 				// For px, remove 1 px.
 				$width: $width - 1;
 			} @else {

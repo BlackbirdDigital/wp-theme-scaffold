@@ -1,29 +1,29 @@
 //
-// Utilities: alignments.
+// Utility: alignments.
 //
 
-@use '../settings/theme';
-@use '../tools/layout';
+@use "../settings/theme";
+@use "../tools/layout";
 
 @include layout.alignments;
 
 // RECOMMENDED STYLE
 .alignleft {
 	float: left;
-	margin-right: theme.get-var( 'sizes', 'gutter' );
-	margin-bottom: theme.get-var( 'sizes', 'gutter' );
+	margin-right: theme.get-var("sizes", "gutter");
+	margin-bottom: theme.get-var("sizes", "gutter");
 }
 
 // RECOMMENDED STYLE
 .alignright {
 	float: right;
-	margin-left: theme.get-var( 'sizes', 'gutter' );
-	margin-bottom: theme.get-var( 'sizes', 'gutter' );
+	margin-left: theme.get-var("sizes", "gutter");
+	margin-bottom: theme.get-var("sizes", "gutter");
 }
 
 // RECOMMENDED STYLE
 .aligncenter {
 	clear: both;
 	@include layout.center-block;
-	margin-bottom: theme.get-var( 'sizes', 'gutter' );
+	margin-bottom: theme.get-var("sizes", "gutter");
 }
