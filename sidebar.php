@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 if ( ! is_active_sidebar( 'footer' ) ) {

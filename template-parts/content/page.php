@@ -7,7 +7,7 @@
  * information and thus not compatible with an RSS-type feed. Note that hAtom
  * classes (entry-title, entry-content, etc.) are absent.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>

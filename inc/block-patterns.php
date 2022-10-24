@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\BlockPatterns;
@@ -15,10 +15,10 @@ namespace ThemeScaffold\BlockPatterns;
 function register() {
 	/*
 	register_block_pattern(
-		'theme-scaffold/example-pattern',
+		'themescaffold/example-pattern',
 		array(
-			'title'       => __( 'Example Pattern', 'theme-scaffold') ,
-			'description' => __( 'An example block pattern.', 'theme-scaffold' ),
+			'title'       => __( 'Example Pattern', 'themescaffold') ,
+			'description' => __( 'An example block pattern.', 'themescaffold' ),
 			'content'     => '<!-- wp:paragraph --><p>Hello world.</p><!-- /wp:paragraph -->',
 		)
 	);

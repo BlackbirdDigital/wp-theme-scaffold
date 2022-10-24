@@ -13,7 +13,7 @@
  * - $content    InnerBlock content (from `save()` in index.js)
  * - $metadata   Block registration metadata from block.json
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 /**
@@ -30,7 +30,7 @@ $atts = get_block_wrapper_attributes();
 
 <div <?php echo $atts; ?>>
 	<p>Hello Blocks</p>
-	<div class="wp-block-theme-scaffold-example__content">
+	<div class="wp-block-themescaffold-example__content">
 		<?php
 		/**
 		 * Output block content, which is the markup provided by `save()` in JS.

@@ -7,17 +7,17 @@
  *
  * @link https://developer.wordpress.org/reference/functions/the_posts_navigation/
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
-	'prev_text'          => 'Previous: %title',
-	'next_text'          => 'Next: %title',
-	'in_same_term'       => false,
-	'excluded_terms'     => '',
-	'taxonomy'           => 'category',
-	'label' => _x( 'Post navigation', 'post prev/next links label', 'theme-scaffold' ),
-	'class'              => 'post-navigation',
+	'prev_text'      => 'Previous: %title',
+	'next_text'      => 'Next: %title',
+	'in_same_term'   => false,
+	'excluded_terms' => '',
+	'taxonomy'       => 'category',
+	'label'          => _x( 'Post navigation', 'post prev/next links label', 'themescaffold' ),
+	'class'          => 'post-navigation',
 );
 
 $args = wp_parse_args( $args, $defaults );

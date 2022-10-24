@@ -6,7 +6,7 @@
  * timestamped with author information. Note the hAtom classes entry-title and
  * entry-content are present, and others are added by the "tag" template-parts.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>

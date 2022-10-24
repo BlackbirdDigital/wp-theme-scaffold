@@ -4,11 +4,11 @@
  *
  * Output page number links for the current post if it includes page breaks.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
-	'label' => _x( 'Pages:', 'post page links label', 'theme-scaffold' ),
+	'label'              => _x( 'Pages:', 'post page links label', 'themescaffold' ),
 	'wp_link_pages_args' => array(
 		'before' => '',
 		'after'  => '',

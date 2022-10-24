@@ -2,7 +2,7 @@
 /**
  * Partial: site-branding, footer variation.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>

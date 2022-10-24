@@ -2,7 +2,7 @@
 /**
  * Component: menu-toggle.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 use function ThemeScaffold\Utilities\array_subset;
@@ -13,7 +13,7 @@ $defaults = array(
 	'id'            => null,
 	'aria-controls' => '',
 	'aria-expanded' => false,
-	'aria-label'    => esc_attr__( 'Toggle Menu', 'theme-scaffold' ),
+	'aria-label'    => esc_attr__( 'Toggle Menu', 'themescaffold' ),
 );
 
 $args = wp_parse_args( $args, $defaults );

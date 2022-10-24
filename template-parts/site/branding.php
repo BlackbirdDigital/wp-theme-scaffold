@@ -2,7 +2,7 @@
 /**
  * Partial: site-branding.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>

@@ -1,0 +1,42 @@
+ _____ _            _    _     _         _   ____  _       _ _        _
+|  _  \ | __ _  ___| | _| |__ (_)_ __ __| | |  _ \(_) __ _(_) |_ __ _| |
+|  _  / |/ _` |/ __| |/ / '_ \| | '__/ _` | | | \ \ |/ _` | | __/ _` | |
+| |_) \ | (_| | (__|   <| |_) | | | | (_| | | |_/ / | (_| | | || (_| | |
+|_____/_|\__,_|\___|_|\_\_.__/|_|_|  \__,_| |____/|_|\__, |_|\__\__,_|_|
+                                                     |___/
+
+
+/* TEAM */
+
+Company:   Blackbird Digital
+Website:   https://blackbird.digital/
+Email:     info@blackbird.digital
+GitHub:    https://github.com/BlackbirdDigital
+Twitter:   @Blackbird_DGTL @InTheLoop_WP
+Facebook:  https://www.facebook.com/blackbirdinteractive
+Instagram: https://www.instagram.com/blackbird.digital/
+Podcast:   https://anchor.fm/blackbird-digital
+Location:  Cleveland, OH
+
+Owner/CEO:        Pat Walsh    @patwalsh
+Lead Developer:   Cory Hughart @cr0ybot
+Senior Developer: Phil Hoyt    @philhoyt
+Senior Designer:  Jack Watson  @jackwatson05
+
+
+/* TOOLS */
+
+This site was built with Blackbird Digital's WordPress Theme Scaffold:
+https://github.com/BlackbirdDigital/wp-theme-scaffold
+
+
+/* ABOUT */
+
+Blackbird Digital is a small, versatile team of creatives making custom websites
+and apps for our clients with WordPress and React Native.
+
+Always chasing the cutting-edge, we are constantly honing our craft and
+contributing back to the open-source projects that enable our success.
+
+
+/* humanstxt.org */

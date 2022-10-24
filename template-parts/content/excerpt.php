@@ -4,7 +4,7 @@
  *
  * Used to display a post excerpt in feeds and archives.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
@@ -16,7 +16,16 @@ $args = wp_parse_args( $args, $defaults );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'content-excerpt' ); ?>>
 	<header class="content-excerpt__header">
-		<?php get_template_part( 'template-parts/tag/thumbnail', get_post_type(), array( 'size'=> 'medium', 'linked' => true ) ); ?>
+		<?php
+		get_template_part(
+			'template-parts/tag/thumbnail',
+			get_post_type(),
+			array(
+				'size'   => 'medium',
+				'linked' => true,
+			)
+		);
+		?>
 
 		<?php
 		the_title(

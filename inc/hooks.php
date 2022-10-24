@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Hooks;
@@ -59,3 +59,26 @@ function pingback_header() {
 	}
 }
 add_action( 'wp_head', __NAMESPACE__ . '\\pingback_header' );
+
+/**
+ * Render humans.txt at /humans.txt URL.
+ */
+function render_humans_txt() {
+	if ( $_SERVER['REQUEST_URI'] === '/humans.txt' ) {
+		header( 'Content-Type: text/plain; charset=utf-8' );
+		include get_template_directory() . '/humans.txt';
+		exit();
+	}
+}
+add_action( 'parse_request', __NAMESPACE__ . '\\render_humans_txt' );
+
+/**
+ * Add humans.txt link to head.
+ */
+function link_humans_txt() {
+	printf(
+		'<link rel="author" type="text/plain" href="%s" />',
+		esc_url( home_url( 'humans.txt' ) )
+	);
+}
+add_action( 'wp_head', __NAMESPACE__ . '\\link_humans_txt', 1 );
