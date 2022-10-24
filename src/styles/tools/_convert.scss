@@ -1,14 +1,14 @@
 //
-// Tools: convert.
+// Tool: convert.
 //
 // Value conversion tools.
 //
 
-@use 'sass:list';
-@use 'sass:map';
-@use 'sass:math';
-@use 'sass:meta';
-@use 'sass:string';
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 
 $base-font-size: 16; // px
 
@@ -17,16 +17,16 @@ $base-font-size: 16; // px
 //
 // Accepts both unitless and px unit arguments.
 //
-@function px2em( $pixels, $context: $base-font-size ) {
-	@if ( math.is-unitless( $pixels ) ) {
+@function px2em($pixels, $context: $base-font-size) {
+	@if (math.is-unitless($pixels)) {
 		$pixels: $pixels * 1px;
 	}
 
-	@if ( math.is-unitless( $context ) ) {
+	@if (math.is-unitless($context)) {
 		$context: $context * 1px;
 	}
 
-	@return $pixels / $context * 1em;
+	@return math.div($pixels, $context) * 1em;
 }
 
 //
@@ -34,14 +34,21 @@ $base-font-size: 16; // px
 //
 // Accepts both unitless and px unit arguments.
 //
-@function px2rem( $pixels, $context: $base-font-size ) {
-	@if ( math.is-unitless( $pixels ) ) {
+@function px2rem($pixels, $context: $base-font-size) {
+	@if (math.is-unitless($pixels)) {
 		$pixels: $pixels * 1px;
 	}
 
-	@if ( math.is-unitless( $context ) ) {
+	@if (math.is-unitless($context)) {
 		$context: $context * 1px;
 	}
 
-	@return $pixels / $context * 1rem;
+	@return math.div($pixels, $context) * 1rem;
+}
+
+//
+// Alias for px2rem.
+//
+@function rpx($pixels, $context: $base-font-size) {
+	@return px2rem($pixels, $context);
 }

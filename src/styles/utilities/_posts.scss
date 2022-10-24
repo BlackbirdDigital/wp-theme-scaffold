@@ -1,5 +1,5 @@
 //
-// Utilities: posts.
+// Utility: posts.
 //
 
 // RECOMMENDED STYLE
@@ -10,6 +10,6 @@
 .published {
 }
 
-.updated:not( .published ) {
+.updated:not(.published) {
 	display: none;
 }

@@ -8,6 +8,7 @@
  */
 
 $defaults = array(
+	'class'                 => '',
 	'hide_if_block_present' => false, // If true, hide on single post if core/post-featured-image block is used within the post.
 	'linked'                => false,
 	'size'                  => 'large',
@@ -33,7 +34,7 @@ if (
 	);
 	?>
 
-<figure class="tag-thumbnail">
+<figure class="tag-thumbnail <?php echo esc_attr( $args['class'] ); ?>">
 	<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </figure>
 

@@ -1,8 +1,8 @@
 //
-// Tools: layout.
+// Tool: layout.
 //
 
-@use '../settings/theme';
+@use "../settings/theme";
 
 @mixin center-block {
 	display: block;
@@ -14,7 +14,7 @@
 // A container adds inline padding, good for wrapping elements using align.
 //
 @mixin container() {
-	padding-inline: theme.get-var( 'sizes', 'gutter' );
+	padding-inline: theme.get-var("sizes", "gutter");
 }
 
 //
@@ -23,8 +23,8 @@
 //
 // @param $width narrow|default|wide|extra-wide
 //
-@mixin align( $width: default ) {
-	max-width: calc( #{theme.get-var( 'layout', $width )} );
+@mixin align($width: default) {
+	max-width: calc(#{theme.get-var("layout", $width)});
 	margin-inline: auto;
 }
 
@@ -33,21 +33,21 @@
 //
 @mixin alignments() {
 	.alignnarrow {
-		@include align('narrow');
+		@include align("narrow");
 	}
 
 	.alignwide {
-		@include align('wide');
+		@include align("wide");
 	}
 
 	.alignextrawide {
-		@include align('extra-wide');
+		@include align("extra-wide");
 	}
 
 	.alignfull {
 		max-width: none;
 		width: auto !important; // Fixes width: 100% when parent has padding.
-		margin-inline: calc( #{theme.get-var( 'sizes', 'gutter' )} * -1 );
+		margin-inline: calc(#{theme.get-var("sizes", "gutter")} * -1);
 	}
 }
 
@@ -57,7 +57,7 @@
 //
 // @param $default Default width to align child elements.
 //
-@mixin block-container( $default: default ) {
+@mixin block-container($default: default) {
 	@include container();
 
 	> * {

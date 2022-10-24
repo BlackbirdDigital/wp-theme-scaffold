@@ -22,6 +22,7 @@
  */
 
 $defaults = array(
+	'class'               => '',
 	'label'               => _x( 'Page navigation', 'pagination label', 'themescaffold' ),
 	'paginate_links_args' => array(),
 );
@@ -29,7 +30,7 @@ $defaults = array(
 $args = wp_parse_args( $args, $defaults );
 ?>
 
-<div class="nav-pagination">
+<div class="nav-pagination <?php echo esc_attr( $args['class'] ); ?>">
 	<nav class="nav-pagination__nav">
 		<?php // Using h2 to provide a heading to the nav section. ?>
 		<h2 class="nav-pagination__label"><?php echo esc_html( $args['label'] ); ?></h2>

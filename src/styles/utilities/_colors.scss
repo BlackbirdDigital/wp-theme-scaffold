@@ -1,0 +1,19 @@
+/**
+ * Utility: colors
+ */
+
+@use "../settings/theme";
+
+// Color CSS vars
+// Note: classes doubled to increase specificity, kind of a hack...
+$theme-colors: theme.get-map("theme-colors");
+@each $color, $value in $theme-colors {
+	.has-#{$color}-color.has-#{$color}-color {
+		color: #{theme.get-var("theme-colors", $color)};
+		--has-color: #{theme.get-var("theme-colors", $color)};
+	}
+	.has-#{$color}-background-color.has-#{$color}-background-color {
+		background-color: #{theme.get-var("theme-colors", $color)};
+		--has-background-color: #{theme.get-var("theme-colors", $color)};
+	}
+}
