@@ -8,6 +8,7 @@
  */
 
 $defaults = array(
+	'class'              => '',
 	'label'              => _x( 'Pages:', 'post page links label', 'themescaffold' ),
 	'wp_link_pages_args' => array(
 		'before' => '',
@@ -25,7 +26,7 @@ $page_links = wp_link_pages( $wp_link_pages_args );
 if ( ! empty( $page_links ) ) :
 	?>
 
-<div class="nav-page-links">
+<div class="nav-page-links <?php echo esc_attr( $args['class'] ); ?>">
 	<nav class="nav-page-links__nav">
 		<?php // Using h2 to provide a heading to the nav section. ?>
 		<h2 class="nav-page-links__label"><?php echo esc_html( $args['label'] ); ?></h2>
