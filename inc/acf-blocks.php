@@ -4,7 +4,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/acf_register_block_type/
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\ACFBlocks;

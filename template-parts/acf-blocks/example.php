@@ -2,7 +2,7 @@
 /**
  * ACF Block: example.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 // Create id attribute allowing for custom "anchor" value.

@@ -4,11 +4,11 @@
  *
  * Output a list of terms from the post. Taxonomy defaults to `post_tag`.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
-	'label'    => esc_html_x( 'Posted in', 'post tags label', 'theme-scaffold' ),
+	'label'    => esc_html_x( 'Posted in', 'post tags label', 'themescaffold' ),
 	'linked'   => true,
 	'taxonomy' => 'post_tag',
 );
@@ -17,7 +17,7 @@ $args = wp_parse_args( $args, $defaults );
 
 $term_list = '';
 if ( $args['linked'] ) {
-	$term_list = get_the_term_list( get_the_ID(), $args['taxonomy'], '', esc_html_x( ', ', 'term list separator', 'theme-scaffold' ), '' );
+	$term_list = get_the_term_list( get_the_ID(), $args['taxonomy'], '', esc_html_x( ', ', 'term list separator', 'themescaffold' ), '' );
 } else {
 	$terms = get_the_terms( get_the_ID(), $args['taxonomy'] );
 	if ( is_array( $terms ) && $terms[0] instanceof WP_Term ) {

@@ -2,7 +2,7 @@
 /**
  * Theme setup.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Setup;
@@ -21,10 +21,10 @@ function setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on theme-scaffold, use a find and replace
-	 * to change 'theme-scaffold' to the name of your theme in all the template files.
+	 * If you're building a theme based on themescaffold, use a find and replace
+	 * to change 'themescaffold' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'theme-scaffold', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'themescaffold', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -100,10 +100,10 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 function menus() {
 	register_nav_menus(
 		array(
-			'primary'          => esc_html__( 'Primary', 'theme-scaffold' ),
-			'secondary'        => esc_html__( 'Secondary', 'theme-scaffold' ),
-			'primary-footer'   => esc_html__( 'Footer Primary', 'theme-scaffold' ),
-			'secondary-footer' => esc_html__( 'Footer Secondary', 'theme-scaffold' ),
+			'primary'          => esc_html__( 'Primary', 'themescaffold' ),
+			'secondary'        => esc_html__( 'Secondary', 'themescaffold' ),
+			'primary-footer'   => esc_html__( 'Footer Primary', 'themescaffold' ),
+			'secondary-footer' => esc_html__( 'Footer Secondary', 'themescaffold' ),
 		)
 	);
 }
@@ -117,9 +117,9 @@ add_action( 'init', __NAMESPACE__ . '\\menus' );
 function widget_areas() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', 'theme-scaffold' ),
+			'name'          => esc_html__( 'Footer', 'themescaffold' ),
 			'id'            => 'footer',
-			'description'   => esc_html__( 'Footer blocks.', 'theme-scaffold' ),
+			'description'   => esc_html__( 'Footer blocks.', 'themescaffold' ),
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '<h2 class="widget-title">',

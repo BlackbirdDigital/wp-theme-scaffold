@@ -4,7 +4,7 @@
  *
  * Output "leave a comment" link.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
@@ -16,7 +16,7 @@ if ( ! post_password_required() && ( comments_open() || get_comments_number() ) 
 		sprintf(
 			wp_kses(
 				/* translators: %s: post title */
-				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'theme-scaffold' ),
+				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'themescaffold' ),
 				array(
 					'span' => array(
 						'class' => array(),

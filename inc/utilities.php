@@ -7,7 +7,7 @@
  * use function ThemeScaffold\Utilities\debug;
  * debug( $foo );
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Utilities;
@@ -69,7 +69,7 @@ function debug( $var ) {
  * @param string $name Asset file name without extension.
  */
 function get_asset_handle( string $name ) {
-	return 'theme-scaffold-' . $name;
+	return 'themescaffold-' . $name;
 }
 
 /**

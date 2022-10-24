@@ -4,7 +4,7 @@
  *
  * Output the post thumbnail, with option to ignore if block is used.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
@@ -31,11 +31,11 @@ if (
 		get_the_post_thumbnail( null, $args['size'], $args['thumbnail_attrs'] ),
 		esc_url( get_permalink() )
 	);
-?>
+	?>
 
 <figure class="tag-thumbnail">
 	<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </figure>
 
-<?php
+	<?php
 endif;

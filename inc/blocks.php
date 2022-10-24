@@ -2,7 +2,7 @@
 /**
  * Block registrations.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Blocks;

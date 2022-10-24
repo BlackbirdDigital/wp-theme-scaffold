@@ -4,11 +4,11 @@
  *
  * Output author vcard, optionally linked.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 $defaults = array(
-	'label'  => esc_html_x( 'by', 'post author byline', 'theme-scaffold' ),
+	'label'  => esc_html_x( 'by', 'post author byline', 'themescaffold' ),
 	'linked' => true,
 );
 

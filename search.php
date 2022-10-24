@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 get_header();

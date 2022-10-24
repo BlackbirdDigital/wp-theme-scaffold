@@ -2,7 +2,7 @@
 /**
  * Theme Customizer
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\Customizer;
@@ -59,6 +59,6 @@ function partial_blogdescription() {
  */
 function preview_js() {
 	$customizerjs_asset = require get_template_directory() . '/dist/js/customizer.asset.php';
-	wp_enqueue_script( 'theme-scaffold-customizer', get_template_directory_uri() . '/js/customizer.js', array_merge( array( 'customize-preview' ), $customizerjs_asset['dependencies'] ), $customizerjs_asset['version'], true );
+	wp_enqueue_script( 'themescaffold-customizer', get_template_directory_uri() . '/js/customizer.js', array_merge( array( 'customize-preview' ), $customizerjs_asset['dependencies'] ), $customizerjs_asset['version'], true );
 }
 add_action( 'customize_preview_init', __NAMESPACE__ . '\\preview_js' );

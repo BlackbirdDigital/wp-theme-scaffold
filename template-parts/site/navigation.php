@@ -2,7 +2,7 @@
 /**
  * Partial: site-navigation.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 use function ThemeScaffold\Utilities\array_subset;

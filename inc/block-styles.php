@@ -2,7 +2,7 @@
 /**
  * Block style registrations.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 namespace ThemeScaffold\BlockStyles;
@@ -18,7 +18,7 @@ function register() {
 		array(
 			'name'  => 'lead',
 			'label' => 'Lead Paragraph',
-			'style' => 'theme-scaffold-style',
+			'style' => 'themescaffold-style',
 		)
 	);
 	*/
@@ -29,7 +29,7 @@ function register() {
 		array(
 			'name'  => 'link',
 			'label' => 'Link',
-			'style' => 'theme-scaffold-style',
+			'style' => 'themescaffold-style',
 		)
 	);
 }

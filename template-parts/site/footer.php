@@ -2,7 +2,7 @@
 /**
  * Partial: site-footer.
  *
- * @package theme-scaffold
+ * @package themescaffold
  */
 
 ?>
