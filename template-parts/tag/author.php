@@ -8,6 +8,7 @@
  */
 
 $defaults = array(
+	'class'  => '',
 	'label'  => esc_html_x( 'by', 'post author byline', 'themescaffold' ),
 	'linked' => true,
 );
@@ -22,7 +23,7 @@ $byline        = sprintf(
 );
 ?>
 
-<span class="tag-author">
+<span class="tag-author <?php echo esc_attr( $args['class'] ); ?>">
 	<span class="tag-author__label"><?php echo $args['label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 	<?php echo $byline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </span>
