@@ -2,6 +2,8 @@
 /**
  * Block registrations.
  *
+ * Handles automatic registration of all blocks in /dist/blocks.
+ *
  * @package themescaffold
  */
 
@@ -11,7 +13,7 @@ namespace ThemeScaffold\Blocks;
  * Automatically register custom blocks output to dist/blocks.
  */
 function register_blocks() {
-	// Filter plugins_url because register_block_type_from_metadata doesn't work for themes.
+	// Filter plugins_url if theme is symlinked.
 	add_filter( 'plugins_url', __NAMESPACE__ . '\\block_plugins_url', 10, 2 );
 
 	foreach ( glob( get_template_directory() . '/dist/blocks/*', GLOB_ONLYDIR ) as $block_dir ) {
@@ -27,29 +29,36 @@ function register_blocks() {
 		$block_callback = $block_dir . '/index.php';
 
 		if ( file_exists( $block_callback ) ) {
-			// Make block metadata available to the PHP template.
-			$metadata                = json_decode( file_get_contents( $block_metadata ), true );
-			$args['render_callback'] = function( $attributes, $content ) use ( $block_callback, $metadata ) {
-				// Note that $attributes, $content, and $metadata will be available in the block template.
-				ob_start();
-				require $block_callback;
-				return ob_get_clean();
-			};
+
+			// This is available to the PHP template.
+			$metadata = wp_json_file_decode( $block_metadata, array( 'associative' => true ) );
+
+			// Only add `render_callback` if `render` is not defined or if there is no `acf.renderTemplate` registered.
+			if ( ! isset( $metadata['render'] ) && ( ! isset( $metadata['acf'] ) || ! isset( $metadata['acf']['renderTemplate'] ) ) ) {
+				$args['render_callback'] = function( $attributes, $content ) use ( $block_callback, $metadata ) {
+					// Note that $attributes, $content, and $metadata will be available in the block template.
+					ob_start();
+					require $block_callback;
+					return ob_get_clean();
+				};
+			}
 		}
 
-		// We must use this instead of register_block_type() directly due to how the filter is applied.
-		register_block_type_from_metadata( $block_metadata, $args );
+		register_block_type( $block_metadata, $args );
 	}
+
 	// Remove filter after registering.
 	remove_filter( 'plugins_url', __NAMESPACE__ . '\\block_plugins_url', 10 );
 }
 add_action( 'init', __NAMESPACE__ . '\\register_blocks' );
 
 /**
- * Filter plugins_url because register_block_type_from_metadata doesn't work
- * for themes (uses plugins_url() directly).
+ * While block registration from themes is now supported, registration from
+ * themes that are symlinked, like you might do when developing locally, is not.
  *
- * Used in register_blocks()
+ * @link https://core.trac.wordpress.org/ticket/56859
+ *
+ * Used in register_blocks().
  */
 function block_plugins_url( $url, $path ) {
 	// Handle symlinked paths (generally only during local development).
