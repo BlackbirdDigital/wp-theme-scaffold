@@ -21,14 +21,15 @@
 			"themeColors": {
 				"primary": "var(--wp--custom--colors--purple)",
 				"secondary": "var(--wp--custom--colors--blue)",
-				"tertiary": "var(--wp--custom--colors--grey3)",
+				"tertiary": "var(--wp--custom--colors--cyan)",
+				"accent": "var(--wp--custom--colors--orange)",
 				"error": "var(--wp--custom--colors--red)",
 				"warning": "var(--wp--custom--colors--orange)",
 				"success": "var(--wp--custom--colors--green)",
 				"info": "var(--wp--custom--colors--cyan)",
 				"background": "var(--wp--custom--colors--white)",
 				"foreground": "var(--wp--custom--colors--black)",
-				"muted": "var(--wp--custom--colors--grey2)",
+				"muted": "var(--wp--custom--colors--grey-2)",
 				"link": "var(--wp--custom--colors--blue)"
 			},
 			"layout": {
@@ -102,6 +103,11 @@
 					"color": "var(--wp--custom--theme-colors--tertiary)"
 				},
 				{
+					"name": "Accent",
+					"slug": "accent",
+					"color": "var(--wp--custom--theme-colors--accent)"
+				},
+				{
 					"name": "Background",
 					"slug": "background",
 					"color": "var(--wp--custom--theme-colors--background)"
@@ -125,11 +131,7 @@
 		"spacing": {
 			"margin": true,
 			"padding": true,
-			"units": [
-				"rem",
-				"vh",
-				"vw"
-			]
+			"units": [ "rem", "vh", "vw" ]
 		},
 		"typography": {
 			"customFontSize": false,
@@ -268,30 +270,15 @@
 			"core/button": {
 				"border": {
 					"customRadius": false
-				},
+				}
+			}
+		}
+	},
+	"styles": {
+		"elements": {
+			"link": {
 				"color": {
-					"palette": [
-						{
-							"name": "Primary",
-							"slug": "primary",
-							"color": "var(--wp--custom--theme-colors--primary)"
-						},
-						{
-							"name": "Secondary",
-							"slug": "secondary",
-							"color": "var(--wp--custom--theme-colors--secondary)"
-						},
-						{
-							"name": "Tertiary",
-							"slug": "tertiary",
-							"color": "var(--wp--custom--theme-colors--tertiary)"
-						},
-						{
-							"name": "Background",
-							"slug": "background",
-							"color": "var(--wp--custom--theme-colors--background)"
-						}
-					]
+					"text": "var(--wp--custom--theme-colors--link)"
 				}
 			}
 		}

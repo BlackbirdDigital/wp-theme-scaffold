@@ -1,0 +1,23 @@
+//
+// Block: core/button.
+//
+
+.wp-block-button {
+	$self: &;
+
+	&__link {
+		@extend %button-filled;
+	}
+
+	&.is-style-outline {
+		#{$self}__link {
+			@extend %button-outline;
+		}
+	}
+
+	&.is-style-link {
+		#{$self}__link {
+			@extend %button-link-arrow;
+		}
+	}
+}
