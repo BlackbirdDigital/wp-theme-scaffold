@@ -26,6 +26,10 @@ function setup() {
 	 */
 	load_theme_textdomain( 'themescaffold', get_template_directory() . '/languages' );
 
+	/**
+	 * Add theme support declarations.
+	 */
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -83,12 +87,19 @@ function setup() {
 	// Add support for responsive video embeds.
 	add_theme_support( 'responsive-embeds' );
 
-	// You may wish to remove core block patterns if you're providing your own in inc/block-patterns.php.
-	// remove_theme_support( 'core-block-patterns' );
-
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'dist/css/editor.css' );
+
+	/**
+	 * Remove theme support declarations.
+	 */
+
+	// Remove core block patterns if you're providing your own in inc/block-patterns.php.
+	remove_theme_support( 'core-block-patterns' );
+
+	// Remove support for block template creation, which overrides the entire page template with FSE.
+	remove_theme_support( 'block-templates' );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
 
