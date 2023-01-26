@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Example Pattern
- * Slug: roxie-them/image-text-columns
+ * Slug: themescaffold/example-pattern
  * Categories: text, columns
  */
 ?>
