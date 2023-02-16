@@ -15,7 +15,7 @@
 		</nav>
 
 		<div class="site-footer__widgets">
-			<?php get_sidebar( 'footer' ); ?>
+			<?php block_template_part( 'footer' ); ?>
 		</div>
 	</div>
 </footer><!-- .site-footer -->

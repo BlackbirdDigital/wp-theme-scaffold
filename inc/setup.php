@@ -91,6 +91,9 @@ function setup() {
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'dist/css/editor.css' );
 
+	// Add support for Block Template Part.
+	add_theme_support( 'block-template-parts' );
+
 	/**
 	 * Remove theme support declarations.
 	 */
@@ -119,26 +122,6 @@ function menus() {
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\\menus' );
-
-/**
- * Register widget areas.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function widget_areas() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer', 'themescaffold' ),
-			'id'            => 'footer',
-			'description'   => esc_html__( 'Footer blocks.', 'themescaffold' ),
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', __NAMESPACE__ . '\\widget_areas' );
 
 /**
  * Register scripts and styles.
