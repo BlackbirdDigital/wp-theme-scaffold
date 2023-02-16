@@ -33,7 +33,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom blocks, styles, and patterns.
+ * Custom blocks and styles.
  */
 require get_template_directory() . '/inc/acf-blocks.php';
 require get_template_directory() . '/inc/blocks.php';

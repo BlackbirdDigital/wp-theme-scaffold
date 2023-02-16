@@ -95,7 +95,7 @@ function setup() {
 	 * Remove theme support declarations.
 	 */
 
-	// Remove core block patterns if you're providing your own in inc/block-patterns.php.
+	// Remove core block patterns if you're providing your own in the patterns directory.
 	remove_theme_support( 'core-block-patterns' );
 
 	// Remove support for block template creation, which overrides the entire page template with FSE.
