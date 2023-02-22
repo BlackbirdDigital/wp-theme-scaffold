@@ -131,6 +131,7 @@
 		"spacing": {
 			"margin": true,
 			"padding": true,
+			"blockGap": true,
 			"units": [ "rem", "vh", "vw" ]
 		},
 		"typography": {
