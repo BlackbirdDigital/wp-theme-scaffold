@@ -1,0 +1,17 @@
+//
+// Admin stylesheet.
+//
+
+@use "tools/context" with (
+	$context: admin
+);
+
+.example {
+	container-type: inline-size;
+}
+
+.example-child {
+	@container (min-width: 600px) {
+		background-color: red;
+	}
+}

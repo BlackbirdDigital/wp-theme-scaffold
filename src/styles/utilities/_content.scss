@@ -15,7 +15,7 @@
 // the .title here affects the title in single.php, archive.php, and 404.php.
 //
 
-@include context.is-front {
+@include context.is(front) {
 	.header {
 		@include layout.block-container();
 	}

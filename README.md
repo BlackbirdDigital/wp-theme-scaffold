@@ -86,7 +86,7 @@ There is a nod to SMACSS in our approach, but it is altered/extended for the Wor
 
 Please be aware that this scaffolding makes use of the latest features of Sass, particularly [Sass modules](https://sass-lang.com/blog/the-module-system-is-launched). Various tools are available that you muse `@use` in order to import into the current file's context, and they are namespaced to avoid global context pollution.
 
-An important tool you should familiarize yourself with is the `context` tool that allows you to manage what styles are output in the main stylesheet vs the editor stylesheet. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
+An important tool you should familiarize yourself with is the `context` tool that allows you to manage what styles are output in different entry stylesheets (ie style/editor/admin). You can add additional contexts as you see fit. See the [tools/_context.scss](src/styles/tools/_context.scss) file for usage information.
 
 The folders in import order:
 

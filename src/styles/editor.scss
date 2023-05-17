@@ -4,7 +4,7 @@
 
 // Set $is-editor to true, which will be inherited anywhere the tools/context module is used.
 @use 'tools/context' with (
-	$is-editor: true,
+	$context: editor,
 );
 
 @import 'base/global/*';

@@ -2,9 +2,9 @@
 // Block: core/spacer.
 //
 
-@use '../../tools/context';
+@use "../../tools/context";
 
-@include context.is-editor {
+@include context.is(editor) {
 	.block-library-spacer__resize-container {
 		background: #f0f0f0;
 		max-height: 100%;

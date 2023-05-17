@@ -2,9 +2,9 @@
 // Module: loop-archive.
 //
 
-@use '../tools/context';
+@use "../tools/context";
 
-@include context.is-front {
+@include context.is(front) {
 	.loop-archive {
 		&__header {
 		}

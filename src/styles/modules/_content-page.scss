@@ -2,9 +2,9 @@
 // Module: content-page.
 //
 
-@use '../tools/context';
+@use "../tools/context";
 
-@include context.is-front {
+@include context.is(front) {
 	.content-page {
 		&__header {
 		}
