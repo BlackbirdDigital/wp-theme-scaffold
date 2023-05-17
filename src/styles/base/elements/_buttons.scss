@@ -6,7 +6,7 @@
 @use "../../utilities/buttons";
 
 // Only include base button styles on front so we don't interfere with UI buttons in the editor.
-@include context.is-front {
+@include context.is(front) {
 	button,
 	input[type="button"],
 	input[type="reset"],

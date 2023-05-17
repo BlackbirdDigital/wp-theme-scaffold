@@ -2,9 +2,9 @@
 // Module: site.
 //
 
-@use '../tools/context';
+@use "../tools/context";
 
-@include context.is-front {
+@include context.is(front) {
 	.site {
 		width: 100%;
 		min-height: 100vh;
@@ -12,12 +12,12 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr auto;
 		grid-template-areas:
-			'header'
-			'main'
-			'footer';
+			"header"
+			"main"
+			"footer";
 
 		body.admin-bar & {
-			min-height: calc( 100vh - var( --global--admin-bar--height ) );
+			min-height: calc(100vh - var(--global--admin-bar--height));
 		}
 	}
 
