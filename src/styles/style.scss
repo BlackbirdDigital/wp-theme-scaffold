@@ -2,14 +2,12 @@
 // Front-end stylesheet.
 //
 
-@import 'normalize.scss/normalize';
+@import "normalize.scss/normalize";
 
-@import 'base/global/*';
-@import 'base/elements/*';
-@import 'base/typography/*';
+@import "base/global/*";
+@import "base/elements/*";
+@import "base/typography/*";
 
-@import 'modules/*';
+@import "modules/*";
 
-@import 'blocks/**/*';
-
-@import 'utilities/*';
+@import "utilities/*";

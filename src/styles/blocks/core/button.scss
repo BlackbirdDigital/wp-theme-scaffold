@@ -2,6 +2,8 @@
 // Block: core/button.
 //
 
+@use "../../utilities/buttons";
+
 .wp-block-button {
 	$self: &;
 

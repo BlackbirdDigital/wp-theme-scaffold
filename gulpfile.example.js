@@ -19,6 +19,6 @@
  */
 const gulp = require( 'gulp' );
 
-const config = {};
+const config = require( './gulp-wp.config' );
 
 const gulpWP = require( 'gulp-wp' )( gulp, config );
