@@ -66,6 +66,11 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
  * overrides of existing block styles in parent theme.
  */
 function block_style_overrides() {
+	// Block styles are still added directly to the main editor stylesheet to enable any styles using the `editor` context.
+	if ( is_admin() ) {
+		return;
+	}
+
 	foreach ( glob( get_template_directory() . '/dist/css/blocks/*', GLOB_ONLYDIR ) as $namespace_dir ) {
 		$namespace = basename( $namespace_dir );
 
