@@ -1,4 +1,4 @@
-# Copyright (C) 2022 WP Theme Scaffold
+# Copyright (C) 2023 WP Theme Scaffold
 # This file is distributed under the same license as the WP Theme Scaffold package.
 msgid ""
 msgstr ""
@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-05 12:38+0000\n"
+"POT-Creation-Date: 2023-05-18 14:48+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -39,7 +39,7 @@ msgid "WP Theme Scaffold"
 msgstr ""
 
 #: style.css:3
-msgid "https://github.com/BlackbirdDigital/wp-themescaffold"
+msgid "https://github.com/BlackbirdDigital/wp-theme-scaffold"
 msgstr ""
 
 #: style.css:4
@@ -58,28 +58,20 @@ msgstr ""
 msgid "Toggle Menu"
 msgstr ""
 
-#: inc/setup.php:103
+#: inc/setup.php:117
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:104
+#: inc/setup.php:118
 msgid "Secondary"
 msgstr ""
 
-#: inc/setup.php:105
+#: inc/setup.php:119
 msgid "Footer Primary"
 msgstr ""
 
-#: inc/setup.php:106
-msgid "Footer Secondary"
-msgstr ""
-
 #: inc/setup.php:120
-msgid "Footer"
-msgstr ""
-
-#: inc/setup.php:122
-msgid "Footer blocks."
+msgid "Footer Secondary"
 msgstr ""
 
 #: template-parts/content/404.php:14
@@ -111,42 +103,42 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/nav/navigation.php:19
+#: template-parts/nav/navigation.php:20
 msgctxt "post prev/next links label"
 msgid "Post navigation"
 msgstr ""
 
-#: template-parts/nav/page-links.php:11
+#: template-parts/nav/page-links.php:12
 msgctxt "post page links label"
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/nav/pagination.php:25
+#: template-parts/nav/pagination.php:26
 msgctxt "pagination label"
 msgid "Page navigation"
 msgstr ""
 
-#: template-parts/tag/author.php:11
+#: template-parts/tag/author.php:12
 msgctxt "post author byline"
 msgid "by"
 msgstr ""
 
 #. translators: %s: post title
-#: template-parts/tag/comment-link.php:19
+#: template-parts/tag/comment-link.php:13
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: template-parts/tag/date.php:12
+#: template-parts/tag/date.php:13
 msgctxt "post date label"
 msgid "Posted on"
 msgstr ""
 
-#: template-parts/tag/term-list.php:11
+#: template-parts/tag/term-list.php:12
 msgctxt "post tags label"
 msgid "Posted in"
 msgstr ""
 
-#: template-parts/tag/term-list.php:20
+#: template-parts/tag/term-list.php:21
 msgctxt "term list separator"
 msgid ", "
 msgstr ""
