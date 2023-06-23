@@ -3,7 +3,11 @@
  */
 
 // WordPress
-import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
 
 export default function save() {
 	// If a dynamic block, return null or <InnerBlocks.Content />
