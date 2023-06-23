@@ -33,5 +33,9 @@ You can use this system to add styles to core blocks, your own custom blocks,
 and any third-party blocks you have installed as long as you know the block name
 and namespace.
 
+In order for these styles to be processed by the gulp-wp workflow, the `styles`
+task's `src` config has been modified in `gulp-wp.config.js` to include only
+files that are nested in a namespace folder like the example above.
+
 The function that loads these styles is located in `inc/blocks.php` as
 `block_style_overrides()`.
