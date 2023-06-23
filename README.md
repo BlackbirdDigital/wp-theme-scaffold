@@ -110,7 +110,7 @@ These are our main BEM component class files. Each module file should be named t
 
 **4. Blocks**
 
-Here is where there is an exception made to the standard concept of modules: Gutenberg blocks. Custom block styles should be added to the `blocks` subfolder and named with their block name (minus the namespace). There is a subfolder in `blocks` for core blocks to distinguish them from custom blocks.
+Here is where there is an exception made to the standard concept of modules: Gutenberg blocks. Custom block style overrides should be added to the `blocks` folder inside a namespace folder and named with their block name, i.e. `/src/styles/blocks/core/paragraph.scss`. Note that the file name should not include an underscore—these are output as separate stylesheets to be linked/inlined on the front end only when the block is present on the page. See the [block styles README](src/styles/blocks/README.md) for more information.
 
 Many block styles may `@extend` existing component styles from the `modules` folder; remember you need to `@use` the module file in order to `@extend` a component class.
 
